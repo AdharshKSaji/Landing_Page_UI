@@ -9,6 +9,7 @@ export function CtaSection() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -52,35 +53,36 @@ export function CtaSection() {
               {/* Left content */}
               <div className="flex-1">
                 <h2 className="text-4xl lg:text-7xl font-display tracking-tight mb-8 leading-[0.95]">
-                  Ready to build
+                  Ready to initiate
                   <br />
-                  something great?
+                  your path towards a brighter future?
                 </h2>
 
                 <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-xl">
-                  Join thousands of teams shipping faster with Optimus. 
-                  Start free, scale infinitely.
+                  Be assured, your confidentiality is paramount within these walls. 
+                  We strive to respond to all enquiries within 24 hours on business days.
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-start gap-4">
-                  <Button
+                  {/* <Button
                     size="lg"
                     className="bg-foreground hover:bg-foreground/90 text-background px-8 h-14 text-base rounded-full group"
                   >
-                    Start building free
+                    Yes, I want to talk to an expert
                     <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                  </Button>
+                  </Button> */}
                   <Button
                     size="lg"
                     variant="outline"
                     className="h-14 px-8 text-base rounded-full border-foreground/20 hover:bg-foreground/5"
+                    onClick={() => setShowForm(prev => !prev)}
                   >
-                    Talk to sales
+                    Make Enquiry Today
                   </Button>
                 </div>
 
                 <p className="text-sm text-muted-foreground mt-8 font-mono">
-                  No credit card required
+                  📞 +91 99957 73273 &nbsp; | &nbsp; ✉️ info@grandreeves.com
                 </p>
               </div>
 
@@ -89,6 +91,59 @@ export function CtaSection() {
                 <AnimatedTetrahedron />
               </div>
             </div>
+
+            {/* Enquiry Form Toggle */}
+            {showForm && (
+              <div className="mt-12 border border-foreground/10 rounded-xl p-10 bg-white shadow-xl">
+                <h3 className="text-3xl font-display mb-2 text-foreground">Drop Us 👋 a Line</h3>
+                <p className="text-muted-foreground mb-8 text-lg">
+                  Make Enquiry Today — Request Free Quote
+                </p>
+                <form className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <input
+                      type="text"
+                      placeholder="Full Name"
+                      className="w-full border border-foreground/20 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground/30"
+                    />
+                    <input
+                      type="email"
+                      placeholder="Email Address"
+                      className="w-full border border-foreground/20 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground/30"
+                    />
+                    <input
+                      type="tel"
+                      placeholder="Phone Number"
+                      className="w-full border border-foreground/20 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground/30"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Country"
+                      className="w-full border border-foreground/20 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground/30"
+                    />
+                  </div>
+
+                  <textarea
+                    placeholder="Your Message"
+                    className="w-full border border-foreground/20 px-4 py-3 rounded-lg h-32 focus:outline-none focus:ring-2 focus:ring-foreground/30"
+                  />
+
+                  <div className="flex items-center gap-3">
+                    <input type="checkbox" id="captcha" className="h-5 w-5" />
+                    <label htmlFor="captcha" className="text-sm text-muted-foreground">
+                      I'm not a robot
+                    </label>
+                  </div>
+
+                  <Button
+                    size="lg"
+                    className="w-full bg-foreground hover:bg-foreground/90 text-background px-8 h-14 text-base rounded-full font-semibold shadow-md"
+                  >
+                    Yes, I want to talk to an expert
+                  </Button>
+                </form>
+              </div>
+            )}
           </div>
 
           {/* Decorative corner */}
