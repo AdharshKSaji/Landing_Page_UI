@@ -38,7 +38,7 @@ export function CtaSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-32"
+      className="relative overflow-hidden bg-white py-12 sm:py-16 lg:py-20"
     >
       {/* =========================================================
           BACKGROUND
@@ -94,9 +94,9 @@ export function CtaSection() {
                 LEFT CONTENT
             ==================================================== */}
 
-            <div className="relative px-7 py-12 sm:px-10 sm:py-16 lg:px-14 lg:py-20 xl:px-16">
+            <div className="relative px-7 py-10 sm:px-10 sm:py-12 lg:px-14 lg:py-16 xl:px-16">
               {/* Small label */}
-              <div className="mb-7 flex items-center gap-3">
+              <div className="mb-5 flex items-center gap-3">
                 <span className="h-px w-8 bg-blue-500" />
 
                 <span className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-600">
@@ -115,7 +115,7 @@ export function CtaSection() {
               </h2>
 
               {/* Description */}
-              <p className="mt-7 max-w-xl text-sm leading-7 text-slate-500 sm:text-base lg:text-lg">
+              <p className="mt-5 max-w-xl text-sm leading-7 text-slate-500 sm:text-base lg:text-lg">
                 Have an idea, a project, or a business challenge? Let's turn
                 it into a digital solution that creates real impact. Tell us
                 what you're building and we'll take it from there.
@@ -125,7 +125,7 @@ export function CtaSection() {
                   CTA
               ================================================== */}
 
-              <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <Button
                   size="lg"
                   onClick={() => setShowForm(true)}
@@ -157,7 +157,7 @@ export function CtaSection() {
                   TRUST INDICATORS
               ================================================== */}
 
-              <div className="mt-12 grid max-w-xl grid-cols-1 gap-5 border-t border-slate-100 pt-7 sm:grid-cols-2">
+              <div className="mt-10 grid max-w-xl grid-cols-1 gap-4 border-t border-slate-100 pt-6 sm:grid-cols-2">
                 <div className="flex items-start gap-3">
                   <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600">
                     <ShieldCheck size={17} />
@@ -168,7 +168,7 @@ export function CtaSection() {
                       Your privacy matters
                     </p>
 
-                    <p className="mt-1 text-xs leading-5 text-slate-400">
+                    <p className="mt-0.5 text-xs leading-5 text-slate-400">
                       Your information stays confidential.
                     </p>
                   </div>
@@ -184,7 +184,7 @@ export function CtaSection() {
                       Quick response
                     </p>
 
-                    <p className="mt-1 text-xs leading-5 text-slate-400">
+                    <p className="mt-0.5 text-xs leading-5 text-slate-400">
                       We respond within 24 business hours.
                     </p>
                   </div>
@@ -196,17 +196,17 @@ export function CtaSection() {
                 RIGHT VISUAL
             ==================================================== */}
 
-            <div className="relative min-h-[420px] overflow-hidden border-t border-slate-100 bg-[#f8fbff] lg:min-h-[650px] lg:border-l lg:border-t-0">
+            <div className="relative min-h-[380px] overflow-hidden border-t border-slate-100 bg-[#f8fbff] lg:min-h-[600px] lg:border-l lg:border-t-0">
               {/* Blue gradient */}
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.10),transparent_55%)]" />
 
               {/* Large circle */}
-              <div className="pointer-events-none absolute left-1/2 top-1/2 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-blue-500/[0.08] sm:h-[470px] sm:w-[470px]" />
+              <div className="pointer-events-none absolute left-1/2 top-1/2 h-[340px] w-[340px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-blue-500/[0.08] sm:h-[420px] sm:w-[420px]" />
 
-              <div className="pointer-events-none absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-blue-500/[0.08]" />
+              <div className="pointer-events-none absolute left-1/2 top-1/2 h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-blue-500/[0.08]" />
 
               {/* Dashed orbit */}
-              <div className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-blue-500/[0.12]" />
+              <div className="pointer-events-none absolute left-1/2 top-1/2 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-blue-500/[0.12]" />
 
               {/* Small decorative points */}
               <span className="absolute left-[18%] top-[25%] h-1.5 w-1.5 rounded-full bg-blue-500/60" />
@@ -219,19 +219,19 @@ export function CtaSection() {
 
               {/* Tetrahedron */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative h-[380px] w-[380px] sm:h-[460px] sm:w-[460px]">
+                <div className="relative h-[340px] w-[340px] sm:h-[420px] sm:w-[420px]">
                   <AnimatedTetrahedron />
                 </div>
               </div>
 
               {/* Bottom label */}
-              <div className="absolute bottom-8 left-8 right-8 flex items-center justify-between border-t border-slate-200/80 pt-5 sm:left-10 sm:right-10">
+              <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between border-t border-slate-200/80 pt-4 sm:left-8 sm:right-8">
                 <div>
                   <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-blue-600">
                     Grandreves Technologies
                   </p>
 
-                  <p className="mt-1 text-xs text-slate-400">
+                  <p className="mt-0.5 text-xs text-slate-400">
                     Digital solutions built for growth
                   </p>
                 </div>
@@ -252,7 +252,7 @@ export function CtaSection() {
               {/* Phone */}
               <a
                 href="tel:+919995773273"
-                className="group flex items-center gap-4 border-b border-slate-200 px-7 py-5 transition-colors hover:bg-white sm:border-b-0 sm:border-r sm:px-10"
+                className="group flex items-center gap-4 border-b border-slate-200 px-7 py-4 transition-colors hover:bg-white sm:border-b-0 sm:border-r sm:px-10"
               >
                 <div className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-blue-600 transition-all group-hover:border-blue-200 group-hover:bg-blue-50">
                   <Phone size={16} />
@@ -263,7 +263,7 @@ export function CtaSection() {
                     Call Us
                   </p>
 
-                  <p className="mt-1 text-sm font-medium text-slate-700">
+                  <p className="mt-0.5 text-sm font-medium text-slate-700">
                     +91 99957 73273
                   </p>
                 </div>
@@ -272,7 +272,7 @@ export function CtaSection() {
               {/* Email */}
               <a
                 href="mailto:info@grandreeves.com"
-                className="group flex items-center gap-4 px-7 py-5 transition-colors hover:bg-white sm:px-10"
+                className="group flex items-center gap-4 px-7 py-4 transition-colors hover:bg-white sm:px-10"
               >
                 <div className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-blue-600 transition-all group-hover:border-blue-200 group-hover:bg-blue-50">
                   <Mail size={16} />
@@ -283,7 +283,7 @@ export function CtaSection() {
                     Email Us
                   </p>
 
-                  <p className="mt-1 text-sm font-medium text-slate-700">
+                  <p className="mt-0.5 text-sm font-medium text-slate-700">
                     info@grandreeves.com
                   </p>
                 </div>
@@ -319,8 +319,8 @@ export function CtaSection() {
             </button>
 
             {/* Header */}
-            <div className="mb-8 pr-10">
-              <div className="mb-4 flex items-center gap-3">
+            <div className="mb-6 pr-10">
+              <div className="mb-3 flex items-center gap-3">
                 <span className="h-px w-6 bg-blue-500" />
 
                 <span className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">
@@ -333,17 +333,17 @@ export function CtaSection() {
                 <span className="text-blue-600"> your project.</span>
               </h3>
 
-              <p className="mt-3 max-w-xl text-sm leading-6 text-slate-500">
+              <p className="mt-2 max-w-xl text-sm leading-6 text-slate-500">
                 Share a few details about your requirements and our team will
                 get back to you shortly.
               </p>
             </div>
 
             {/* Form */}
-            <form className="space-y-5">
-              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+            <form className="space-y-4">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
-                  <label className="mb-2 block text-xs font-medium text-slate-600">
+                  <label className="mb-1.5 block text-xs font-medium text-slate-600">
                     Full Name
                   </label>
 
@@ -355,7 +355,7 @@ export function CtaSection() {
                 </div>
 
                 <div>
-                  <label className="mb-2 block text-xs font-medium text-slate-600">
+                  <label className="mb-1.5 block text-xs font-medium text-slate-600">
                     Email Address
                   </label>
 
@@ -367,7 +367,7 @@ export function CtaSection() {
                 </div>
 
                 <div>
-                  <label className="mb-2 block text-xs font-medium text-slate-600">
+                  <label className="mb-1.5 block text-xs font-medium text-slate-600">
                     Phone Number
                   </label>
 
@@ -379,7 +379,7 @@ export function CtaSection() {
                 </div>
 
                 <div>
-                  <label className="mb-2 block text-xs font-medium text-slate-600">
+                  <label className="mb-1.5 block text-xs font-medium text-slate-600">
                     Company
                   </label>
 
@@ -392,18 +392,18 @@ export function CtaSection() {
               </div>
 
               <div>
-                <label className="mb-2 block text-xs font-medium text-slate-600">
+                <label className="mb-1.5 block text-xs font-medium text-slate-600">
                   Tell us about your project
                 </label>
 
                 <textarea
                   placeholder="What are you looking to build?"
-                  className="h-32 w-full resize-none rounded-lg border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10"
+                  className="h-28 w-full resize-none rounded-lg border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10"
                 />
               </div>
 
               {/* Submit */}
-              <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex flex-col gap-4 pt-1 sm:flex-row sm:items-center sm:justify-between">
                 <p className="text-xs text-slate-400">
                   We typically respond within 24 business hours.
                 </p>
