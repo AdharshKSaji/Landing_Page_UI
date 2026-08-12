@@ -187,15 +187,18 @@ function FeatureCard({
               rounded-2xl
               border border-slate-200
               bg-slate-50
-              text-[#087EA4]
               transition-all duration-500
-              group-hover:border-[#087EA4]/20
-              group-hover:bg-[#087EA4]
-              group-hover:text-white
+              group-hover:border-[#1E3A8A]/20
+              group-hover:bg-[#1E3A8A]
               group-hover:rotate-3
             "
           >
-            <Icon size={20} strokeWidth={1.7} />
+            <Icon
+              size={20}
+              strokeWidth={1.7}
+              stroke="url(#icon-grad)"
+              className="group-hover:stroke-white transition-colors duration-300"
+            />
           </div>
         </div>
 
@@ -295,11 +298,21 @@ export function FeaturesSection() {
       ref={sectionRef}
       className="
         relative overflow-hidden
-        bg-[#F8FAFC]
-        py-24
-        lg:py-32
+        bg-white
+        pt-4 pb-12
+        lg:pt-4 lg:pb-24
       "
     >
+      {/* Global SVG Gradients for Icons */}
+      <svg className="absolute w-0 h-0 pointer-events-none" width="0" height="0">
+        <defs>
+          <linearGradient id="icon-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#172554" />
+            <stop offset="50%" stopColor="#1E3A8A" />
+            <stop offset="100%" stopColor="#2563EB" />
+          </linearGradient>
+        </defs>
+      </svg>
       {/* Background decoration */}
       <div className="pointer-events-none absolute inset-0">
         <div
@@ -341,10 +354,10 @@ export function FeaturesSection() {
         {/* Header */}
         <div
           className={`
-            mb-16
+            mb-8
             max-w-4xl
             transition-all duration-700
-            lg:mb-20
+            lg:mb-12
             ${headerVisible
               ? "translate-y-0 opacity-100"
               : "translate-y-8 opacity-0"
@@ -366,45 +379,42 @@ export function FeaturesSection() {
             </span>
           </div>
 
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-            <div>
-              <h2
+          <div className="flex flex-col gap-6">
+            <h2
+              className="
+                max-w-3xl
+                text-4xl
+                font-medium
+                leading-[1.05]
+                tracking-[-0.045em]
+                text-slate-950
+                sm:text-5xl
+                lg:text-7xl
+              "
+            >
+              <span className="block lg:whitespace-nowrap">Built on experience.</span>
+              <span
                 className="
-                  max-w-3xl
-                  text-4xl
-                  font-medium
-                  leading-[1.05]
-                  tracking-[-0.045em]
-                  text-slate-950
-                  sm:text-5xl
-                  lg:text-7xl
+                  block
+                  lg:whitespace-nowrap
+                  bg-gradient-to-r
+                  from-[#172554]
+                  via-[#1E3A8A]
+                  to-[#2563EB]
+                  bg-clip-text
+                  text-transparent
                 "
               >
-                Built on experience.
-                <br />
-
-                <span
-                  className="
-                    bg-gradient-to-r
-                    from-[#087EA4]
-                    via-[#159BC1]
-                    to-[#49C7EA]
-                    bg-clip-text
-                    text-transparent
-                  "
-                >
-                  Driven by results.
-                </span>
-              </h2>
-            </div>
+                Driven by results.
+              </span>
+            </h2>
 
             <p
               className="
-                max-w-sm
-                text-sm
-                leading-6
+                max-w-3xl
+                text-lg
+                leading-relaxed
                 text-slate-500
-                lg:pb-2
               "
             >
               Technology is only part of the equation. We combine
@@ -414,54 +424,8 @@ export function FeaturesSection() {
           </div>
         </div>
 
-        {/* Stats strip */}
-        <div
-          className="
-            mb-6
-            grid grid-cols-2
-            overflow-hidden
-            rounded-[24px]
-            border border-slate-200
-            bg-white
-            sm:grid-cols-4
-          "
-        >
-          <Stat
-            value="10+"
-            label="Years Experience"
-            icon={Sparkles}
-          />
-
-          <Stat
-            value="50+"
-            label="Milestones"
-            icon={CheckCircle2}
-          />
-
-          <Stat
-            value="24/7"
-            label="Support"
-            icon={Headphones}
-          />
-
-          <Stat
-            value="100%"
-            label="Commitment"
-            icon={Users}
-          />
-        </div>
-
         {/* Bento Grid */}
-        <div
-          className="
-            grid
-            auto-rows-[250px]
-            grid-cols-1
-            gap-5
-            md:grid-cols-2
-            lg:grid-cols-4
-          "
-        >
+        <div className=" grid auto-rows-[250px] grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
           {/* 01 */}
           <FeatureCard feature={features[0]} index={0} />
 
@@ -578,14 +542,18 @@ function Stat({
           flex h-10 w-10
           shrink-0 items-center justify-center
           rounded-xl
-          bg-[#087EA4]/8
-          text-[#087EA4]
+          bg-slate-50
+          border border-slate-200/60
           transition-all duration-300
-          group-hover:bg-[#087EA4]
-          group-hover:text-white
+          group-hover:bg-[#1E3A8A]
         "
       >
-        <Icon size={17} strokeWidth={1.8} />
+        <Icon
+          size={17}
+          strokeWidth={1.8}
+          stroke="url(#icon-grad)"
+          className="group-hover:stroke-white transition-colors duration-300"
+        />
       </div>
 
       <div>

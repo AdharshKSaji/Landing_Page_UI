@@ -37,7 +37,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-white text-[#171A1C]">
+    <section className="relative overflow-hidden bg-white text-[#171A1C]">
 
       {/* ============================================================
           BACKGROUND GRID
@@ -150,10 +150,9 @@ export function HeroSection() {
           z-10
           mx-auto
           flex
-          min-h-screen
           max-w-[1500px]
           flex-col
-          justify-between
+          justify-start
           px-6
           pb-10
           pt-28
@@ -520,7 +519,7 @@ export function HeroSection() {
 
         <div
           className={`
-            mt-20
+            mt-8
             border-t
             border-[#164A5B]/10
             pt-5
