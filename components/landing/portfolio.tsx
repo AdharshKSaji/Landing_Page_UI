@@ -167,12 +167,12 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       ref={ref}
       className={`
         group relative overflow-hidden rounded-[28px]
-        border border-slate-200/80
-        bg-white
+        border border-border
+        bg-card
         transition-all duration-700
         hover:-translate-y-1
-        hover:border-[#159BC1]/40
-        hover:shadow-[0_20px_60px_rgba(8,126,164,0.10)]
+        hover:border-primary/40
+        hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)]
         ${isLarge ? "md:col-span-2" : isFeatured ? "md:row-span-2" : ""}
         ${visible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}
       `}
@@ -182,7 +182,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         className="
           absolute -right-20 -top-20
           h-48 w-48 rounded-full
-          bg-[#16A9D2]/10
+          bg-primary/10
           blur-3xl
           opacity-0
           transition-opacity duration-500
@@ -191,9 +191,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       />
 
       <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-        <div className="absolute left-1/4 top-0 h-full w-px bg-slate-100" />
-        <div className="absolute left-2/4 top-0 h-full w-px bg-slate-100" />
-        <div className="absolute left-3/4 top-0 h-full w-px bg-slate-100" />
+        <div className="absolute left-1/4 top-0 h-full w-px bg-border" />
+        <div className="absolute left-2/4 top-0 h-full w-px bg-border" />
+        <div className="absolute left-3/4 top-0 h-full w-px bg-border" />
       </div>
 
       <div
@@ -203,7 +203,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         `}
       >
         <div className="flex items-start justify-between">
-          <span className="font-mono text-xs font-medium tracking-widest text-slate-400">
+          <span className="font-mono text-xs font-medium tracking-widest text-muted-foreground">
             {project.number}
           </span>
 
@@ -211,13 +211,13 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             className="
               flex h-11 w-11 items-center justify-center
               rounded-2xl
-              border border-slate-200
-              bg-slate-50
-              text-[#087EA4]
+              border border-border
+              bg-secondary
+              text-primary
               transition-all duration-500
-              group-hover:border-[#087EA4]/20
-              group-hover:bg-[#087EA4]
-              group-hover:text-white
+              group-hover:border-primary/20
+              group-hover:bg-primary
+              group-hover:text-primary-foreground
               group-hover:rotate-3
             "
           >
@@ -228,9 +228,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         <div className="mt-auto pt-4">
           <h3
             className={`
-              max-w-md font-medium tracking-tight text-slate-900
+              max-w-md font-medium tracking-tight text-foreground
               transition-colors duration-300
-              group-hover:text-[#087EA4]
+              group-hover:text-primary
               ${isFeatured ? "text-2xl lg:text-3xl" : "text-xl lg:text-2xl"}
             `}
           >
@@ -238,7 +238,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           </h3>
 
           <p
-            className="mt-3 max-w-lg text-sm leading-6 text-slate-500 lg:text-[15px]"
+            className="mt-3 max-w-lg text-sm leading-6 text-muted-foreground lg:text-[15px]"
             style={{
               display: "-webkit-box",
               WebkitLineClamp: clampLines,
@@ -254,10 +254,10 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               <span
                 key={t}
                 className="
-                  rounded-full border border-slate-200 bg-slate-50
-                  px-3 py-1 text-xs font-medium text-slate-600
+                  rounded-full border border-border bg-secondary
+                  px-3 py-1 text-xs font-medium text-muted-foreground
                   transition-colors duration-300
-                  group-hover:border-[#087EA4]/20 group-hover:bg-[#087EA4]/5 group-hover:text-[#087EA4]
+                  group-hover:border-primary/20 group-hover:bg-primary/5 group-hover:text-primary
                 "
               >
                 {t}
@@ -270,7 +270,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           className="
             absolute bottom-0 left-0
             h-[2px] w-0
-            bg-gradient-to-r from-[#087EA4] to-[#36C5EE]
+            bg-primary
             transition-all duration-500
             group-hover:w-full
           "
@@ -303,10 +303,10 @@ export function PortfolioSection() {
   }, []);
 
   return (
-    <section id="portfolio" ref={sectionRef} className="relative overflow-hidden bg-white py-24 lg:py-32">
+    <section id="portfolio" ref={sectionRef} className="relative overflow-hidden bg-background py-24 lg:py-32">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-40 top-40 h-[420px] w-[420px] rounded-full bg-[#16A9D2]/5 blur-[120px]" />
-        <div className="absolute -right-40 bottom-20 h-[420px] w-[420px] rounded-full bg-[#087EA4]/5 blur-[120px]" />
+        <div className="absolute -left-40 top-40 h-[420px] w-[420px] rounded-full bg-primary/5 blur-[120px]" />
+        <div className="absolute -right-40 bottom-20 h-[420px] w-[420px] rounded-full bg-primary/5 blur-[120px]" />
         <div
           className="absolute right-10 top-10 h-40 w-40 opacity-30"
           style={{
@@ -324,24 +324,24 @@ export function PortfolioSection() {
           `}
         >
           <div className="mb-7 flex items-center gap-3">
-            <span className="h-px w-10 bg-[#087EA4]" />
-            <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[#087EA4]">
+            <span className="h-px w-10 bg-primary" />
+            <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-primary">
               Our Portfolio
             </span>
           </div>
 
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <h2 className="max-w-3xl text-4xl font-medium leading-[1.05] tracking-[-0.045em] text-slate-950 sm:text-5xl lg:text-7xl">
+              <h2 className="max-w-3xl text-4xl font-medium leading-[1.05] tracking-[-0.045em] text-foreground sm:text-5xl lg:text-7xl">
                 Ideas we've
                 <br />
-                <span className="bg-gradient-to-r from-[#087EA4] via-[#159BC1] to-[#49C7EA] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-primary via-foreground to-muted-foreground bg-clip-text text-transparent">
                   shipped to production.
                 </span>
               </h2>
             </div>
 
-            <p className="max-w-sm text-sm leading-6 text-slate-500 lg:pb-2">
+            <p className="max-w-sm text-sm leading-6 text-muted-foreground lg:pb-2">
               A snapshot of platforms we've designed, built, and scaled across
               banking, fintech, edtech, and cloud — solving real operational
               problems, not just shipping features.
@@ -349,7 +349,7 @@ export function PortfolioSection() {
           </div>
         </div>
 
-        <div className="mb-6 grid grid-cols-2 overflow-hidden rounded-[24px] border border-slate-200 bg-white sm:grid-cols-4">
+        <div className="mb-6 grid grid-cols-2 overflow-hidden rounded-[24px] border border-border bg-card sm:grid-cols-4">
           <Stat value={`${projects.length}+`} label="Projects Delivered" icon={Sparkles} />
           <Stat value={`${industryCount}+`} label="Industries Served" icon={Building2} />
           <Stat value={`${techCount}+`} label="Technologies Used" icon={Coins} />
@@ -362,9 +362,9 @@ export function PortfolioSection() {
           ))}
         </div>
 
-        <div className="mt-8 flex flex-col gap-6 rounded-[28px] border border-slate-200 bg-slate-950 p-8 text-white lg:flex-row lg:items-center lg:justify-between lg:p-10">
+        <div className="mt-8 flex flex-col gap-6 rounded-[28px] border border-border bg-primary p-8 text-primary-foreground lg:flex-row lg:items-center lg:justify-between lg:p-10">
           <div>
-            <div className="mb-2 text-xs font-medium uppercase tracking-[0.2em] text-[#49C7EA]">
+            <div className="mb-2 text-xs font-medium uppercase tracking-[0.2em] text-primary-foreground/70">
               Have a project in mind?
             </div>
             <h3 className="max-w-2xl text-2xl font-medium tracking-tight lg:text-3xl">
@@ -372,8 +372,8 @@ export function PortfolioSection() {
             </h3>
           </div>
 
-          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5">
-            <ArrowUpRight size={20} className="text-[#49C7EA]" />
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-primary-foreground/15 bg-primary-foreground/5">
+            <ArrowUpRight size={20} className="text-primary-foreground" />
           </div>
         </div>
       </div>
@@ -394,9 +394,9 @@ function Stat({
     <div
       className="
         group flex items-center gap-4
-        border-slate-200 p-5
+        border-border p-5
         transition-colors
-        hover:bg-slate-50
+        hover:bg-accent
         sm:p-6
         sm:first:border-l-0
         sm:[&:not(:last-child)]:border-r
@@ -405,17 +405,17 @@ function Stat({
       <div
         className="
           flex h-10 w-10 shrink-0 items-center justify-center
-          rounded-xl bg-[#087EA4]/8 text-[#087EA4]
+          rounded-xl bg-accent text-accent-foreground
           transition-all duration-300
-          group-hover:bg-[#087EA4] group-hover:text-white
+          group-hover:bg-primary group-hover:text-primary-foreground
         "
       >
         <Icon size={17} strokeWidth={1.8} />
       </div>
 
       <div>
-        <div className="text-xl font-semibold tracking-tight text-slate-900">{value}</div>
-        <div className="mt-0.5 text-xs text-slate-400">{label}</div>
+        <div className="text-xl font-semibold tracking-tight text-foreground">{value}</div>
+        <div className="mt-0.5 text-xs text-muted-foreground">{label}</div>
       </div>
     </div>
   );
