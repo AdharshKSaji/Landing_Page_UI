@@ -37,7 +37,7 @@ const trustedCompanies = [
 
 export function TestimonialsSection() {
   return (
-    <section className="relative py-32 lg:py-40 border-t border-foreground/10">
+    <section className="relative py-32 lg:py-40 border-t border-foreground/10 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Trusted by Section */}
         <div className="text-center mb-16">

@@ -237,7 +237,7 @@ export function MetricsSection() {
       <section
         id="products"
         ref={sectionRef}
-        className="relative py-28 lg:py-40 overflow-hidden bg-gradient-to-b from-background via-background to-background/50"
+        className="relative py-28 lg:py-40 overflow-hidden bg-white text-[#171A1C]"
       >
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -267,14 +267,13 @@ export function MetricsSection() {
             </div>
 
             <div
-              className={`transition-all duration-700 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
+              className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                }`}
             >
               <h2 className="text-4xl lg:text-6xl xl:text-7xl font-display tracking-tight leading-[1.08]">
                 <span className="block text-4xl bg-gradient-to-r from-gray-800 via-gray-600 to-gray-900 dark:from-gray-100 dark:via-gray-300 dark:to-gray-500 bg-clip-text text-transparent font-bold">
-  Technology Engineered to Transform Your Business
-</span>
+                  Technology Engineered to Transform Your Business
+                </span>
               </h2>
 
               <p className="mt-6 text-lg text-muted-foreground max-w-3xl leading-relaxed">
@@ -286,8 +285,8 @@ export function MetricsSection() {
 
               <div className="mt-8 flex flex-wrap gap-4">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  
-                  
+
+
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <span className="w-2 h-2 rounded-full bg-blue-500" />
@@ -303,9 +302,8 @@ export function MetricsSection() {
 
           {/* Products Grid */}
           <div
-            className={`transition-all duration-700 delay-200 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-            }`}
+            className={`transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
           >
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center gap-3">
@@ -313,7 +311,7 @@ export function MetricsSection() {
                 <h3 className="text-xl font-display tracking-tight">
                   Our Product Suite
                 </h3>
-                
+
               </div>
               <button className="hidden sm:flex items-center gap-2 text-sm font-medium text-primary hover:gap-3 transition-all group bg-primary/5 hover:bg-primary/10 px-5 py-2.5 rounded-xl border border-primary/10 hover:border-primary/20">
                 View All Solutions
@@ -324,17 +322,14 @@ export function MetricsSection() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {products.map((product) => {
                 const Icon = product.icon;
-                const isHovered = hoveredProduct === product.name;
-
-                return (
+                const isHovered = hoveredProduct === product.name;                return (
                   <div
                     key={product.name}
                     className={cn(
-                      "group relative p-7 rounded-2xl border transition-all duration-500 cursor-pointer",
-                      "hover:shadow-2xl hover:shadow-primary/10",
+                      "group relative p-7 rounded-2xl border transition-all duration-500 cursor-pointer text-white",
                       isHovered
-                        ? "border-primary/30 bg-primary/[0.03]"
-                        : "border-border/50 bg-background/50 hover:border-primary/15"
+                        ? "border-blue-500/50 bg-[#0c1e3f] shadow-[0_0_50px_rgba(37,99,235,0.12)]"
+                        : "border-white/10 bg-[#061126] hover:border-blue-500/30"
                     )}
                     onMouseEnter={() => setHoveredProduct(product.name)}
                     onMouseLeave={() => setHoveredProduct(null)}
@@ -344,14 +339,14 @@ export function MetricsSection() {
                     <div
                       className={cn(
                         "absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500",
-                        "bg-gradient-to-br from-primary/8 via-transparent to-primary/4",
+                        "bg-gradient-to-br from-blue-500/10 via-transparent to-blue-500/5",
                         isHovered && "opacity-100"
                       )}
                     />
                     <div
                       className={cn(
                         "absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 pointer-events-none",
-                        "bg-gradient-to-r from-primary/10 via-transparent to-primary/10 blur-2xl",
+                        "bg-gradient-to-r from-blue-500/15 via-transparent to-blue-500/15 blur-2xl",
                         isHovered && "opacity-100"
                       )}
                     />
@@ -364,14 +359,14 @@ export function MetricsSection() {
                             className={cn(
                               "p-2.5 rounded-xl transition-all duration-300",
                               isHovered
-                                ? "bg-primary/20 shadow-lg shadow-primary/10"
-                                : "bg-primary/5"
+                                ? "bg-blue-500/20 shadow-lg shadow-blue-500/10"
+                                : "bg-blue-500/10"
                             )}
                           >
                             <Icon
                               className={cn(
                                 "w-5 h-5 transition-colors duration-300",
-                                isHovered ? "text-primary" : "text-primary/70"
+                                isHovered ? "text-blue-400" : "text-blue-400/70"
                               )}
                             />
                           </div>
@@ -379,16 +374,16 @@ export function MetricsSection() {
                             <h4
                               className={cn(
                                 "text-base font-semibold transition-colors duration-300 leading-tight",
-                                isHovered ? "text-primary" : "text-foreground"
+                                isHovered ? "text-blue-400" : "text-white"
                               )}
                             >
                               {product.name}
                             </h4>
                             <div className="flex items-center gap-2 mt-0.5">
-                              <span className="text-xs font-mono text-muted-foreground/60 uppercase tracking-wider">
+                              <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">
                                 {product.category}
                               </span>
-                              <span className="w-px h-3 bg-foreground/10" />
+                              <span className="w-px h-3 bg-white/10" />
                               <span
                                 className={cn(
                                   "text-[10px] font-mono px-2 py-0.5 rounded-full border",
@@ -403,7 +398,7 @@ export function MetricsSection() {
                       </div>
 
                       {/* Description */}
-                      <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-2">
+                      <p className="text-sm text-slate-300 leading-relaxed mb-4 line-clamp-2">
                         {product.description}
                       </p>
 
@@ -415,8 +410,8 @@ export function MetricsSection() {
                             className={cn(
                               "text-[10px] px-2.5 py-1 rounded-full border transition-colors duration-300 font-medium",
                               isHovered
-                                ? "border-primary/20 bg-primary/5 text-primary/80"
-                                : "border-foreground/5 bg-foreground/5 text-muted-foreground/70"
+                                ? "border-blue-500/30 bg-blue-500/10 text-blue-300"
+                                : "border-white/5 bg-white/5 text-slate-300"
                             )}
                           >
                             {feature}
@@ -425,13 +420,13 @@ export function MetricsSection() {
                       </div>
 
                       {/* Action */}
-                      <div className="mt-4 pt-4 border-t border-foreground/5">
+                      <div className="mt-4 pt-4 border-t border-white/10">
                         <button
                           className={cn(
                             "w-full flex items-center justify-center gap-2 py-2 px-4 rounded-lg transition-all duration-300 text-sm font-medium",
                             isHovered
-                              ? "bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20"
-                              : "bg-foreground/5 hover:bg-foreground/10 text-foreground"
+                              ? "bg-blue-600 text-white hover:bg-blue-500 shadow-lg shadow-blue-500/20"
+                              : "bg-white/5 hover:bg-white/10 text-white"
                           )}
                         >
                           Learn More
@@ -466,7 +461,7 @@ export function MetricsSection() {
             if (e.target === e.currentTarget) setSelectedProduct(null);
           }}
         >
-          <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-background rounded-2xl shadow-2xl border border-border/50 animate-in slide-in-from-bottom-10 duration-300">
+          <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-background text-slate-900 rounded-2xl shadow-2xl border border-border/50 animate-in slide-in-from-bottom-10 duration-300">
             <button
               onClick={() => setSelectedProduct(null)}
               className="sticky top-4 float-right m-4 p-2 rounded-lg hover:bg-foreground/5 transition-colors z-10"

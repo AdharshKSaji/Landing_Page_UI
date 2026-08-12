@@ -1,37 +1,71 @@
-
 "use client";
 
-import { useEffect, useState, useRef } from "react";
-import { CheckCircle2, Clock, Zap, Shield, TrendingUp, ArrowRight } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Clock,
+  Zap,
+  Shield,
+  TrendingUp,
+  Target,
+  Palette,
+  Boxes,
+  Code2,
+  TestTube2,
+  Rocket,
+  Headphones,
+} from "lucide-react";
 
 const processSteps = [
-  { 
-    step: "Requirement Analysis & Strategy", 
-    description: "Comprehensive assessment of business needs, technical requirements, and project objectives to establish a clear development roadmap."
+  {
+    step: "Requirement Analysis & Strategy",
+    short: "Strategy",
+    description:
+      "Comprehensive assessment of business needs, technical requirements, and project objectives to establish a clear development roadmap.",
+    icon: Target,
   },
-  { 
-    step: "UI/UX Design & Prototyping", 
-    description: "User-centric design approach creating intuitive interfaces, seamless user experiences, and interactive prototypes for stakeholder validation."
+  {
+    step: "UI/UX Design & Prototyping",
+    short: "Design",
+    description:
+      "User-centric design approach creating intuitive interfaces, seamless user experiences, and interactive prototypes for stakeholder validation.",
+    icon: Palette,
   },
-  { 
-    step: "Architecture & Prototype Development", 
-    description: "Designing scalable system architecture and developing functional prototypes to validate technical approaches and user flows."
+  {
+    step: "Architecture & Prototype Development",
+    short: "Architecture",
+    description:
+      "Designing scalable system architecture and developing functional prototypes to validate technical approaches and user flows.",
+    icon: Boxes,
   },
-  { 
-    step: "Agile Development & Coding", 
-    description: "Iterative development using agile methodologies, ensuring clean, maintainable code with continuous integration and delivery practices."
+  {
+    step: "Agile Development & Coding",
+    short: "Development",
+    description:
+      "Iterative development using agile methodologies, ensuring clean, maintainable code with continuous integration and delivery practices.",
+    icon: Code2,
   },
-  { 
-    step: "Quality Assurance & Testing", 
-    description: "Rigorous testing protocols including functional, performance, security, and user acceptance testing to ensure enterprise-grade reliability."
+  {
+    step: "Quality Assurance & Testing",
+    short: "Testing",
+    description:
+      "Rigorous testing protocols including functional, performance, security, and user acceptance testing to ensure enterprise-grade reliability.",
+    icon: TestTube2,
   },
-  { 
-    step: "Deployment & Integration", 
-    description: "Strategic deployment planning with seamless integration into existing infrastructure, ensuring minimal disruption and optimal performance."
+  {
+    step: "Deployment & Integration",
+    short: "Deployment",
+    description:
+      "Strategic deployment planning with seamless integration into existing infrastructure, ensuring minimal disruption and optimal performance.",
+    icon: Rocket,
   },
-  { 
-    step: "Maintenance & Continuous Support", 
-    description: "Ongoing technical support, performance monitoring, regular updates, and continuous optimization to ensure long-term success and scalability."
+  {
+    step: "Maintenance & Continuous Support",
+    short: "Support",
+    description:
+      "Ongoing technical support, performance monitoring, regular updates, and continuous optimization to ensure long-term success and scalability.",
+    icon: Headphones,
   },
 ];
 
@@ -40,178 +74,394 @@ export function InfrastructureSection() {
   const [activeStep, setActiveStep] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
 
+  /* -----------------------------------------------------------
+     Visibility
+  ------------------------------------------------------------ */
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) setIsVisible(true);
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
       },
-      { threshold: 0.1 }
+      {
+        threshold: 0.15,
+      }
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
     return () => observer.disconnect();
   }, []);
+
+  /* -----------------------------------------------------------
+     Auto rotation
+  ------------------------------------------------------------ */
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveStep((prev) => (prev + 1) % processSteps.length);
-    }, 2500);
+    }, 4000);
+
     return () => clearInterval(interval);
   }, []);
 
+  const active = processSteps[activeStep];
+  const ActiveIcon = active.icon;
+
   return (
-    <section ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-background via-background to-background/50">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-br from-primary/5 via-transparent to-transparent rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-secondary/5 via-transparent to-transparent rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/[0.02] rounded-full blur-3xl" />
+    <section
+      ref={sectionRef}
+      className="relative overflow-hidden bg-white py-24 lg:py-32"
+    >
+      {/* =========================================================
+          BACKGROUND
+      ========================================================== */}
+
+      <div className="pointer-events-none absolute inset-0">
+        {/* Fine grid */}
+        <div
+          className="absolute inset-0 opacity-[0.35]"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(15,23,42,0.035) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(15,23,42,0.035) 1px, transparent 1px)
+            `,
+            backgroundSize: "80px 80px",
+          }}
+        />
+
+        {/* Blue glow */}
+        <div className="absolute -right-40 top-0 h-[500px] w-[500px] rounded-full bg-blue-500/[0.06] blur-[120px]" />
+
+        <div className="absolute -left-40 bottom-0 h-[450px] w-[450px] rounded-full bg-cyan-400/[0.04] blur-[120px]" />
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-          {/* Left: Content */}
+      {/* =========================================================
+          CONTENT
+      ========================================================== */}
+
+      <div className="relative z-10 mx-auto max-w-[1400px] px-6 lg:px-12">
+        <div className="grid items-start gap-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
+          {/* =====================================================
+              LEFT SIDE
+          ====================================================== */}
+
           <div
-            className={`transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
-            }`}
+            className={`transition-all duration-1000 ${isVisible
+                ? "translate-x-0 opacity-100"
+                : "-translate-x-8 opacity-0"
+              }`}
           >
-            <div className="mb-6">
-              <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground">
-                <span className="w-8 h-px bg-gradient-to-r from-foreground/30 to-transparent" />
+            {/* Label */}
+
+            <div className="mb-6 flex items-center gap-3">
+              <span className="h-px w-8 bg-blue-500" />
+
+              <span className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-600">
                 Our Methodology
               </span>
             </div>
-            
-            <h2 className="text-4xl lg:text-6xl font-display tracking-tight mb-6 leading-[1.1]">
-              Streamlined Development
+
+            {/* Heading */}
+
+            <h2 className="text-4xl font-light leading-[1.02] tracking-[-0.045em] text-slate-950 sm:text-5xl lg:text-[64px]">
+              Streamlined
               <br />
-              <span className="bg-gradient-to-r from-foreground via-foreground/80 to-foreground/60 bg-clip-text text-transparent">
-                Lifecycle.
+              development
+              <br />
+
+              <span className="bg-gradient-to-r from-blue-500 via-blue-600 to-cyan-500 bg-clip-text text-transparent">
+                lifecycle.
               </span>
             </h2>
-            
-            <p className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-lg">
-              Our proven development methodology combines industry best practices with agile principles, 
-              ensuring transparent, efficient, and high-quality delivery from concept to deployment and beyond.
+
+            {/* Description */}
+
+            <p className="mt-7 max-w-xl text-sm leading-7 text-slate-500 sm:text-base">
+              Our proven development methodology combines industry best
+              practices with agile principles, ensuring transparent, efficient
+              and high-quality delivery from concept to deployment and beyond.
             </p>
 
-            {/* Stats with icons */}
-            <div className="grid grid-cols-3 gap-6">
-              <div className="group p-4 rounded-xl border border-foreground/5 hover:border-foreground/10 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
-                <div className="flex items-center gap-2 mb-1">
-                  <div className="w-8 h-8 rounded-full bg-primary/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Zap className="w-4 h-4 text-primary/60" />
-                  </div>
+            {/* =================================================
+                STATS
+            ================================================== */}
+
+            <div className="mt-10 grid grid-cols-3 gap-3 sm:gap-4">
+              {/* Stat 1 */}
+
+              <div className="group rounded-2xl border border-slate-200 bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_15px_40px_rgba(15,23,42,0.07)]">
+                <div className="mb-5 flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 text-blue-500">
+                  <Zap size={15} />
                 </div>
-                <div className="text-2xl lg:text-3xl font-display mb-1">100%</div>
-                <div className="text-xs text-muted-foreground font-mono tracking-wide">Client Commitment</div>
-              </div>
-              
-              <div className="group p-4 rounded-xl border border-foreground/5 hover:border-foreground/10 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
-                <div className="flex items-center gap-2 mb-1">
-                  <div className="w-8 h-8 rounded-full bg-primary/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Shield className="w-4 h-4 text-primary/60" />
-                  </div>
+
+                <div className="text-2xl font-light tracking-tight text-slate-950">
+                  100%
                 </div>
-                <div className="text-2xl lg:text-3xl font-display mb-1">100%</div>
-                <div className="text-xs text-muted-foreground font-mono tracking-wide">Quality Assurance</div>
+
+                <p className="mt-1 text-[10px] leading-4 text-slate-400 sm:text-xs">
+                  Client
+                  <br />
+                  Commitment
+                </p>
               </div>
-              
-              <div className="group p-4 rounded-xl border border-foreground/5 hover:border-foreground/10 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5">
-                <div className="flex items-center gap-2 mb-1">
-                  <div className="w-8 h-8 rounded-full bg-primary/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <TrendingUp className="w-4 h-4 text-primary/60" />
-                  </div>
+
+              {/* Stat 2 */}
+
+              <div className="group rounded-2xl border border-slate-200 bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_15px_40px_rgba(15,23,42,0.07)]">
+                <div className="mb-5 flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 text-blue-500">
+                  <Shield size={15} />
                 </div>
-                <div className="text-2xl lg:text-3xl font-display mb-1">Agile</div>
-                <div className="text-xs text-muted-foreground font-mono tracking-wide">Development</div>
+
+                <div className="text-2xl font-light tracking-tight text-slate-950">
+                  100%
+                </div>
+
+                <p className="mt-1 text-[10px] leading-4 text-slate-400 sm:text-xs">
+                  Quality
+                  <br />
+                  Assurance
+                </p>
               </div>
+
+              {/* Stat 3 */}
+
+              <div className="group rounded-2xl border border-slate-200 bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_15px_40px_rgba(15,23,42,0.07)]">
+                <div className="mb-5 flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 text-blue-500">
+                  <TrendingUp size={15} />
+                </div>
+
+                <div className="text-2xl font-light tracking-tight text-slate-950">
+                  Agile
+                </div>
+
+                <p className="mt-1 text-[10px] leading-4 text-slate-400 sm:text-xs">
+                  Development
+                  <br />
+                  Approach
+                </p>
+              </div>
+            </div>
+
+            {/* Small statement */}
+
+            <div className="mt-10 flex items-center gap-3 text-xs text-slate-400">
+              <div className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+
+              <span>
+                From strategy to continuous support — one connected process.
+              </span>
             </div>
           </div>
 
-          {/* Right: Process list */}
+          {/* =====================================================
+              RIGHT SIDE
+          ====================================================== */}
+
           <div
-            className={`transition-all duration-700 delay-200 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
-            }`}
+            className={`transition-all delay-200 duration-1000 ${isVisible
+                ? "translate-x-0 opacity-100"
+                : "translate-x-8 opacity-0"
+              }`}
           >
-            <div className="border border-foreground/10 rounded-2xl overflow-hidden bg-background/50 backdrop-blur-sm shadow-xl shadow-foreground/5">
-              {/* Header */}
-              <div className="px-6 py-5 border-b border-foreground/10 flex items-center justify-between bg-foreground/[0.02]">
+            {/* Main process card */}
+
+            <div className="overflow-hidden rounded-[24px] border border-slate-200 bg-white shadow-[0_25px_70px_rgba(15,23,42,0.08)]">
+              {/* -----------------------------------------------
+                  Card Header
+              ------------------------------------------------ */}
+
+              <div className="flex items-center justify-between border-b border-slate-100 px-6 py-5 sm:px-7">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-primary/5 flex items-center justify-center">
-                    <Clock className="w-4 h-4 text-primary/60" />
+                  <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-950 text-white">
+                    <Clock size={15} />
                   </div>
-                  <span className="text-sm font-mono text-muted-foreground">Development Lifecycle</span>
+
+                  <div>
+                    <p className="text-sm font-medium text-slate-900">
+                      Development Lifecycle
+                    </p>
+
+                    <p className="mt-0.5 text-[10px] uppercase tracking-[0.15em] text-slate-400">
+                      07 stages
+                    </p>
+                  </div>
                 </div>
-                <span className="flex items-center gap-2 text-xs font-mono text-emerald-600 bg-emerald-50/50 px-3 py-1.5 rounded-full border border-emerald-200/30">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  In Progress
-                </span>
+
+                {/* Status */}
+
+                <div className="flex items-center gap-2 rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1.5">
+                  <span className="relative flex h-1.5 w-1.5">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                  </span>
+
+                  <span className="text-[10px] font-medium text-emerald-600">
+                    Active
+                  </span>
+                </div>
               </div>
 
-              {/* Process Steps */}
-              <div className="divide-y divide-foreground/5">
-                {processSteps.map((step, index) => (
-                  <div
-                    key={step.step}
-                    className={`px-6 py-5 flex items-center justify-between transition-all duration-500 group ${
-                      activeStep === index 
-                        ? "bg-gradient-to-r from-primary/[0.03] to-transparent" 
-                        : "hover:bg-foreground/[0.01]"
-                    }`}
-                  >
-                    <div className="flex items-center gap-4 flex-1">
-                      {/* Step indicator */}
-                      <div className="relative flex-shrink-0">
-                        {activeStep === index ? (
-                          <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                            <CheckCircle2 className="w-5 h-5 text-primary" />
-                          </div>
-                        ) : (
-                          <div className="w-10 h-10 rounded-full border-2 border-foreground/10 flex items-center justify-center group-hover:border-foreground/20 transition-colors duration-300">
-                            <span className="text-xs font-mono text-muted-foreground/40">
-                              {String(index + 1).padStart(2, '0')}
-                            </span>
-                          </div>
-                        )}
-                        
-                        {/* Progress line */}
-                        {index < processSteps.length - 1 && (
-                          <div className={`absolute left-1/2 -translate-x-1/2 top-full w-0.5 h-6 transition-colors duration-500 ${
-                            activeStep === index ? "bg-primary/20" : "bg-foreground/5"
-                          }`} />
-                        )}
-                      </div>
+              {/* -----------------------------------------------
+                  ACTIVE STAGE
+              ------------------------------------------------ */}
 
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-3 mb-0.5">
-                          <span className="text-sm font-medium">{step.step}</span>
-                          {activeStep === index && (
-                            <span className="text-[10px] font-mono text-primary/60 bg-primary/5 px-2 py-0.5 rounded-full">
-                              Current
-                            </span>
-                          )}
-                        </div>
-                        <div className="text-sm text-muted-foreground leading-relaxed">{step.description}</div>
-                      </div>
+              <div className="relative overflow-hidden bg-slate-950 px-6 py-7 text-white sm:px-8 sm:py-8">
+                {/* Background glow */}
+
+                <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-blue-500/20 blur-[70px]" />
+
+                <div className="pointer-events-none absolute -bottom-20 left-20 h-40 w-40 rounded-full bg-cyan-400/10 blur-[60px]" />
+
+                <div className="relative z-10">
+                  <div className="mb-6 flex items-center justify-between">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.06] text-blue-300">
+                      <ActiveIcon size={21} strokeWidth={1.5} />
                     </div>
+
+                    <span className="font-mono text-xs text-white/30">
+                      {String(activeStep + 1).padStart(2, "0")} /{" "}
+                      {String(processSteps.length).padStart(2, "0")}
+                    </span>
                   </div>
-                ))}
+
+                  <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.2em] text-blue-300">
+                    Current Stage
+                  </p>
+
+                  <h3
+                    key={activeStep}
+                    className="text-2xl font-light tracking-tight sm:text-3xl"
+                  >
+                    {active.step}
+                  </h3>
+
+                  <p
+                    key={`description-${activeStep}`}
+                    className="mt-4 max-w-xl text-sm leading-6 text-white/50"
+                  >
+                    {active.description}
+                  </p>
+
+                  {/* Progress */}
+
+                  <div className="mt-7 h-[2px] overflow-hidden rounded-full bg-white/10">
+                    <div
+                      key={activeStep}
+                      className="h-full origin-left rounded-full bg-gradient-to-r from-blue-400 to-cyan-300"
+                      style={{
+                        animation: "methodologyProgress 4s linear forwards",
+                      }}
+                    />
+                  </div>
+                </div>
               </div>
 
-              {/* Footer */}
-              <div className="px-6 py-4 border-t border-foreground/10 bg-foreground/[0.02] flex items-center justify-end">
-                <button className="text-xs font-mono text-primary/60 hover:text-primary transition-colors duration-300 flex items-center gap-1.5 group">
-                  Explore our process
-                  <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" />
-                </button>
+              {/* -----------------------------------------------
+                  STEP NAVIGATION
+              ------------------------------------------------ */}
+
+              <div className="p-3">
+                {processSteps.map((step, index) => {
+                  const Icon = step.icon;
+                  const isActive = index === activeStep;
+
+                  return (
+                    <button
+                      key={step.step}
+                      type="button"
+                      onClick={() => setActiveStep(index)}
+                      className={`group relative flex w-full items-center gap-4 rounded-xl px-4 py-3 text-left transition-all duration-300 ${isActive
+                          ? "bg-blue-50"
+                          : "hover:bg-slate-50"
+                        }`}
+                    >
+                      {/* Number / Icon */}
+
+                      <div
+                        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-all duration-300 ${isActive
+                            ? "bg-blue-500 text-white shadow-[0_5px_15px_rgba(59,130,246,0.25)]"
+                            : "border border-slate-200 bg-white text-slate-300 group-hover:border-blue-200 group-hover:text-blue-500"
+                          }`}
+                      >
+                        {isActive ? (
+                          <CheckCircle2 size={15} />
+                        ) : (
+                          <span className="font-mono text-[10px]">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Text */}
+
+                      <div className="min-w-0 flex-1">
+                        <div
+                          className={`text-sm transition-colors ${isActive
+                              ? "font-medium text-slate-900"
+                              : "text-slate-500 group-hover:text-slate-900"
+                            }`}
+                        >
+                          {step.step}
+                        </div>
+
+                        <div className="mt-0.5 text-[10px] uppercase tracking-[0.12em] text-slate-300">
+                          {step.short}
+                        </div>
+                      </div>
+
+                      {/* Arrow */}
+
+                      <ArrowRight
+                        size={14}
+                        className={`shrink-0 transition-all duration-300 ${isActive
+                            ? "translate-x-0 text-blue-500"
+                            : "-translate-x-2 text-slate-200 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
+                          }`}
+                      />
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* -----------------------------------------------
+                  FOOTER
+              ------------------------------------------------ */}
+
+              <div className="flex items-center justify-between border-t border-slate-100 bg-slate-50/60 px-6 py-4">
+                <span className="text-[10px] uppercase tracking-[0.16em] text-slate-400">
+                  Continuous improvement
+                </span>
+
+                <span className="flex items-center gap-2 text-[10px] text-slate-400">
+                  <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+                  Agile workflow
+                </span>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* =========================================================
+          ANIMATION
+      ========================================================== */}
+
+      <style jsx>{`
+        @keyframes methodologyProgress {
+          from {
+            transform: scaleX(0);
+          }
+
+          to {
+            transform: scaleX(1);
+          }
+        }
+      `}</style>
     </section>
   );
 }

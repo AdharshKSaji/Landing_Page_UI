@@ -55,7 +55,7 @@ function AnimatedCounter({ end, suffix = "", prefix = "" }: { end: number; suffi
   }, [end, hasAnimated]);
 
   return (
-    <div ref={ref} className="text-5xl lg:text-7xl font-display tracking-tight bg-gradient-to-r from-white via-white to-white/70 bg-clip-text text-transparent">
+    <div ref={ref} className="text-5xl lg:text-7xl font-display tracking-tight bg-gradient-to-r from-slate-950 via-slate-800 to-slate-900 bg-clip-text text-transparent">
       {prefix}{count.toLocaleString()}{suffix}
     </div>
   );
@@ -135,7 +135,7 @@ export function SecuritySection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-background via-background to-background/80">
+    <section ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden bg-white">
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-br from-primary/5 via-transparent to-transparent rounded-full blur-3xl" />
@@ -167,11 +167,11 @@ export function SecuritySection() {
               Enterprise Solutions
             </span>
             <h1 className="text-5xl lg:text-7xl font-display tracking-tight leading-[1.1]">
-              <span className="bg-gradient-to-r from-white via-white to-white/70 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-slate-950 via-slate-800 to-slate-900 bg-clip-text text-transparent">
                 Transform Your Business
               </span>
               <br />
-              <span className="text-muted-foreground text-3xl lg:text-5xl">
+              <span className="text-slate-500 text-3xl lg:text-5xl">
                 with Grandreves Enterprise Suite
               </span>
             </h1>
@@ -221,7 +221,7 @@ export function SecuritySection() {
               return (
                 <div
                   key={product.name}
-                  className="group relative p-8 rounded-2xl border border-foreground/5 bg-gradient-to-br from-background to-background/80 hover:border-foreground/20 transition-all duration-500 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1"
+                  className="group relative p-8 rounded-2xl border border-slate-200 bg-slate-50/50 hover:border-primary/20 transition-all duration-500 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1"
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
                   {/* Gradient Background */}

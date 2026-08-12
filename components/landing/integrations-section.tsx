@@ -94,7 +94,7 @@ export function IntegrationsSection() {
   const MarqueeItem = ({ integration, reverse = false }: any) => {
     const IconComponent = integration.icon;
     const isHovered = hoveredTech === integration.id;
-    
+
     return (
       <div
         key={integration.id}
@@ -117,7 +117,7 @@ export function IntegrationsSection() {
             isHovered && "opacity-100"
           )}
         />
-        
+
         {/* Subtle border glow */}
         <div
           className={cn(
@@ -126,7 +126,7 @@ export function IntegrationsSection() {
             isHovered && "opacity-100"
           )}
         />
-        
+
         <div className="relative z-10 flex flex-col items-center">
           <div className="flex items-center gap-3 mb-2">
             <IconComponent className={cn(
@@ -143,7 +143,7 @@ export function IntegrationsSection() {
           <span className="text-[10px] font-mono text-muted-foreground/40 uppercase tracking-[0.15em]">
             {integration.category}
           </span>
-          
+
           {/* Animated indicator dot */}
           <div className={cn(
             "mt-2 h-px transition-all duration-500",
@@ -165,9 +165,9 @@ export function IntegrationsSection() {
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary/3 rounded-full blur-3xl" />
         <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-secondary/3 rounded-full blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/[0.02] rounded-full blur-3xl" />
-        
+
         {/* Grid pattern */}
-        <div className="absolute inset-0 opacity-[0.02]" 
+        <div className="absolute inset-0 opacity-[0.02]"
           style={{
             backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 40px, currentColor 40px, currentColor 41px),
                              repeating-linear-gradient(90deg, transparent, transparent 40px, currentColor 40px, currentColor 41px)`
@@ -184,11 +184,10 @@ export function IntegrationsSection() {
           </span>
 
           <h2
-            className={`text-4xl lg:text-6xl font-display tracking-tight transition-all duration-700 ${
-              isVisible
+            className={`text-4xl lg:text-6xl font-display tracking-tight transition-all duration-700 ${isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-4"
-            }`}
+              }`}
           >
             <span className="block">Engineering solutions with</span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gray-700 via-gray-300 to-black dark:from-gray-200 dark:via-gray-400 dark:to-gray-800 font-bold">
@@ -207,7 +206,7 @@ export function IntegrationsSection() {
           {integrationCategories.map((category, idx) => {
             const IconComponent = category.iconComponent;
             const isActive = activeCategory === category.title;
-            
+
             return (
               <button
                 key={idx}
@@ -215,8 +214,8 @@ export function IntegrationsSection() {
                 className={cn(
                   "px-4 py-2.5 text-xs font-mono rounded-full border transition-all duration-300",
                   "hover:border-primary/30 hover:bg-primary/5",
-                  isActive 
-                    ? "border-primary/30 bg-primary/5 text-primary" 
+                  isActive
+                    ? "border-primary/30 bg-primary/5 text-primary"
                     : "border-border/50 bg-secondary/30 text-muted-foreground hover:text-foreground"
                 )}
               >
@@ -280,7 +279,7 @@ export function IntegrationsSection() {
 
       {/* Enhanced bottom subtle gradient */}
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background via-background/50 to-transparent pointer-events-none" />
-      
+
       {/* Bottom decorative line */}
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-32 h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent pointer-events-none" />
     </section>

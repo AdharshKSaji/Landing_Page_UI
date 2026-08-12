@@ -37,7 +37,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#F8F9F7] text-[#171A1C]">
+    <section className="relative min-h-screen overflow-hidden bg-white text-[#171A1C]">
 
       {/* ============================================================
           BACKGROUND GRID
@@ -57,7 +57,7 @@ export function HeroSection() {
         />
 
         {/* Soft background fade */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#F8F9F7]/20 via-transparent to-[#F8F9F7]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white" />
 
         {/* Right-side subtle color glow */}
         <div
@@ -117,7 +117,7 @@ export function HeroSection() {
             inset-0
             rounded-full
             bg-gradient-to-r
-            from-[#F8F9F7]
+            from-white
             via-transparent
             to-transparent
             opacity-80
@@ -132,7 +132,7 @@ export function HeroSection() {
             inset-0
             rounded-full
             bg-gradient-to-t
-            from-[#F8F9F7]/40
+            from-white/40
             via-transparent
             to-transparent
           "

@@ -673,7 +673,7 @@ export function FeaturesSection() {
     <section
       id="features"
       ref={sectionRef}
-      className="relative pt-8 pb-24 lg:pt-14 lg:pb-32"
+      className="relative pt-8 pb-24 lg:pt-14 lg:pb-32 bg-white"
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}

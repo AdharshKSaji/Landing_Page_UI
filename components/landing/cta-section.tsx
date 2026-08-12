@@ -2,155 +2,428 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Mail,
+  Phone,
+  ShieldCheck,
+  Clock3,
+  X,
+} from "lucide-react";
 import { AnimatedTetrahedron } from "./animated-tetrahedron";
 
 export function CtaSection() {
   const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [showForm, setShowForm] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) setIsVisible(true);
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
       },
-      { threshold: 0.2 }
+      { threshold: 0.15 }
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
     return () => observer.disconnect();
   }, []);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setMousePosition({
-      x: ((e.clientX - rect.left) / rect.width) * 100,
-      y: ((e.clientY - rect.top) / rect.height) * 100,
-    });
-  };
-
   return (
-    <section ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+    <section
+      ref={sectionRef}
+      className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-32"
+    >
+      {/* =========================================================
+          BACKGROUND
+      ========================================================== */}
+
+      {/* Soft blue glow */}
+      <div className="pointer-events-none absolute -right-40 -top-40 h-[600px] w-[600px] rounded-full bg-blue-500/[0.06] blur-[120px]" />
+
+      <div className="pointer-events-none absolute -bottom-40 -left-40 h-[500px] w-[500px] rounded-full bg-cyan-400/[0.04] blur-[120px]" />
+
+      {/* Architectural grid */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.35]"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(15,23,42,0.035) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(15,23,42,0.035) 1px, transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
+
+      {/* =========================================================
+          MAIN CONTAINER
+      ========================================================== */}
+
+      <div className="relative z-10 mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
         <div
-          className={`relative border border-foreground transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-          onMouseMove={handleMouseMove}
+          className={`relative overflow-hidden border border-slate-200 bg-white transition-all duration-1000 ${isVisible
+              ? "translate-y-0 opacity-100"
+              : "translate-y-10 opacity-0"
+            }`}
         >
-          {/* Spotlight effect */}
-          <div 
-            className="absolute inset-0 opacity-10 pointer-events-none transition-opacity duration-300"
-            style={{
-              background: `radial-gradient(600px circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(0,0,0,0.15), transparent 40%)`
-            }}
-          />
-          
-          <div className="relative z-10 px-8 lg:px-16 py-16 lg:py-24">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-              {/* Left content */}
-              <div className="flex-1">
-                <h2 className="text-4xl lg:text-7xl font-display tracking-tight mb-8 leading-[0.95]">
-                  Ready to initiate
-                  <br />
-                  your path towards a brighter future?
-                </h2>
+          {/* =====================================================
+              DECORATIVE CORNERS
+          ====================================================== */}
 
-                <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-xl">
-                  Be assured, your confidentiality is paramount within these walls. 
-                  We strive to respond to all enquiries within 24 hours on business days.
-                </p>
+          <div className="pointer-events-none absolute left-0 top-0 h-20 w-20 border-b border-r border-slate-200" />
 
-                <div className="flex flex-col sm:flex-row items-start gap-4">
-                  {/* <Button
-                    size="lg"
-                    className="bg-foreground hover:bg-foreground/90 text-background px-8 h-14 text-base rounded-full group"
-                  >
-                    Yes, I want to talk to an expert
-                    <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                  </Button> */}
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="h-14 px-8 text-base rounded-full border-foreground/20 hover:bg-foreground/5"
-                    onClick={() => setShowForm(prev => !prev)}
-                  >
-                    Make Enquiry Today
-                  </Button>
-                </div>
+          <div className="pointer-events-none absolute bottom-0 right-0 h-20 w-20 border-l border-t border-slate-200" />
 
-                <p className="text-sm text-muted-foreground mt-8 font-mono">
-                  📞 +91 99957 73273 &nbsp; | &nbsp; ✉️ info@grandreeves.com
-                </p>
+          {/* Blue corner accent */}
+          <div className="absolute right-0 top-0 h-[1px] w-32 bg-gradient-to-l from-blue-500 to-transparent" />
+
+          <div className="absolute bottom-0 left-0 h-[1px] w-32 bg-gradient-to-r from-blue-500 to-transparent" />
+
+          {/* =====================================================
+              CONTENT
+          ====================================================== */}
+
+          <div className="grid lg:grid-cols-[1.05fr_0.95fr]">
+            {/* ===================================================
+                LEFT CONTENT
+            ==================================================== */}
+
+            <div className="relative px-7 py-12 sm:px-10 sm:py-16 lg:px-14 lg:py-20 xl:px-16">
+              {/* Small label */}
+              <div className="mb-7 flex items-center gap-3">
+                <span className="h-px w-8 bg-blue-500" />
+
+                <span className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-600">
+                  Let's Work Together
+                </span>
               </div>
 
-              {/* Right animation */}
-              <div className="hidden lg:flex items-center justify-center w-[500px] h-[500px] -mr-16">
-                <AnimatedTetrahedron />
+              {/* Heading */}
+              <h2 className="max-w-[720px] text-[42px] font-light leading-[0.98] tracking-[-0.045em] text-slate-950 sm:text-5xl lg:text-[64px] xl:text-[72px]">
+                Ready to build
+                <br />
+                something{" "}
+                <span className="bg-gradient-to-r from-blue-500 via-blue-600 to-cyan-500 bg-clip-text text-transparent">
+                  remarkable?
+                </span>
+              </h2>
+
+              {/* Description */}
+              <p className="mt-7 max-w-xl text-sm leading-7 text-slate-500 sm:text-base lg:text-lg">
+                Have an idea, a project, or a business challenge? Let's turn
+                it into a digital solution that creates real impact. Tell us
+                what you're building and we'll take it from there.
+              </p>
+
+              {/* =================================================
+                  CTA
+              ================================================== */}
+
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+                <Button
+                  size="lg"
+                  onClick={() => setShowForm(true)}
+                  className="group h-14 rounded-full bg-slate-950 px-7 text-sm font-medium text-white shadow-lg shadow-slate-950/10 transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-600 hover:shadow-xl hover:shadow-blue-600/20"
+                >
+                  Start a Conversation
+
+                  <ArrowRight
+                    size={17}
+                    className="ml-3 transition-transform duration-300 group-hover:translate-x-1"
+                  />
+                </Button>
+
+                <button
+                  type="button"
+                  onClick={() => setShowForm(true)}
+                  className="group inline-flex h-14 items-center justify-center rounded-full px-5 text-sm font-medium text-slate-600 transition-colors hover:text-blue-600"
+                >
+                  Make an Enquiry
+
+                  <ArrowUpRight
+                    size={16}
+                    className="ml-2 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  />
+                </button>
+              </div>
+
+              {/* =================================================
+                  TRUST INDICATORS
+              ================================================== */}
+
+              <div className="mt-12 grid max-w-xl grid-cols-1 gap-5 border-t border-slate-100 pt-7 sm:grid-cols-2">
+                <div className="flex items-start gap-3">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+                    <ShieldCheck size={17} />
+                  </div>
+
+                  <div>
+                    <p className="text-sm font-medium text-slate-800">
+                      Your privacy matters
+                    </p>
+
+                    <p className="mt-1 text-xs leading-5 text-slate-400">
+                      Your information stays confidential.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+                    <Clock3 size={17} />
+                  </div>
+
+                  <div>
+                    <p className="text-sm font-medium text-slate-800">
+                      Quick response
+                    </p>
+
+                    <p className="mt-1 text-xs leading-5 text-slate-400">
+                      We respond within 24 business hours.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Enquiry Form Toggle */}
-            {showForm && (
-              <div className="mt-12 border border-foreground/10 rounded-xl p-10 bg-white shadow-xl">
-                <h3 className="text-3xl font-display mb-2 text-foreground">Drop Us 👋 a Line</h3>
-                <p className="text-muted-foreground mb-8 text-lg">
-                  Make Enquiry Today — Request Free Quote
-                </p>
-                <form className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <input
-                      type="text"
-                      placeholder="Full Name"
-                      className="w-full border border-foreground/20 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground/30"
-                    />
-                    <input
-                      type="email"
-                      placeholder="Email Address"
-                      className="w-full border border-foreground/20 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground/30"
-                    />
-                    <input
-                      type="tel"
-                      placeholder="Phone Number"
-                      className="w-full border border-foreground/20 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground/30"
-                    />
-                    <input
-                      type="text"
-                      placeholder="Country"
-                      className="w-full border border-foreground/20 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground/30"
-                    />
-                  </div>
+            {/* ===================================================
+                RIGHT VISUAL
+            ==================================================== */}
 
-                  <textarea
-                    placeholder="Your Message"
-                    className="w-full border border-foreground/20 px-4 py-3 rounded-lg h-32 focus:outline-none focus:ring-2 focus:ring-foreground/30"
-                  />
+            <div className="relative min-h-[420px] overflow-hidden border-t border-slate-100 bg-[#f8fbff] lg:min-h-[650px] lg:border-l lg:border-t-0">
+              {/* Blue gradient */}
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.10),transparent_55%)]" />
 
-                  <div className="flex items-center gap-3">
-                    <input type="checkbox" id="captcha" className="h-5 w-5" />
-                    <label htmlFor="captcha" className="text-sm text-muted-foreground">
-                      I'm not a robot
-                    </label>
-                  </div>
+              {/* Large circle */}
+              <div className="pointer-events-none absolute left-1/2 top-1/2 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-blue-500/[0.08] sm:h-[470px] sm:w-[470px]" />
 
-                  <Button
-                    size="lg"
-                    className="w-full bg-foreground hover:bg-foreground/90 text-background px-8 h-14 text-base rounded-full font-semibold shadow-md"
-                  >
-                    Yes, I want to talk to an expert
-                  </Button>
-                </form>
+              <div className="pointer-events-none absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-blue-500/[0.08]" />
+
+              {/* Dashed orbit */}
+              <div className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-blue-500/[0.12]" />
+
+              {/* Small decorative points */}
+              <span className="absolute left-[18%] top-[25%] h-1.5 w-1.5 rounded-full bg-blue-500/60" />
+
+              <span className="absolute right-[20%] top-[30%] h-2 w-2 rounded-full bg-cyan-400/70" />
+
+              <span className="absolute bottom-[25%] left-[25%] h-1.5 w-1.5 rounded-full bg-blue-400/50" />
+
+              <span className="absolute bottom-[20%] right-[25%] h-1.5 w-1.5 rounded-full bg-blue-500/50" />
+
+              {/* Tetrahedron */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="relative h-[380px] w-[380px] sm:h-[460px] sm:w-[460px]">
+                  <AnimatedTetrahedron />
+                </div>
               </div>
-            )}
+
+              {/* Bottom label */}
+              <div className="absolute bottom-8 left-8 right-8 flex items-center justify-between border-t border-slate-200/80 pt-5 sm:left-10 sm:right-10">
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-blue-600">
+                    Grandreves Technologies
+                  </p>
+
+                  <p className="mt-1 text-xs text-slate-400">
+                    Digital solutions built for growth
+                  </p>
+                </div>
+
+                <div className="hidden h-8 w-8 items-center justify-center rounded-full border border-slate-200 bg-white sm:flex">
+                  <ArrowUpRight size={14} className="text-slate-500" />
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Decorative corner */}
-          <div className="absolute top-0 right-0 w-32 h-32 border-b border-l border-foreground/10" />
-          <div className="absolute bottom-0 left-0 w-32 h-32 border-t border-r border-foreground/10" />
+          {/* =====================================================
+              CONTACT BAR
+          ====================================================== */}
+
+          <div className="border-t border-slate-200 bg-slate-50/70">
+            <div className="grid sm:grid-cols-2">
+              {/* Phone */}
+              <a
+                href="tel:+919995773273"
+                className="group flex items-center gap-4 border-b border-slate-200 px-7 py-5 transition-colors hover:bg-white sm:border-b-0 sm:border-r sm:px-10"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-blue-600 transition-all group-hover:border-blue-200 group-hover:bg-blue-50">
+                  <Phone size={16} />
+                </div>
+
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">
+                    Call Us
+                  </p>
+
+                  <p className="mt-1 text-sm font-medium text-slate-700">
+                    +91 99957 73273
+                  </p>
+                </div>
+              </a>
+
+              {/* Email */}
+              <a
+                href="mailto:info@grandreeves.com"
+                className="group flex items-center gap-4 px-7 py-5 transition-colors hover:bg-white sm:px-10"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-blue-600 transition-all group-hover:border-blue-200 group-hover:bg-blue-50">
+                  <Mail size={16} />
+                </div>
+
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">
+                    Email Us
+                  </p>
+
+                  <p className="mt-1 text-sm font-medium text-slate-700">
+                    info@grandreeves.com
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
+
+      {/* =========================================================
+          ENQUIRY MODAL
+      ========================================================== */}
+
+      {showForm && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          {/* Overlay */}
+          <button
+            type="button"
+            aria-label="Close enquiry form"
+            onClick={() => setShowForm(false)}
+            className="absolute inset-0 cursor-default bg-slate-950/50 backdrop-blur-sm"
+          />
+
+          {/* Modal */}
+          <div className="relative z-10 max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-2xl border border-slate-200 bg-white p-7 shadow-2xl sm:p-10">
+            {/* Close */}
+            <button
+              type="button"
+              onClick={() => setShowForm(false)}
+              className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-slate-400 transition-colors hover:bg-slate-50 hover:text-slate-800"
+            >
+              <X size={17} />
+            </button>
+
+            {/* Header */}
+            <div className="mb-8 pr-10">
+              <div className="mb-4 flex items-center gap-3">
+                <span className="h-px w-6 bg-blue-500" />
+
+                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">
+                  Start a Conversation
+                </span>
+              </div>
+
+              <h3 className="text-3xl font-light tracking-tight text-slate-950 sm:text-4xl">
+                Tell us about
+                <span className="text-blue-600"> your project.</span>
+              </h3>
+
+              <p className="mt-3 max-w-xl text-sm leading-6 text-slate-500">
+                Share a few details about your requirements and our team will
+                get back to you shortly.
+              </p>
+            </div>
+
+            {/* Form */}
+            <form className="space-y-5">
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                <div>
+                  <label className="mb-2 block text-xs font-medium text-slate-600">
+                    Full Name
+                  </label>
+
+                  <input
+                    type="text"
+                    placeholder="Your name"
+                    className="h-12 w-full rounded-lg border border-slate-200 bg-slate-50/50 px-4 text-sm text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10"
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-xs font-medium text-slate-600">
+                    Email Address
+                  </label>
+
+                  <input
+                    type="email"
+                    placeholder="you@example.com"
+                    className="h-12 w-full rounded-lg border border-slate-200 bg-slate-50/50 px-4 text-sm text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10"
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-xs font-medium text-slate-600">
+                    Phone Number
+                  </label>
+
+                  <input
+                    type="tel"
+                    placeholder="+91"
+                    className="h-12 w-full rounded-lg border border-slate-200 bg-slate-50/50 px-4 text-sm text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10"
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-xs font-medium text-slate-600">
+                    Company
+                  </label>
+
+                  <input
+                    type="text"
+                    placeholder="Company name"
+                    className="h-12 w-full rounded-lg border border-slate-200 bg-slate-50/50 px-4 text-sm text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="mb-2 block text-xs font-medium text-slate-600">
+                  Tell us about your project
+                </label>
+
+                <textarea
+                  placeholder="What are you looking to build?"
+                  className="h-32 w-full resize-none rounded-lg border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10"
+                />
+              </div>
+
+              {/* Submit */}
+              <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-xs text-slate-400">
+                  We typically respond within 24 business hours.
+                </p>
+
+                <Button
+                  type="submit"
+                  className="group h-12 rounded-full bg-slate-950 px-7 text-sm text-white hover:bg-blue-600"
+                >
+                  Send Enquiry
+
+                  <ArrowRight
+                    size={16}
+                    className="ml-2 transition-transform group-hover:translate-x-1"
+                  />
+                </Button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
