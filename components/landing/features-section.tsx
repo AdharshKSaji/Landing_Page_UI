@@ -88,13 +88,13 @@ function SupportVisual() {
           <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
         </radialGradient>
       </defs>
-      
+
       {/* Background glow */}
       <circle cx="100" cy="75" r="60" fill="url(#pulseGrad)" opacity="0.3">
         <animate attributeName="r" values="50;65;50" dur="3s" repeatCount="indefinite" />
         <animate attributeName="opacity" values="0.2;0.4;0.2" dur="3s" repeatCount="indefinite" />
       </circle>
-      
+
       {/* 24/7 Badge with gradient */}
       <g transform="translate(125, 15)">
         <rect x="0" y="0" width="50" height="24" rx="12" fill="currentColor" opacity="0.15" />
@@ -106,7 +106,7 @@ function SupportVisual() {
           <animate attributeName="x" values="-25;50;-25" dur="3s" repeatCount="indefinite" />
         </rect>
       </g>
-      
+
       {/* Headset - Professional design */}
       <g transform="translate(100, 65)">
         <path d="M -30 -25 Q -30 -45 0 -45 Q 30 -45 30 -25" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
@@ -130,7 +130,7 @@ function SupportVisual() {
           <animate attributeName="opacity" values="0.15;0.5;0.15" dur="1.2s" begin="0.8s" repeatCount="indefinite" />
         </path>
       </g>
-      
+
       {/* Support chat bubbles */}
       <g>
         <rect x="20" y="130" width="45" height="18" rx="9" fill="currentColor" opacity="0.1" />
@@ -144,20 +144,20 @@ function SupportVisual() {
         <circle cx="55" cy="139" r="3" fill="currentColor" opacity="0.3">
           <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" begin="1s" repeatCount="indefinite" />
         </circle>
-        
+
         <rect x="75" y="135" width="40" height="14" rx="7" fill="currentColor" opacity="0.08" />
         <rect x="76" y="136" width="38" height="12" rx="6" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.15" />
         <rect x="85" y="139" width="15" height="4" rx="2" fill="currentColor" opacity="0.2">
           <animate attributeName="width" values="15;25;15" dur="1.5s" begin="0.3s" repeatCount="indefinite" />
         </rect>
-        
+
         <rect x="125" y="130" width="50" height="18" rx="9" fill="currentColor" opacity="0.1" />
         <rect x="126" y="131" width="48" height="16" rx="8" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.2" />
         <rect x="135" y="136" width="20" height="6" rx="3" fill="currentColor" opacity="0.2">
           <animate attributeName="width" values="20;35;20" dur="1.8s" begin="0.7s" repeatCount="indefinite" />
         </rect>
       </g>
-      
+
       {/* Pulse rings */}
       <circle cx="100" cy="65" r="15" fill="none" stroke="currentColor" strokeWidth="1" opacity="0">
         <animate attributeName="r" values="15;70;15" dur="3s" repeatCount="indefinite" />
@@ -171,7 +171,7 @@ function SupportVisual() {
         <animate attributeName="r" values="15;40;15" dur="3s" begin="2s" repeatCount="indefinite" />
         <animate attributeName="opacity" values="0.2;0;0.2" dur="3s" begin="2s" repeatCount="indefinite" />
       </circle>
-      
+
       {/* Status indicator */}
       <circle cx="140" cy="45" r="3" fill="#22c55e" opacity="0.8">
         <animate attributeName="opacity" values="0.8;1;0.8" dur="1.5s" repeatCount="indefinite" />
@@ -180,7 +180,7 @@ function SupportVisual() {
         <animate attributeName="r" values="6;12;6" dur="1.5s" repeatCount="indefinite" />
         <animate attributeName="opacity" values="0.2;0;0.2" dur="1.5s" repeatCount="indefinite" />
       </circle>
-      
+
       {/* Decorative elements */}
       <circle cx="30" cy="40" r="2" fill="currentColor" opacity="0.15">
         <animate attributeName="opacity" values="0.15;0.4;0.15" dur="2s" begin="0.2s" repeatCount="indefinite" />
@@ -191,7 +191,7 @@ function SupportVisual() {
       <circle cx="175" cy="35" r="1.5" fill="currentColor" opacity="0.1">
         <animate attributeName="opacity" values="0.1;0.3;0.1" dur="2.5s" begin="1.2s" repeatCount="indefinite" />
       </circle>
-      
+
       <path d="M 55 40 Q 70 20 85 25" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.1" />
       <path d="M 145 40 Q 130 20 115 25" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.1" />
     </svg>
@@ -208,12 +208,12 @@ function MilestonesVisual() {
           <stop offset="100%" stopColor="currentColor" stopOpacity="0.3" />
         </linearGradient>
       </defs>
-      
+
       {/* Trophy */}
       <path d="M 75 30 L 125 30 L 120 80 Q 100 95 80 80 Z" fill="none" stroke="currentColor" strokeWidth="3" />
       <rect x="90" y="80" width="20" height="25" rx="2" fill="none" stroke="currentColor" strokeWidth="2" />
       <path d="M 85 105 L 115 105" stroke="currentColor" strokeWidth="2" />
-      
+
       {/* Stars */}
       <text x="140" y="25" fontSize="18" fill="currentColor" opacity="0.3">
         ★
@@ -227,7 +227,7 @@ function MilestonesVisual() {
         ★
         <animate attributeName="opacity" values="0.3;1;0.3" dur="1s" begin="0.6s" repeatCount="indefinite" />
       </text>
-      
+
       {/* Count */}
       <text x="100" y="140" textAnchor="middle" fontSize="24" fontFamily="monospace" fill="currentColor" opacity="0.3">
         50+
@@ -247,26 +247,26 @@ function ExperienceVisual() {
           <stop offset="100%" stopColor="currentColor" stopOpacity="0.3" />
         </linearGradient>
       </defs>
-      
+
       {/* Calendar */}
       <rect x="50" y="40" width="100" height="80" rx="6" fill="none" stroke="currentColor" strokeWidth="3" />
       <line x1="50" y1="60" x2="150" y2="60" stroke="currentColor" strokeWidth="2" />
       <line x1="70" y1="40" x2="70" y2="25" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
       <line x1="130" y1="40" x2="130" y2="25" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      
+
       {/* Years marked */}
       <text x="100" y="85" textAnchor="middle" fontSize="16" fontWeight="bold" fill="currentColor" opacity="0.5">2016</text>
       <text x="100" y="110" textAnchor="middle" fontSize="16" fontWeight="bold" fill="currentColor" opacity="0.5">2026</text>
-      
+
       {/* Arrow */}
       <line x1="85" y1="95" x2="115" y2="95" stroke="currentColor" strokeWidth="2" markerEnd="url(#arrowhead)" />
-      
+
       <defs>
         <marker id="arrowhead" markerWidth="8" markerHeight="5" refX="8" refY="2.5" orient="auto">
           <polygon points="0 0, 8 2.5, 0 5" fill="currentColor" />
         </marker>
       </defs>
-      
+
       {/* 10 years text */}
       <text x="100" y="145" textAnchor="middle" fontSize="14" fill="currentColor" opacity="0.3">
         10 Years
@@ -286,13 +286,13 @@ function TechnologyVisual() {
           <stop offset="100%" stopColor="currentColor" stopOpacity="0.3" />
         </linearGradient>
       </defs>
-      
+
       {/* Main node */}
       <circle cx="100" cy="80" r="15" fill="none" stroke="currentColor" strokeWidth="3">
         <animate attributeName="r" values="15;18;15" dur="2s" repeatCount="indefinite" />
       </circle>
       <circle cx="100" cy="80" r="8" fill="currentColor" opacity="0.3" />
-      
+
       {/* Connected nodes */}
       {[0, 1, 2, 3, 4, 5].map((i) => {
         const angle = i * 60 * (Math.PI / 180);
@@ -323,7 +323,7 @@ function TechnologyVisual() {
           </g>
         );
       })}
-      
+
       {/* Pulse rings */}
       <circle cx="100" cy="80" r="25" fill="none" stroke="currentColor" strokeWidth="1" opacity="0">
         <animate attributeName="r" values="15;70" dur="3s" repeatCount="indefinite" />
@@ -343,7 +343,7 @@ function DevelopersVisual() {
           <stop offset="100%" stopColor="currentColor" stopOpacity="0.3" />
         </linearGradient>
       </defs>
-      
+
       {/* Developer 1 */}
       <g transform="translate(40, 30)">
         <circle cx="20" cy="15" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
@@ -351,7 +351,7 @@ function DevelopersVisual() {
         <text x="13" y="45" fontSize="10" fill="currentColor" opacity="0.3">&lt;/&gt;</text>
         <animateTransform attributeName="transform" type="translate" values="40,30;40,28;40,30" dur="2s" begin="0s" repeatCount="indefinite" />
       </g>
-      
+
       {/* Developer 2 */}
       <g transform="translate(100, 25)">
         <circle cx="20" cy="15" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
@@ -359,7 +359,7 @@ function DevelopersVisual() {
         <text x="13" y="45" fontSize="10" fill="currentColor" opacity="0.3">&lt;/&gt;</text>
         <animateTransform attributeName="transform" type="translate" values="100,25;100,27;100,25" dur="2s" begin="0.5s" repeatCount="indefinite" />
       </g>
-      
+
       {/* Developer 3 */}
       <g transform="translate(70, 60)">
         <circle cx="20" cy="15" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
@@ -367,7 +367,7 @@ function DevelopersVisual() {
         <text x="13" y="45" fontSize="10" fill="currentColor" opacity="0.3">&lt;/&gt;</text>
         <animateTransform attributeName="transform" type="translate" values="70,60;70,58;70,60" dur="2s" begin="1s" repeatCount="indefinite" />
       </g>
-      
+
       {/* Developer 4 */}
       <g transform="translate(30, 85)">
         <circle cx="20" cy="15" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
@@ -375,7 +375,7 @@ function DevelopersVisual() {
         <text x="13" y="45" fontSize="10" fill="currentColor" opacity="0.3">&lt;/&gt;</text>
         <animateTransform attributeName="transform" type="translate" values="30,85;30,83;30,85" dur="2s" begin="1.5s" repeatCount="indefinite" />
       </g>
-      
+
       {/* Developer 5 */}
       <g transform="translate(120, 90)">
         <circle cx="20" cy="15" r="10" fill="none" stroke="currentColor" strokeWidth="2" />
@@ -397,16 +397,16 @@ function DeliveryVisual() {
           <stop offset="100%" stopColor="currentColor" stopOpacity="0.3" />
         </linearGradient>
       </defs>
-      
+
       {/* Checkmark circle */}
       <circle cx="100" cy="80" r="40" fill="none" stroke="currentColor" strokeWidth="3" opacity="0.2">
         <animate attributeName="r" values="40;45;40" dur="2s" repeatCount="indefinite" />
         <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2s" repeatCount="indefinite" />
       </circle>
-      
+
       {/* Checkmark */}
       <path d="M 85 80 L 95 90 L 115 70" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-      
+
       {/* Clock */}
       <circle cx="100" cy="80" r="30" fill="none" stroke="currentColor" strokeWidth="2" />
       <line x1="100" y1="80" x2="100" y2="60" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -415,7 +415,7 @@ function DeliveryVisual() {
       <line x1="100" y1="80" x2="115" y2="80" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
         <animateTransform attributeName="transform" type="rotate" from="0 100 80" to="360 100 80" dur="2s" repeatCount="indefinite" />
       </line>
-      
+
       {/* Delivery truck icon */}
       <rect x="35" y="120" width="30" height="15" rx="3" fill="none" stroke="currentColor" strokeWidth="2" />
       <circle cx="45" cy="135" r="4" fill="none" stroke="currentColor" strokeWidth="1.5" />
@@ -434,12 +434,12 @@ function CostVisual() {
           <stop offset="100%" stopColor="currentColor" stopOpacity="0.3" />
         </linearGradient>
       </defs>
-      
+
       {/* Dollar signs */}
       <text x="40" y="50" fontSize="24" fontWeight="bold" fill="currentColor" opacity="0.1">$</text>
       <text x="90" y="40" fontSize="32" fontWeight="bold" fill="currentColor" opacity="0.2">$</text>
       <text x="140" y="55" fontSize="28" fontWeight="bold" fill="currentColor" opacity="0.15">$</text>
-      
+
       {/* Graph bars */}
       <rect x="50" y="90" width="20" height="40" rx="2" fill="currentColor" opacity="0.15">
         <animate attributeName="height" values="40;30;40" dur="2s" begin="0s" repeatCount="indefinite" />
@@ -457,7 +457,7 @@ function CostVisual() {
         <animate attributeName="height" values="45;35;45" dur="2s" begin="1.5s" repeatCount="indefinite" />
         <animate attributeName="y" values="85;95;85" dur="2s" begin="1.5s" repeatCount="indefinite" />
       </rect>
-      
+
       {/* Arrow pointing down (cost reduction) */}
       <path d="M 120 25 L 120 15 L 115 20 M 120 15 L 125 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
       <line x1="120" y1="15" x2="120" y2="35" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -475,7 +475,7 @@ function SecurityVisual() {
           <stop offset="100%" stopColor="currentColor" stopOpacity="0.3" />
         </linearGradient>
       </defs>
-      
+
       {/* Shield */}
       <path
         d="M 100 25 L 145 45 L 145 85 Q 145 120 100 140 Q 55 120 55 85 L 55 45 Z"
@@ -483,7 +483,7 @@ function SecurityVisual() {
         stroke="currentColor"
         strokeWidth="3"
       />
-      
+
       {/* Shield inner glow */}
       <path
         d="M 100 35 L 135 50 L 135 80 Q 135 110 100 125 Q 65 110 65 80 L 65 50 Z"
@@ -492,19 +492,19 @@ function SecurityVisual() {
       >
         <animate attributeName="opacity" values="0.05;0.15;0.05" dur="2s" repeatCount="indefinite" />
       </path>
-      
+
       {/* Lock */}
       <rect x="85" y="75" width="30" height="25" rx="3" fill="currentColor" opacity="0.8" />
       <path d="M 90 75 L 90 65 Q 90 55 100 55 Q 110 55 110 65 L 110 75" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-      
+
       {/* Keyhole */}
       <circle cx="100" cy="85" r="4" fill="white" />
       <rect x="98" y="87" width="4" height="6" fill="white" />
-      
+
       {/* IP badge */}
       <rect x="130" y="20" width="35" height="20" rx="3" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.3" />
       <text x="140" y="34" fontSize="10" fontFamily="monospace" fill="currentColor" opacity="0.5">IP</text>
-      
+
       {/* Scan line effect */}
       <line x1="60" y1="50" x2="140" y2="50" stroke="currentColor" strokeWidth="1" opacity="0">
         <animate attributeName="y1" values="45;115;45" dur="3s" repeatCount="indefinite" />
@@ -535,6 +535,21 @@ function AnimatedVisual({ type }: { type: string }) {
       return <SecurityVisual />;
     default:
       return <SupportVisual />;
+  }
+}
+
+function getVisualColor(type: string) {
+  switch (type) {
+    case "deploy":
+      return "text-[#087EA4]";
+    case "ai":
+      return "text-[#18A8D1]";
+    case "collab":
+      return "text-[#24B35A]";
+    case "security":
+      return "text-[#164A5B]";
+    default:
+      return "text-[#087EA4]";
   }
 }
 
@@ -575,11 +590,10 @@ function FeatureCard({
   return (
     <div
       ref={cardRef}
-      className={`group relative transition-all duration-700 ${
-        isVisible
-          ? "opacity-100 translate-y-0"
-          : "opacity-0 translate-y-12"
-      }`}
+      className={`group relative transition-all duration-700 ${isVisible
+        ? "opacity-100 translate-y-0"
+        : "opacity-0 translate-y-12"
+        }`}
       style={{
         transitionDelay: `${index * 100}ms`,
       }}
@@ -604,7 +618,7 @@ function FeatureCard({
               <p className="text-lg text-muted-foreground leading-relaxed">
                 {isExpanded ? feature.description : feature.shortDescription}
               </p>
-              
+
               {/* Minimal Read More Button */}
               <button
                 onClick={toggleReadMore}
@@ -622,7 +636,7 @@ function FeatureCard({
 
           {/* Visual */}
           <div className="flex justify-center lg:justify-end">
-            <div className="w-48 h-40 text-foreground">
+            <div className={`w-48 h-40 ${getVisualColor(feature.visual)}`}>
               <AnimatedVisual type={feature.visual} />
             </div>
           </div>
@@ -659,7 +673,7 @@ export function FeaturesSection() {
     <section
       id="features"
       ref={sectionRef}
-      className="relative py-24 lg:py-32"
+      className="relative pt-8 pb-24 lg:pt-14 lg:pb-32"
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
@@ -670,17 +684,16 @@ export function FeaturesSection() {
           </span>
 
           <h2
-            className={`text-4xl lg:text-6xl font-display tracking-tight transition-all duration-700 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-4"
-            }`}
+            className={`text-4xl lg:text-6xl font-display tracking-tight transition-all duration-700 ${isVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-4"
+              }`}
           >
             <span className="block">Experience the Grandreves</span>
-            
-<span className="block text-transparent bg-clip-text bg-gradient-to-r from-gray-700 via-gray-300 to-black dark:from-gray-200 dark:via-gray-400 dark:to-gray-800 font-bold">
-  Difference
-</span>
+
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gray-700 via-gray-300 to-black dark:from-gray-200 dark:via-gray-400 dark:to-gray-800 font-bold">
+              Difference
+            </span>
 
           </h2>
         </div>
