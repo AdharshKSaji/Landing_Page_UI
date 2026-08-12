@@ -115,8 +115,18 @@ export function InfrastructureSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-white py-24 lg:py-32"
+      className="relative overflow-hidden bg-white pt-4 pb-10 lg:pt-4 lg:pb-16"
     >
+      {/* Global SVG Gradients for Icons */}
+      <svg className="absolute w-0 h-0 pointer-events-none" width="0" height="0">
+        <defs>
+          <linearGradient id="icon-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#172554" />
+            <stop offset="50%" stopColor="#1E3A8A" />
+            <stop offset="100%" stopColor="#2563EB" />
+          </linearGradient>
+        </defs>
+      </svg>
       {/* =========================================================
           BACKGROUND
       ========================================================== */}
@@ -159,22 +169,22 @@ export function InfrastructureSection() {
             {/* Label */}
 
             <div className="mb-6 flex items-center gap-3">
-              <span className="h-px w-8 bg-blue-500" />
+              <span className="h-px w-8 bg-[#1E3A8A]" />
 
-              <span className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-600">
+              <span className="text-xs font-bold uppercase tracking-[0.22em] bg-gradient-to-r from-[#172554] via-[#1E3A8A] to-[#2563EB] bg-clip-text text-transparent">
                 Our Methodology
               </span>
             </div>
 
             {/* Heading */}
 
-            <h2 className="text-4xl font-display font-light leading-[1.02] tracking-[-0.045em] text-slate-950 sm:text-5xl lg:text-[64px]">
+            <h2 className="text-4xl font-display font-semibold leading-[1.02] tracking-[-0.045em] text-slate-950 sm:text-5xl lg:text-[64px]">
               Streamlined
               <br />
               development
               <br />
 
-              <span className="text-[#164A5B]">
+              <span className="bg-gradient-to-r from-[#172554] via-[#1E3A8A] to-[#2563EB] bg-clip-text text-transparent font-semibold">
                 lifecycle.
               </span>
             </h2>
@@ -195,15 +205,15 @@ export function InfrastructureSection() {
               {/* Stat 1 */}
 
               <div className="group rounded-2xl border border-slate-200 bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_15px_40px_rgba(15,23,42,0.07)]">
-                <div className="mb-5 flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 text-blue-500">
-                  <Zap size={15} />
+                <div className="mb-5 flex h-8 w-8 items-center justify-center rounded-lg bg-slate-50 border border-slate-200/60">
+                  <Zap size={15} stroke="url(#icon-grad)" />
                 </div>
 
                 <div className="text-2xl font-light tracking-tight text-slate-950">
                   100%
                 </div>
 
-                <p className="mt-1 text-[10px] leading-4 text-slate-400 sm:text-xs">
+                <p className="mt-1 text-[12px] leading-4 text-slate-600 sm:text-medium">
                   Client
                   <br />
                   Commitment
@@ -213,15 +223,15 @@ export function InfrastructureSection() {
               {/* Stat 2 */}
 
               <div className="group rounded-2xl border border-slate-200 bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_15px_40px_rgba(15,23,42,0.07)]">
-                <div className="mb-5 flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 text-blue-500">
-                  <Shield size={15} />
+                <div className="mb-5 flex h-8 w-8 items-center justify-center rounded-lg bg-slate-50 border border-slate-200/60">
+                  <Shield size={15} stroke="url(#icon-grad)" />
                 </div>
 
                 <div className="text-2xl font-light tracking-tight text-slate-950">
                   100%
                 </div>
 
-                <p className="mt-1 text-[10px] leading-4 text-slate-400 sm:text-xs">
+                <p className="mt-1 text-[12px] leading-4 text-slate-600 sm:text-medium">
                   Quality
                   <br />
                   Assurance
@@ -231,15 +241,15 @@ export function InfrastructureSection() {
               {/* Stat 3 */}
 
               <div className="group rounded-2xl border border-slate-200 bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_15px_40px_rgba(15,23,42,0.07)]">
-                <div className="mb-5 flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 text-blue-500">
-                  <TrendingUp size={15} />
+                <div className="mb-5 flex h-8 w-8 items-center justify-center rounded-lg bg-slate-50 border border-slate-200/60">
+                  <TrendingUp size={15} stroke="url(#icon-grad)" />
                 </div>
 
                 <div className="text-2xl font-light tracking-tight text-slate-950">
                   Agile
                 </div>
 
-                <p className="mt-1 text-[10px] leading-4 text-slate-400 sm:text-xs">
+                <p className="mt-1 text-[12px] leading-4 text-slate-600 sm:text-medium">
                   Development
                   <br />
                   Approach
@@ -249,7 +259,7 @@ export function InfrastructureSection() {
 
             {/* Small statement */}
 
-            <div className="mt-10 flex items-center gap-3 text-xs text-slate-400">
+            <div className="mt-10 flex items-center gap-3 text-medium text-slate-400">
               <div className="h-1.5 w-1.5 rounded-full bg-blue-500" />
 
               <span>
@@ -277,8 +287,8 @@ export function InfrastructureSection() {
 
               <div className="flex items-center justify-between border-b border-slate-100 px-6 py-5 sm:px-7">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-950 text-white">
-                    <Clock size={15} />
+                  <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-50 border border-slate-200/60">
+                    <Clock size={15} stroke="url(#icon-grad)" />
                   </div>
 
                   <div>
@@ -286,7 +296,7 @@ export function InfrastructureSection() {
                       Development Lifecycle
                     </p>
 
-                    <p className="mt-0.5 text-[10px] uppercase tracking-[0.15em] text-slate-400">
+                    <p className="mt-0.5 text-[10px] uppercase tracking-[0.15em] text-slate-600">
                       07 stages
                     </p>
                   </div>
@@ -316,11 +326,10 @@ export function InfrastructureSection() {
                 <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-blue-500/20 blur-[70px]" />
 
                 <div className="pointer-events-none absolute -bottom-20 left-20 h-40 w-40 rounded-full bg-cyan-400/10 blur-[60px]" />
-
                 <div className="relative z-10">
                   <div className="mb-6 flex items-center justify-between">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.06] text-blue-300">
-                      <ActiveIcon size={21} strokeWidth={1.5} />
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white shadow-lg">
+                      <ActiveIcon size={21} strokeWidth={1.5} stroke="url(#icon-grad)" />
                     </div>
 
                     <span className="font-mono text-xs text-white/30">
@@ -384,14 +393,14 @@ export function InfrastructureSection() {
 
                       <div
                         className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-all duration-300 ${isActive
-                          ? "bg-blue-500 text-white shadow-[0_5px_15px_rgba(59,130,246,0.25)]"
-                          : "border border-slate-200 bg-white text-slate-300 group-hover:border-blue-200 group-hover:text-blue-500"
+                          ? "bg-slate-50 border border-slate-200/80 shadow-md"
+                          : "border border-slate-200 bg-white text-slate-350 group-hover:border-[#1E3A8A]/30"
                           }`}
                       >
                         {isActive ? (
-                          <CheckCircle2 size={15} />
+                          <CheckCircle2 size={15} stroke="url(#icon-grad)" />
                         ) : (
-                          <span className="font-mono text-[10px]">
+                          <span className="font-mono text-[10px] transition-colors duration-300 group-hover:text-[#1E3A8A]">
                             {String(index + 1).padStart(2, "0")}
                           </span>
                         )}
@@ -402,14 +411,14 @@ export function InfrastructureSection() {
                       <div className="min-w-0 flex-1">
                         <div
                           className={`text-sm transition-colors ${isActive
-                            ? "font-medium text-slate-900"
-                            : "text-slate-500 group-hover:text-slate-900"
+                            ? "font-semibold text-slate-900"
+                            : "text-slate-500 group-hover:text-slate-900 font-semibold"
                             }`}
                         >
                           {step.step}
                         </div>
 
-                        <div className="mt-0.5 text-[10px] uppercase tracking-[0.12em] text-slate-300">
+                        <div className="mt-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-600">
                           {step.short}
                         </div>
                       </div>

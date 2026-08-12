@@ -38,7 +38,7 @@ const trustedCompanies = [
 
 export function TestimonialsSection() {
   return (
-    <section className="relative py-28 lg:py-40 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50/50 text-[#0A1628]">
+    <section className="relative pt-4 pb-28 lg:pt-4 lg:pb-40 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50/50 text-[#0A1628]">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-indigo-500/10 rounded-full blur-2xl" />

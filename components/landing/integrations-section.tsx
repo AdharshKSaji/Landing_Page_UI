@@ -184,7 +184,7 @@ export function IntegrationsSection() {
     <section
       id="integrations"
       ref={sectionRef}
-      className="relative py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-white via-gray-50/30 to-white"
+      className="relative pt-12 pb-24 lg:pt-16 lg:pb-32 overflow-hidden bg-gradient-to-b from-white via-gray-50/30 to-white"
     >
       {/* Decorative elements - softer and friendlier */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

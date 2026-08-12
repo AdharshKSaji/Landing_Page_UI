@@ -237,7 +237,7 @@ export function MetricsSection() {
       <section
         id="products"
         ref={sectionRef}
-        className="relative py-28 lg:py-40 overflow-hidden bg-white text-[#171A1C]"
+        className="relative pt-2 pb-10 lg:pt-2 lg:pb-16 overflow-hidden bg-white text-[#171A1C]"
       >
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -322,7 +322,8 @@ export function MetricsSection() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {products.map((product) => {
                 const Icon = product.icon;
-                const isHovered = hoveredProduct === product.name;                return (
+                const isHovered = hoveredProduct === product.name;
+                return (
                   <div
                     key={product.name}
                     className={cn(

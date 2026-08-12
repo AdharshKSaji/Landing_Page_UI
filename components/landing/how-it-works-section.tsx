@@ -43,24 +43,10 @@ const steps = [
     result:
       "We develop intelligent solutions using artificial intelligence, machine learning, and advanced analytics to enable automation, prediction, and smarter business decisions.",
   },
-  {
-    number: "V",
-    title: "Computer Vision Development",
-    icon: Eye,
-    result:
-      "We build computer vision solutions for document recognition, object detection, image analysis, and visual intelligence to enhance digital experiences.",
-  },
-  {
-    number: "VI",
-    title: "Team Augmentation",
-    icon: Users,
-    result:
-      "We provide experienced software developers who integrate seamlessly with your team, strengthen technical capabilities, and accelerate project delivery.",
-  },
 ];
 
 export function HowItWorksSection() {
-  const [activeStep, setActiveStep] = useState(2);
+  const [activeStep, setActiveStep] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -89,14 +75,14 @@ export function HowItWorksSection() {
     return () => clearInterval(interval);
   }, []);
 
-  const activeService = steps[activeStep];
-  const ActiveIcon = activeService.icon;
+  const activeService = steps[activeStep] || steps[0];
+  const ActiveIcon = activeService?.icon;
 
   return (
     <section
       id="how-it-works"
       ref={sectionRef}
-      className="relative min-h-screen overflow-hidden bg-[#020611] text-white py-20 lg:py-28"
+      className="relative overflow-hidden bg-[#020611] text-white pt-10 pb-20 lg:pt-14 lg:pb-28"
     >
       {/* =========================================================
           BACKGROUND
@@ -163,53 +149,51 @@ export function HowItWorksSection() {
 
       <div className="relative z-10 mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
         {/* =====================================================
-            HEADER
-        ====================================================== */}
-
-        <div
-          className={`mb-12 lg:mb-14 transition-all duration-1000 ${isVisible
-              ? "translate-y-0 opacity-100"
-              : "translate-y-8 opacity-0"
-            }`}
-        >
-          {/* Small label */}
-          <div className="mb-5 flex items-center gap-3">
-            <span className="h-px w-8 bg-blue-500" />
-
-            <span className="text-xs font-medium uppercase tracking-[0.22em] text-blue-400">
-              Our Services
-            </span>
-          </div>
-
-          {/* Heading */}
-          <h2 className="max-w-4xl text-4xl font-display font-light leading-[1.05] tracking-[-0.035em] sm:text-5xl lg:text-[64px]">
-            Built to move
-            <br />
-            your{" "}
-            <span className="bg-gradient-to-r from-blue-300 via-blue-500 to-blue-600 bg-clip-text text-transparent">
-              business forward.
-            </span>
-          </h2>
-
-          {/* Description */}
-          <p className="mt-6 max-w-3xl text-sm leading-7 text-white/55 sm:text-base lg:text-lg">
-            Our team delivers exceptional IT services and innovative digital
-            solutions tailored to drive measurable results. From concept to
-            execution, we build scalable, secure and future-ready solutions
-            that help businesses adapt, grow and lead in a digital world.
-          </p>
-        </div>
-
-        {/* =====================================================
             MAIN GRID
         ====================================================== */}
 
         <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 xl:gap-20">
           {/* ===================================================
-              LEFT — SERVICES
+              LEFT — SERVICES & HEADER
           ==================================================== */}
 
-          <div className="space-y-2">
+          <div className="flex flex-col lg:h-full lg:justify-between">
+            {/* HEADER */}
+            <div
+              className={`mb-10 transition-all duration-1000 ${isVisible
+                ? "translate-y-0 opacity-100"
+                : "translate-y-8 opacity-0"
+                }`}
+            >
+              {/* Small label */}
+              <div className="mb-4 flex items-center gap-3">
+                <span className="h-px w-8 bg-blue-500" />
+                <span className="text-xs font-medium uppercase tracking-[0.22em] text-blue-400">
+                  Our Services
+                </span>
+              </div>
+
+              {/* Heading */}
+              <h2 className="max-w-xl text-3xl font-display font-light leading-[1.08] tracking-[-0.035em] sm:text-4xl lg:text-5xl">
+                Built to move
+                <br />
+                your{" "}
+                <span className="bg-gradient-to-r from-blue-300 via-blue-500 to-blue-600 bg-clip-text text-transparent">
+                  business forward.
+                </span>
+              </h2>
+
+              {/* Description */}
+              <p className="mt-5 text-sm leading-6 text-white/55 lg:text-base">
+                Our team delivers exceptional IT services and innovative digital
+                solutions tailored to drive measurable results. From concept to
+                execution, we build scalable, secure and future-ready solutions
+                that help businesses adapt, grow and lead in a digital world.
+              </p>
+            </div>
+
+            {/* Buttons list */}
+            <div className="space-y-4">
             {steps.map((step, index) => {
               const Icon = step.icon;
               const isActive = activeStep === index;
@@ -220,8 +204,8 @@ export function HowItWorksSection() {
                   type="button"
                   onClick={() => setActiveStep(index)}
                   className={`group relative flex w-full items-center gap-4 overflow-hidden rounded-xl border px-4 py-4 text-left transition-all duration-500 sm:px-5 sm:py-5 ${isActive
-                      ? "border-blue-500/70 bg-blue-500/[0.08] shadow-[0_0_35px_rgba(37,99,235,0.08)]"
-                      : "border-white/[0.08] bg-white/[0.015] hover:border-blue-500/30 hover:bg-white/[0.025]"
+                    ? "border-blue-500/70 bg-blue-500/[0.08] shadow-[0_0_35px_rgba(37,99,235,0.08)]"
+                    : "border-white/[0.08] bg-white/[0.015] hover:border-blue-500/30 hover:bg-white/[0.025]"
                     }`}
                 >
                   {/* Active left line */}
@@ -233,8 +217,8 @@ export function HowItWorksSection() {
                   {/* Icon */}
                   <div
                     className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border transition-all duration-500 ${isActive
-                        ? "border-blue-500/30 bg-blue-500/[0.12] text-blue-400"
-                        : "border-white/[0.06] bg-white/[0.025] text-white/35 group-hover:text-blue-400"
+                      ? "border-blue-500/30 bg-blue-500/[0.12] text-blue-400"
+                      : "border-white/[0.06] bg-white/[0.025] text-white/35 group-hover:text-blue-400"
                       }`}
                   >
                     <Icon size={20} strokeWidth={1.5} />
@@ -251,8 +235,8 @@ export function HowItWorksSection() {
                   {/* Title */}
                   <span
                     className={`flex-1 text-sm font-medium transition-all duration-300 sm:text-base lg:text-lg ${isActive
-                        ? "text-white"
-                        : "text-white/50 group-hover:text-white/80"
+                      ? "text-white"
+                      : "text-white/50 group-hover:text-white/80"
                       }`}
                   >
                     {step.title}
@@ -261,15 +245,15 @@ export function HowItWorksSection() {
                   {/* Arrow */}
                   <div
                     className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-all duration-500 ${isActive
-                        ? "bg-blue-500 text-white shadow-[0_0_20px_rgba(59,130,246,0.35)]"
-                        : "text-white/30 group-hover:text-blue-400"
+                      ? "bg-blue-500 text-white shadow-[0_0_20px_rgba(59,130,246,0.35)]"
+                      : "text-white/30 group-hover:text-blue-400"
                       }`}
                   >
                     <ArrowRight
                       size={17}
                       className={`transition-transform duration-300 ${isActive
-                          ? "translate-x-0"
-                          : "group-hover:translate-x-1"
+                        ? "translate-x-0"
+                        : "group-hover:translate-x-1"
                         }`}
                     />
                   </div>
@@ -287,6 +271,7 @@ export function HowItWorksSection() {
                 </button>
               );
             })}
+            </div>
           </div>
 
           {/* ===================================================
@@ -294,7 +279,7 @@ export function HowItWorksSection() {
           ==================================================== */}
 
           <div
-            className="relative min-h-[560px] overflow-hidden rounded-2xl border border-blue-500/20 bg-gradient-to-br from-blue-500/[0.08] via-white/[0.02] to-transparent p-7 sm:p-9 lg:p-10"
+            className="relative lg:h-full overflow-hidden rounded-2xl border border-blue-500/20 bg-gradient-to-br from-blue-500/[0.08] via-white/[0.02] to-transparent p-7 sm:p-9 lg:p-10"
           >
             {/* Card glow */}
             <div className="pointer-events-none absolute right-[-20%] top-[-15%] h-[300px] w-[300px] rounded-full bg-blue-500/[0.10] blur-[100px]" />
@@ -304,13 +289,13 @@ export function HowItWorksSection() {
 
             <div
               key={activeStep}
-              className="relative z-10 h-full animate-service-fade"
+              className="relative z-10 flex h-full flex-col justify-between animate-service-fade"
             >
               {/* =================================================
                   ABSTRACT WEB UI
               ================================================== */}
 
-              <div className="mb-10 flex justify-center">
+              <div className="mb-8 flex justify-center">
                 <div className="relative w-full max-w-[380px]">
                   {/* Glow */}
                   <div className="absolute inset-10 rounded-full bg-blue-500/20 blur-[70px]" />
@@ -358,59 +343,62 @@ export function HowItWorksSection() {
                 </div>
               </div>
 
-              {/* Small divider */}
-              <div className="mb-6 h-px w-20 bg-blue-500" />
+              {/* Bottom Info Group */}
+              <div>
+                {/* Small divider */}
+                <div className="mb-6 h-px w-20 bg-blue-500" />
 
-              {/* Description */}
-              <p className="max-w-lg text-xl font-light leading-relaxed text-white/85 sm:text-2xl">
-                {activeService.result}
-              </p>
+                {/* Description */}
+                <p className="max-w-lg text-xl font-light leading-relaxed text-white/85 sm:text-2xl">
+                  {activeService.result}
+                </p>
 
-              {/* Benefits */}
-              <div className="mt-10 grid grid-cols-3 border-t border-white/[0.08] pt-7">
-                {/* Benefit 1 */}
-                <div className="flex flex-col items-center border-r border-white/[0.08] px-2 text-center">
-                  <Zap
-                    size={25}
-                    strokeWidth={1.5}
-                    className="mb-3 text-blue-400"
-                  />
+                {/* Benefits */}
+                <div className="mt-10 grid grid-cols-3 border-t border-white/[0.08] pt-7">
+                  {/* Benefit 1 */}
+                  <div className="flex flex-col items-center border-r border-white/[0.08] px-2 text-center">
+                    <Zap
+                      size={25}
+                      strokeWidth={1.5}
+                      className="mb-3 text-blue-400"
+                    />
 
-                  <span className="text-xs leading-5 text-white/60 sm:text-sm">
-                    Fast &
-                    <br />
-                    Performant
-                  </span>
-                </div>
+                    <span className="text-xs leading-5 text-white/60 sm:text-sm">
+                      Fast &
+                      <br />
+                      Performant
+                    </span>
+                  </div>
 
-                {/* Benefit 2 */}
-                <div className="flex flex-col items-center border-r border-white/[0.08] px-2 text-center">
-                  <MonitorSmartphone
-                    size={25}
-                    strokeWidth={1.5}
-                    className="mb-3 text-blue-400"
-                  />
+                  {/* Benefit 2 */}
+                  <div className="flex flex-col items-center border-r border-white/[0.08] px-2 text-center">
+                    <MonitorSmartphone
+                      size={25}
+                      strokeWidth={1.5}
+                      className="mb-3 text-blue-400"
+                    />
 
-                  <span className="text-xs leading-5 text-white/60 sm:text-sm">
-                    Responsive
-                    <br />
-                    by Design
-                  </span>
-                </div>
+                    <span className="text-xs leading-5 text-white/60 sm:text-sm">
+                      Responsive
+                      <br />
+                      by Design
+                    </span>
+                  </div>
 
-                {/* Benefit 3 */}
-                <div className="flex flex-col items-center px-2 text-center">
-                  <UserRound
-                    size={25}
-                    strokeWidth={1.5}
-                    className="mb-3 text-blue-400"
-                  />
+                  {/* Benefit 3 */}
+                  <div className="flex flex-col items-center px-2 text-center">
+                    <UserRound
+                      size={25}
+                      strokeWidth={1.5}
+                      className="mb-3 text-blue-400"
+                    />
 
-                  <span className="text-xs leading-5 text-white/60 sm:text-sm">
-                    User-Centric
-                    <br />
-                    Experience
-                  </span>
+                    <span className="text-xs leading-5 text-white/60 sm:text-sm">
+                      User-Centric
+                      <br />
+                      Experience
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>

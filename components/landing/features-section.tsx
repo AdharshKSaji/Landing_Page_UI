@@ -36,7 +36,7 @@ const features = [
   },
   {
     number: "03",
-    title: "10+ Years of Experience",
+    title: "15+ Years of Experience",
     description:
       "Years of hands-on expertise helping businesses turn technology into meaningful results.",
     icon: Clock3,
@@ -167,7 +167,7 @@ function FeatureCard({
       <div
         className={`
           relative z-10 flex h-full flex-col
-          ${isFeatured ? "p-8 lg:p-10" : "p-7 lg:p-8"}
+          ${isFeatured ? "p-8 lg:p-10" : "pt-4 pb-7 px-7 lg:pt-5 lg:pb-8 lg:px-8"}
         `}
       >
         {/* Top */}
@@ -214,7 +214,7 @@ function FeatureCard({
                   lg:text-8xl
                 "
               >
-                10
+                15
               </span>
 
               <span className="mb-3 text-3xl font-light text-[#0D9AC8]">
@@ -233,7 +233,7 @@ function FeatureCard({
             </p>
           </div>
         ) : (
-          <div className="mt-auto pt-4">
+          <div className="mt-3">
             <h3
               className="
                 max-w-md
