@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import { 
-  Shield, 
-  Users, 
-  Award, 
-  TrendingUp, 
-  Building, 
+import {
+  Shield,
+  Users,
+  Award,
+  TrendingUp,
+  Building,
   Gavel,
   ArrowRight,
   CheckCircle,
@@ -141,7 +141,7 @@ export function SecuritySection() {
         <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-br from-primary/5 via-transparent to-transparent rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-primary/5 via-transparent to-transparent rounded-full blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-primary/5 to-transparent rounded-full blur-3xl" />
-        
+
         {/* Animated floating particles */}
         <div className="absolute top-20 left-10 w-2 h-2 bg-primary/20 rounded-full animate-pulse" style={{ animationDuration: "3s" }} />
         <div className="absolute bottom-20 right-10 w-3 h-3 bg-primary/10 rounded-full animate-pulse" style={{ animationDuration: "4s", animationDelay: "1s" }} />
@@ -158,10 +158,9 @@ export function SecuritySection() {
             <span className="w-px h-4 bg-foreground/10" />
             <span className="text-xs font-mono text-primary/60">Enterprise Ready</span>
           </div>
-          
-          <div className={`transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}>
+
+          <div className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}>
             <span className="inline-flex items-center gap-2 text-sm font-mono text-primary/80 tracking-widest uppercase mb-4 bg-primary/5 px-4 py-2 rounded-full border border-primary/10">
               <Sparkles className="w-4 h-4" />
               Enterprise Solutions
@@ -176,10 +175,10 @@ export function SecuritySection() {
               </span>
             </h1>
             <p className="mt-6 text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Discover our comprehensive suite of enterprise-grade solutions designed 
+              Discover our comprehensive suite of enterprise-grade solutions designed
               to drive innovation, ensure compliance, and accelerate your digital transformation journey.
             </p>
-            
+
             <div className="mt-8 flex flex-wrap items-center justify-center gap-6">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <CheckCircle className="w-4 h-4 text-primary" />
@@ -198,9 +197,8 @@ export function SecuritySection() {
         </div>
 
         {/* Products Grid */}
-        <div className={`transition-all duration-700 delay-200 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        }`}>
+        <div className={`transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
           <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between mb-12 gap-4">
             <div>
               <h2 className="text-3xl lg:text-4xl font-display tracking-tight">
@@ -226,7 +224,7 @@ export function SecuritySection() {
                 >
                   {/* Gradient Background */}
                   <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${product.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-                  
+
                   <div className="relative">
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center gap-3">
@@ -245,7 +243,7 @@ export function SecuritySection() {
                     <h3 className="text-xl font-display font-semibold mb-3 group-hover:text-primary transition-colors">
                       {product.name}
                     </h3>
-                    
+
                     <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                       {product.description}
                     </p>
@@ -261,7 +259,7 @@ export function SecuritySection() {
 
                     <div className="mt-6 pt-6 border-t border-foreground/5">
                       <button className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-foreground/5 hover:bg-foreground/10 transition-colors text-sm font-medium group-hover:text-primary group">
-                        Learn more 
+                        Learn more
                         <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                       </button>
                     </div>

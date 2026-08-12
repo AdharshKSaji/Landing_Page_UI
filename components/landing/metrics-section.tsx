@@ -457,69 +457,217 @@ export function MetricsSection() {
       {/* Modal */}
       {selectedProduct && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-300"
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/45 backdrop-blur-[5px] animate-in fade-in duration-200"
           onClick={(e) => {
-            if (e.target === e.currentTarget) setSelectedProduct(null);
+            if (e.target === e.currentTarget) {
+              setSelectedProduct(null);
+            }
           }}
         >
-          <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-background text-slate-900 rounded-2xl shadow-2xl border border-border/50 animate-in slide-in-from-bottom-10 duration-300">
+          <div
+            className="
+        relative w-full max-w-[860px]
+        max-h-[92vh]
+        overflow-y-auto
+        bg-white
+        text-[#171A1C]
+        rounded-[18px]
+        border border-black/[0.08]
+        shadow-[0_25px_80px_rgba(0,0,0,0.18)]
+        animate-in
+        zoom-in-[0.98]
+        duration-300
+      "
+          >
+            {/* ───────────────────────── CLOSE ───────────────────────── */}
             <button
               onClick={() => setSelectedProduct(null)}
-              className="sticky top-4 float-right m-4 p-2 rounded-lg hover:bg-foreground/5 transition-colors z-10"
+              aria-label="Close"
+              className="
+          absolute
+          top-4
+          right-4
+          z-20
+          w-8
+          h-8
+          flex
+          items-center
+          justify-center
+          rounded-full
+          text-[#737373]
+          hover:text-[#171A1C]
+          hover:bg-black/[0.05]
+          transition-all
+        "
             >
-              <X className="w-5 h-5 text-muted-foreground" />
+              <X className="w-[15px] h-[15px]" />
             </button>
 
-            <div className="px-8 pb-10 lg:px-12 lg:pb-12">
-              {/* Header */}
-              <div className="flex items-start gap-5 mb-6">
-                <div className="p-4 rounded-2xl bg-primary/10 shrink-0">
-                  <selectedProduct.icon className="w-8 h-8 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-2xl lg:text-3xl font-display font-semibold leading-tight">
-                    {selectedProduct.name}
-                  </h3>
-                  <div className="flex flex-wrap items-center gap-3 mt-1.5">
-                    <span className="text-sm text-muted-foreground">
+            <div className="px-6 py-6 sm:px-8 sm:py-7 lg:px-10 lg:py-8">
+
+              {/* ───────────────────────── HEADER ───────────────────────── */}
+              <div className="pr-10">
+
+                <div className="flex items-center gap-3 mb-2.5">
+
+                  {/* Small icon */}
+                  <div
+                    className="
+                w-8
+                h-8
+                rounded-lg
+                border
+                border-black/[0.08]
+                bg-[#f7f7f7]
+                flex
+                items-center
+                justify-center
+              "
+                  >
+                    <selectedProduct.icon
+                      className="w-[15px] h-[15px] text-[#303030]"
+                    />
+                  </div>
+
+                  <div className="flex items-center gap-2">
+
+                    <span
+                      className="
+                  text-[9px]
+                  font-mono
+                  uppercase
+                  tracking-[0.12em]
+                  text-[#777]
+                "
+                    >
                       {selectedProduct.category}
                     </span>
-                    <span className="w-px h-4 bg-foreground/10" />
+
+                    <span className="w-1 h-1 rounded-full bg-[#c8c8c8]" />
+
                     <span
                       className={cn(
-                        "text-xs font-mono px-2.5 py-0.5 rounded-full border",
-                        statusColors[selectedProduct.status]
+                        "inline-flex items-center gap-1.5 text-[9px] font-mono uppercase tracking-[0.08em]",
+                        selectedProduct.status === "Available"
+                          ? "text-emerald-600"
+                          : selectedProduct.status === "Beta"
+                            ? "text-blue-600"
+                            : "text-amber-600"
                       )}
                     >
+                      <span
+                        className={cn(
+                          "w-1.5 h-1.5 rounded-full",
+                          selectedProduct.status === "Available"
+                            ? "bg-emerald-500"
+                            : selectedProduct.status === "Beta"
+                              ? "bg-blue-500"
+                              : "bg-amber-500"
+                        )}
+                      />
                       {selectedProduct.status}
                     </span>
+
                   </div>
                 </div>
+
+                <h3
+                  className="
+              text-[25px]
+              sm:text-[29px]
+              font-semibold
+              tracking-[-0.035em]
+              leading-[1.1]
+              text-[#171A1C]
+            "
+                >
+                  {selectedProduct.name}
+                </h3>
+
               </div>
 
-              <div className="h-px bg-foreground/5 mb-6" />
 
-              {/* Description */}
-              <div className="prose prose-neutral dark:prose-invert max-w-none">
-                <p className="text-base leading-relaxed text-foreground/80">
+              {/* ───────────────────────── DIVIDER ───────────────────────── */}
+              <div className="h-px bg-black/[0.07] mt-5 mb-5" />
+
+
+              {/* ───────────────────────── DESCRIPTION ───────────────────────── */}
+              <div className="space-y-3">
+
+                <p
+                  className="
+              text-[12px]
+              sm:text-[13px]
+              leading-[1.6]
+              text-[#444]
+              max-w-[780px]
+            "
+                >
                   {selectedProduct.detailedDescription}
                 </p>
+
                 {selectedProduct.longDescription && (
-                  <p className="text-base leading-relaxed text-foreground/70 mt-4">
+                  <p
+                    className="
+                text-[11px]
+                sm:text-[12px]
+                leading-[1.6]
+                text-[#666]
+                max-w-[780px]
+              "
+                  >
                     {selectedProduct.longDescription}
                   </p>
                 )}
+
               </div>
 
-              {/* Metrics */}
+
+              {/* ───────────────────────── METRICS ───────────────────────── */}
               {selectedProduct.metrics && (
-                <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4 bg-foreground/[0.02] rounded-xl p-5 border border-foreground/5">
-                  {selectedProduct.metrics.map((metric) => (
-                    <div key={metric.label} className="text-center">
-                      <div className="text-2xl font-semibold text-primary">
+                <div
+                  className="
+              mt-6
+              grid
+              grid-cols-3
+              border
+              border-black/[0.07]
+              rounded-xl
+              overflow-hidden
+              bg-[#fafafa]
+            "
+                >
+                  {selectedProduct.metrics.map((metric, index) => (
+                    <div
+                      key={metric.label}
+                      className={cn(
+                        "px-3 py-4 sm:py-4.5 text-center",
+                        index !== selectedProduct.metrics!.length - 1 &&
+                        "border-r border-black/[0.07]"
+                      )}
+                    >
+                      <div
+                        className="
+                    text-[18px]
+                    sm:text-[21px]
+                    font-semibold
+                    tracking-[-0.03em]
+                    text-[#171A1C]
+                  "
+                      >
                         {metric.value}
                       </div>
-                      <div className="text-xs text-muted-foreground mt-0.5">
+
+                      <div
+                        className="
+                    mt-0.5
+                    text-[8px]
+                    sm:text-[9px]
+                    uppercase
+                    tracking-[0.08em]
+                    text-[#777]
+                  "
+                      >
                         {metric.label}
                       </div>
                     </div>
@@ -527,54 +675,183 @@ export function MetricsSection() {
                 </div>
               )}
 
-              {/* Features */}
+
+              {/* ───────────────────────── KEY BENEFITS ───────────────────────── */}
               {selectedProduct.benefits && (
-                <div className="mt-8">
-                  <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3.5">
-                    Key Benefits
-                  </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                <div className="mt-6">
+
+                  <div className="flex items-center gap-2 mb-2.5">
+
+                    <span
+                      className="
+                  text-[9px]
+                  font-mono
+                  uppercase
+                  tracking-[0.12em]
+                  text-[#666]
+                "
+                    >
+                      Key Benefits
+                    </span>
+
+                    <span className="h-px flex-1 bg-black/[0.06]" />
+
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+
                     {selectedProduct.benefits.map((benefit) => (
                       <div
                         key={benefit}
-                        className="flex items-center gap-2.5 text-sm text-foreground/80 bg-primary/[0.02] px-3.5 py-2.5 rounded-lg border border-foreground/5"
+                        className="
+                    flex
+                    items-center
+                    gap-2.5
+                    min-h-[35px]
+                    px-3
+                    rounded-md
+                    border
+                    border-black/[0.07]
+                    bg-[#fbfbfb]
+                    text-[10px]
+                    sm:text-[11px]
+                    text-[#444]
+                  "
                       >
-                        <Check className="w-4 h-4 text-primary shrink-0" />
-                        {benefit}
+                        <Check
+                          className="
+                      w-3
+                      h-3
+                      text-[#555]
+                      shrink-0
+                    "
+                        />
+
+                        <span>{benefit}</span>
                       </div>
                     ))}
+
                   </div>
+
                 </div>
               )}
 
-              {/* Features Tags */}
-              <div className="mt-8">
-                <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3.5">
-                  Core Capabilities
-                </h4>
-                <div className="flex flex-wrap gap-2.5">
+
+              {/* ───────────────────────── CORE CAPABILITIES ───────────────────────── */}
+              <div className="mt-6">
+
+                <div className="flex items-center gap-2 mb-2.5">
+
+                  <span
+                    className="
+                text-[9px]
+                font-mono
+                uppercase
+                tracking-[0.12em]
+                text-[#666]
+              "
+                  >
+                    Core Capabilities
+                  </span>
+
+                  <span className="h-px flex-1 bg-black/[0.06]" />
+
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+
                   {selectedProduct.features.map((feature) => (
                     <span
                       key={feature}
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 text-sm text-foreground/80"
+                      className="
+                  inline-flex
+                  items-center
+                  gap-1.5
+                  px-3
+                  py-1.5
+                  rounded-full
+                  border
+                  border-black/[0.1]
+                  bg-white
+                  text-[9px]
+                  sm:text-[10px]
+                  font-medium
+                  text-[#444]
+                "
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary/40" />
+                      <span
+                        className="
+                    w-1
+                    h-1
+                    rounded-full
+                    bg-[#888]
+                  "
+                      />
+
                       {feature}
                     </span>
                   ))}
+
                 </div>
+
               </div>
 
-              {/* Actions */}
-              <div className="mt-10 pt-6 border-t border-foreground/5 flex flex-col sm:flex-row gap-3">
-                <button className="flex-1 bg-primary text-primary-foreground py-3 px-6 rounded-xl font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
+
+              {/* ───────────────────────── ACTIONS ───────────────────────── */}
+              <div
+                className="
+            mt-7
+            pt-5
+            border-t
+            border-black/[0.07]
+            grid
+            grid-cols-1
+            sm:grid-cols-2
+            gap-2
+          "
+              >
+
+                <button
+                  className="
+              h-10
+              rounded-md
+              bg-[#0b0b0b]
+              text-white
+              text-[10px]
+              font-medium
+              hover:bg-[#222]
+              transition-all
+              shadow-sm
+            "
+                >
                   Get Started
                 </button>
-                <button className="flex-1 border border-foreground/10 hover:bg-foreground/5 py-3 px-6 rounded-xl font-medium transition-colors flex items-center justify-center gap-2">
+
+                <button
+                  className="
+              h-10
+              rounded-md
+              border
+              border-black/[0.12]
+              bg-white
+              text-[#222]
+              text-[10px]
+              font-medium
+              hover:bg-[#f7f7f7]
+              transition-all
+              flex
+              items-center
+              justify-center
+              gap-1.5
+            "
+                >
                   Schedule Demo
-                  <ExternalLink className="w-4 h-4" />
+
+                  <ExternalLink className="w-3 h-3" />
                 </button>
+
               </div>
+
             </div>
           </div>
         </div>
