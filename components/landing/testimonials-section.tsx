@@ -41,12 +41,12 @@ export function TestimonialsSection() {
     <section className="relative py-28 lg:py-40 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50/50 text-[#0A1628]">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/5 rounded-full blur-3xl" />
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-indigo-500/10 rounded-full blur-2xl" />
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-purple-500/10 rounded-full blur-2xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-blue-500/5 rounded-full blur-2xl" />
 
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.02]"
           style={{
             backgroundImage: `
               repeating-linear-gradient(0deg, transparent, transparent 40px, #1e293b 40px, #1e293b 41px),
@@ -57,29 +57,28 @@ export function TestimonialsSection() {
       </div>
 
       <div className="relative max-w-[1440px] mx-auto px-6 lg:px-16">
-        {/* Header matching the products section exactly */}
+        {/* Header */}
         <div className="mb-20 lg:mb-24">
           <div className="flex items-center gap-3 mb-6">
             <span className="w-8 h-px bg-gradient-to-r from-indigo-600/80 to-transparent" />
             <span className="text-sm font-mono text-indigo-600 uppercase tracking-[0.2em] font-semibold">
-              Trusted Partners
+              Strategic Partnerships
             </span>
           </div>
 
           <div className="transition-all duration-700">
             <h2 className="text-3xl lg:text-5xl xl:text-6xl font-display tracking-tight leading-[1.08] whitespace-nowrap">
               <span className="bg-gradient-to-r from-slate-900 via-indigo-800 to-slate-900 bg-clip-text text-transparent font-bold">
-                Trusted by Industry Leaders Worldwide
+                Trusted by Global Enterprises
               </span>
             </h2>
 
             <p className="mt-6 text-lg text-slate-600 max-w-3xl leading-relaxed font-light">
-              GrandReves stands as the preferred technology partner for enterprises
-              across the globe, delivering innovative, scalable, and reliable software
-              solutions that drive measurable business outcomes. With a proven track
-              record of excellence, we empower organizations to accelerate growth,
-              optimize operational efficiency, and achieve sustainable success in
-              today's rapidly evolving digital landscape.
+              GrandReves is the technology partner of choice for leading enterprises worldwide.
+              We deliver scalable solutions that enhance operational efficiency, strengthen
+              performance, and support sustainable growth. With a documented track record of
+              success, we enable organizations to adapt confidently in today’s evolving digital
+              landscape.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
@@ -89,17 +88,17 @@ export function TestimonialsSection() {
               </div>
               <div className="flex items-center gap-2 text-sm text-slate-600 bg-blue-50/50 px-3 py-1.5 rounded-full border border-blue-100/50">
                 <span className="w-2 h-2 rounded-full bg-blue-500 shadow-lg shadow-blue-500/30" />
-                <span className="font-medium">Industry-Leading Solutions</span>
+                <span className="font-medium">Scalable Technology Solutions</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-slate-600 bg-purple-50/50 px-3 py-1.5 rounded-full border border-purple-100/50">
                 <span className="w-2 h-2 rounded-full bg-purple-500 shadow-lg shadow-purple-500/30" />
-                <span className="font-medium">Proven Excellence Record</span>
+                <span className="font-medium">Documented Track Record</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Company Logos Marquee - Enhanced for maximum clarity */}
+        {/* Company Logos Marquee */}
         <div className="w-full overflow-hidden">
           <div className="flex gap-24 items-center marquee">
             {[...Array(3)].map((_, setIdx) => (
@@ -110,7 +109,7 @@ export function TestimonialsSection() {
                 {trustedCompanies.map((company) => (
                   <div
                     key={`${setIdx}-${company.name}`}
-                    className="group flex items-center justify-center px-12 py-8 rounded-2xl border border-slate-200/80 hover:border-indigo-400/60 transition-all duration-500 hover:scale-105 bg-white/80 backdrop-blur-sm hover:bg-white shadow-sm hover:shadow-xl hover:shadow-indigo-500/10 min-w-[200px]"
+                    className="group flex items-center justify-center px-12 py-8 rounded-2xl border border-slate-200/80 hover:border-indigo-400/60 transition-all duration-500 hover:shadow-md bg-white/80 backdrop-blur-sm min-w-[200px]"
                   >
                     <div className="relative w-full h-16 flex items-center justify-center">
                       <Image
@@ -126,6 +125,7 @@ export function TestimonialsSection() {
                           imageRendering: 'auto',
                           filter: 'none'
                         }}
+                        aria-label={`${company.name} logo`}
                       />
                     </div>
                   </div>
