@@ -226,6 +226,7 @@ export function HeroSection() {
               className={`
                 max-w-[950px]
                 text-[clamp(3.4rem,7vw,7.5rem)]
+                font-display
                 font-medium
                 leading-[0.88]
                 tracking-[-0.055em]

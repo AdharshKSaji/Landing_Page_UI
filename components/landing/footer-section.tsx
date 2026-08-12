@@ -94,7 +94,7 @@ export function FooterSection() {
                 </span>
               </div>
 
-              <h2 className="text-4xl font-light leading-[1] tracking-[-0.04em] sm:text-5xl lg:text-[68px]">
+              <h2 className="text-4xl font-display font-light leading-[1] tracking-[-0.04em] sm:text-5xl lg:text-[68px]">
                 Have an idea?
                 <br />
 

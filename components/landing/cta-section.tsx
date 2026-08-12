@@ -105,7 +105,7 @@ export function CtaSection() {
               </div>
 
               {/* Heading */}
-              <h2 className="max-w-[720px] text-[42px] font-light leading-[0.98] tracking-[-0.045em] text-slate-950 sm:text-5xl lg:text-[64px] xl:text-[72px]">
+              <h2 className="max-w-[720px] text-[42px] font-display font-light leading-[0.98] tracking-[-0.045em] text-slate-950 sm:text-5xl lg:text-[64px] xl:text-[72px]">
                 Ready to build
                 <br />
                 something{" "}
