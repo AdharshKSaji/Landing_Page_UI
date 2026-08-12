@@ -261,9 +261,9 @@ export function MetricsSection() {
           <div className="mb-20 lg:mb-24">
             <div className="flex items-center gap-3 mb-6">
               <span className="w-8 h-px bg-gradient-to-r from-primary/60 to-transparent" />
-              <span className="text-sm font-mono text-muted-foreground uppercase tracking-[0.15em]">
-                Enterprise Solutions
-              </span>
+              <span className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-600">
+  Enterprise Solutions
+</span>
             </div>
 
             <div
