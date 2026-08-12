@@ -36,7 +36,7 @@ const features = [
   },
   {
     number: "03",
-    title: "10+ Years of Experience",
+    title: "15+ Years of Experience",
     description:
       "Years of hands-on expertise helping businesses turn technology into meaningful results.",
     icon: Clock3,
@@ -214,7 +214,7 @@ function FeatureCard({
                   lg:text-8xl
                 "
               >
-                10
+                15
               </span>
 
               <span className="mb-3 text-3xl font-light text-[#0D9AC8]">
@@ -394,19 +394,14 @@ export function FeaturesSection() {
             >
               <span className="block lg:whitespace-nowrap">Built on experience.</span>
               <span
-                className="
-                  block
-                  lg:whitespace-nowrap
-                  bg-gradient-to-r
-                  from-[#172554]
-                  via-[#1E3A8A]
-                  to-[#2563EB]
-                  bg-clip-text
-                  text-transparent
-                "
-              >
-                Driven by results.
-              </span>
+  className="
+    block
+    lg:whitespace-nowrap
+    text-[#164A5B]
+  "
+>
+  Driven by results.
+</span>
             </h2>
 
             <p
