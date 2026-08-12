@@ -160,7 +160,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
   const isLarge = project.size === "large";
   const isFeatured = project.size === "featured";
-  const clampLines = isFeatured ? 5 : isLarge ? 3 : 4;
+  const clampLines = isFeatured ? 5 : isLarge ? 3 : 3;
 
   return (
     <div
@@ -213,11 +213,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               rounded-2xl
               border border-border
               bg-secondary
-              text-primary
+              text-blue-600
               transition-all duration-500
-              group-hover:border-primary/20
-              group-hover:bg-primary
-              group-hover:text-primary-foreground
+              group-hover:border-blue-600/20
               group-hover:rotate-3
             "
           >
@@ -230,7 +228,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             className={`
               max-w-md font-medium tracking-tight text-foreground
               transition-colors duration-300
-              group-hover:text-primary
+              group-hover:text-blue-600
               ${isFeatured ? "text-2xl lg:text-3xl" : "text-xl lg:text-2xl"}
             `}
           >
@@ -249,7 +247,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             {project.description}
           </p>
 
-          <div className="mt-5 flex flex-wrap gap-2">
+          <div className="mt-4 flex flex-wrap gap-2">
             {project.tech.map((t) => (
               <span
                 key={t}
@@ -257,7 +255,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                   rounded-full border border-border bg-secondary
                   px-3 py-1 text-xs font-medium text-muted-foreground
                   transition-colors duration-300
-                  group-hover:border-primary/20 group-hover:bg-primary/5 group-hover:text-primary
+                  group-hover:border-primary/20 group-hover:bg-primary/5 group-hover:text-blue-600
                 "
               >
                 {t}
@@ -325,7 +323,7 @@ export function PortfolioSection() {
         >
           <div className="mb-7 flex items-center gap-3">
             <span className="h-px w-10 bg-primary" />
-            <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-primary">
+            <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-blue-600">
               Our Portfolio
             </span>
           </div>
@@ -335,7 +333,7 @@ export function PortfolioSection() {
               <h2 className="max-w-3xl text-4xl font-medium leading-[1.05] tracking-[-0.045em] text-foreground sm:text-5xl lg:text-7xl">
                 Ideas we've
                 <br />
-                <span className="bg-gradient-to-r from-primary via-foreground to-muted-foreground bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-blue-500 via-blue-600 to-cyan-500 bg-clip-text text-transparent">
                   shipped to production.
                 </span>
               </h2>
@@ -356,7 +354,7 @@ export function PortfolioSection() {
           <Stat value="100%" label="In-House Built" icon={ShieldCheck} />
         </div>
 
-        <div className="grid auto-rows-[260px] grid-cols-1 gap-5 [grid-auto-flow:dense] md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid auto-rows-[280px] grid-cols-1 gap-5 [grid-auto-flow:dense] md:grid-cols-2 lg:grid-cols-4">
           {projects.map((project, index) => (
             <ProjectCard key={project.title} project={project} index={index} />
           ))}
@@ -405,9 +403,8 @@ function Stat({
       <div
         className="
           flex h-10 w-10 shrink-0 items-center justify-center
-          rounded-xl bg-accent text-accent-foreground
+          rounded-xl bg-accent text-blue-600
           transition-all duration-300
-          group-hover:bg-primary group-hover:text-primary-foreground
         "
       >
         <Icon size={17} strokeWidth={1.8} />
