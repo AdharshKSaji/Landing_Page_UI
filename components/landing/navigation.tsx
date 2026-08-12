@@ -9,7 +9,7 @@ const navLinks = [
   { name: "Who we are", href: "#how-it-works" },
   { name: "What we do", href: "#developers" },
   { name: "Contact Us", href: "#pricing" },
-  { name: "Our Protfolio", href: "#pricing" },
+  { name: "Our Portfolio", href: "#pricing" },
 ];
 
 export function Navigation() {
@@ -26,23 +26,20 @@ export function Navigation() {
 
   return (
     <header
-      className={`fixed z-50 transition-all duration-500 ${
-        isScrolled 
-          ? "top-4 left-4 right-4" 
+      className={`fixed z-50 transition-all duration-500 ${isScrolled
+          ? "top-4 left-4 right-4"
           : "top-0 left-0 right-0"
-      }`}
+        }`}
     >
-      <nav 
-        className={`mx-auto transition-all duration-500 ${
-          isScrolled || isMobileMenuOpen
+      <nav
+        className={`mx-auto transition-all duration-500 ${isScrolled || isMobileMenuOpen
             ? "bg-background/80 backdrop-blur-xl border border-foreground/10 rounded-2xl shadow-lg max-w-[1200px]"
             : "bg-transparent max-w-[1400px]"
-        }`}
-      >
-        <div 
-          className={`flex items-center justify-between transition-all duration-500 px-6 lg:px-8 ${
-            isScrolled ? "h-14" : "h-20"
           }`}
+      >
+        <div
+          className={`flex items-center justify-between transition-all duration-500 px-6 lg:px-8 ${isScrolled ? "h-14" : "h-20"
+            }`}
         >
           {/* Logo
           <a href="#" className="flex items-center gap-2 group">
@@ -50,27 +47,25 @@ export function Navigation() {
             <span className={`text-muted-foreground font-mono transition-all duration-500 ${isScrolled ? "text-[10px] mt-0.5" : "text-xs mt-1"}`}>TM</span>
           </a> */}
           {/* Logo */}
-<div className="flex items-center">
-  <img
-    src="/logo2.png"
-    alt="GRANDREVES TECHNOLOGIES"
-    className={`object-contain transition-all duration-500 ${
-      isScrolled ? "h-8 w-auto" : "h-10 w-auto"
-    }`}
-  />
+          <div className="flex items-center">
+            <img
+              src="/logo2.png"
+              alt="GRANDREVES TECHNOLOGIES"
+              className={`object-contain transition-all duration-500 ${isScrolled ? "h-8 w-auto" : "h-10 w-auto"
+                }`}
+            />
 
 
-<span
-  className={`text-muted-foreground font-mono font-bold transition-all duration-500 ${
-    isScrolled
-     ? "text-[16px] ml-1 mt-0"
-      : "text-[18px] ml-1 mt-0.5"
-  }`}
->
-  Grandreves Technologies
-</span>
+            <span
+              className={`text-[#164A5B] font-sans font-semibold tracking-tight transition-all duration-500 ${isScrolled
+                  ? "text-[18px] ml-2"
+                  : "text-[21px] ml-2"
+                }`}
+            >
+              Grandreves Technologies
+            </span>
 
-</div>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-12">
@@ -78,7 +73,7 @@ export function Navigation() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm text-foreground/70 hover:text-foreground transition-colors duration-300 relative group"
+                className="text-base font-bold text-foreground/70 hover:text-foreground transition-colors duration-300 relative group"
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-foreground transition-all duration-300 group-hover:w-full" />
@@ -101,14 +96,13 @@ export function Navigation() {
         </div>
 
       </nav>
-      
+
       {/* Mobile Menu - Full Screen Overlay */}
       <div
-        className={`md:hidden fixed inset-0 bg-background z-40 transition-all duration-500 ${
-          isMobileMenuOpen 
-            ? "opacity-100 pointer-events-auto" 
+        className={`md:hidden fixed inset-0 bg-background z-40 transition-all duration-500 ${isMobileMenuOpen
+            ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
-        }`}
+          }`}
         style={{ top: 0 }}
       >
         <div className="flex flex-col h-full px-8 pt-28 pb-8">
@@ -119,34 +113,32 @@ export function Navigation() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-5xl font-display text-foreground hover:text-muted-foreground transition-all duration-500 ${
-                  isMobileMenuOpen 
-                    ? "opacity-100 translate-y-0" 
+                className={`text-5xl font-display text-foreground hover:text-muted-foreground transition-all duration-500 ${isMobileMenuOpen
+                    ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-4"
-                }`}
+                  }`}
                 style={{ transitionDelay: isMobileMenuOpen ? `${i * 75}ms` : "0ms" }}
               >
                 {link.name}
               </a>
             ))}
           </div>
-          
+
           {/* Bottom CTAs */}
-          <div className={`flex gap-4 pt-8 border-t border-foreground/10 transition-all duration-500 ${
-            isMobileMenuOpen 
-              ? "opacity-100 translate-y-0" 
+          <div className={`flex gap-4 pt-8 border-t border-foreground/10 transition-all duration-500 ${isMobileMenuOpen
+              ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-4"
-          }`}
-          style={{ transitionDelay: isMobileMenuOpen ? "300ms" : "0ms" }}
+            }`}
+            style={{ transitionDelay: isMobileMenuOpen ? "300ms" : "0ms" }}
           >
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               className="flex-1 rounded-full h-14 text-base"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Sign in
             </Button>
-            <Button 
+            <Button
               className="flex-1 bg-foreground text-background rounded-full h-14 text-base"
               onClick={() => setIsMobileMenuOpen(false)}
             >
