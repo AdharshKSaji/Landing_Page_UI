@@ -5,23 +5,23 @@ import { AnimatedWave } from "./animated-wave";
 
 const footerLinks = {
   Company: [
-    { name: "Home", href: "#" },
-    { name: "Who We Are", href: "#who-we-are" },
-    { name: "What We Do", href: "#how-it-works" },
-    { name: "Our Portfolio", href: "#" },
+    { name: "Home", href: "#hero" },  // ✅ Updated
+    { name: "Who We Are", href: "#how-it-works" },
+    { name: "What We Do", href: "#features" },  // ✅ Updated
+    { name: "Our Portfolio", href: "#portfolio" },  // ✅ Updated
   ],
 
   Services: [
-    { name: "Mobile Development", href: "#how-it-works" },
-    { name: "Web Development", href: "#how-it-works" },
-    { name: "AI Development", href: "#how-it-works" },
-    { name: "Computer Vision", href: "#how-it-works" },
-    { name: "Team Augmentation", href: "#how-it-works" },
+    { name: "Mobile Development", href: "#services" },
+    { name: "Web Development", href: "#services" },
+    { name: "AI Development", href: "#services" },
+    { name: "Computer Vision", href: "#services" },
+    { name: "Team Augmentation", href: "#services" },
   ],
 
   Legal: [
-    { name: "Privacy Policy", href: "#" },
-    { name: "Cookies Policy", href: "#" },
+    { name: "Privacy Policy", href: "#privacy" },
+    { name: "Cookies Policy", href: "#cookies" },
   ],
 };
 
@@ -42,7 +42,10 @@ const socialLinks = [
 
 export function FooterSection() {
   return (
-    <footer className="relative overflow-hidden bg-[#020611] text-white">
+    <footer 
+      id="footer"  // ✅ Added ID here
+      className="relative overflow-hidden bg-[#020611] text-white scroll-mt-20"  // ✅ Added scroll margin
+    >
       {/* =========================================================
           BACKGROUND
       ========================================================== */}
@@ -109,7 +112,7 @@ export function FooterSection() {
             {/* CTA */}
 
             <a
-              href="#contact"
+              href="#footer"  // ✅ Updated to #footer (or keep #contact if you want)
               className="group inline-flex h-14 shrink-0 items-center justify-center rounded-full bg-white px-7 text-sm font-medium text-slate-950 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-500 hover:text-white hover:shadow-[0_15px_40px_rgba(59,130,246,0.25)]"
             >
               Start a Conversation
@@ -136,7 +139,7 @@ export function FooterSection() {
           <div>
             {/* Logo / Brand */}
 
-            <a href="#" className="group inline-block">
+            <a href="#hero" className="group inline-block">  {/* ✅ Updated */}
               <div className="flex items-center gap-3">
                 {/* Logo mark */}
 
@@ -326,7 +329,7 @@ export function FooterSection() {
 
           <div className="flex items-center gap-5 text-xs">
             <a
-              href="#"
+              href="#privacy"
               className="text-white/30 transition-colors hover:text-white"
             >
               Privacy Policy
@@ -335,7 +338,7 @@ export function FooterSection() {
             <span className="h-3 w-px bg-white/10" />
 
             <a
-              href="#"
+              href="#cookies"
               className="text-white/30 transition-colors hover:text-white"
             >
               Cookies Policy
