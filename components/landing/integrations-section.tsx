@@ -225,7 +225,7 @@ export function IntegrationsSection() {
             <span className="block text-gray-800">
               Engineering solutions with
             </span>
-            <span className="block bg-gradient-to-r from-[#667eea] via-[#764ba2] to-[#f093fb] bg-clip-text text-transparent mt-1 font-extrabold">
+            <span className="block text-[#164A5B]">
               modern technology
             </span>
           </h2>
@@ -233,8 +233,10 @@ export function IntegrationsSection() {
           <p className={`mt-4 text-lg text-gray-500 max-w-2xl transition-all duration-700 delay-100 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}>
-            We leverage industry-leading tools and frameworks to deliver 
-            <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent font-medium"> exceptional digital experiences</span>
+            We leverage industry-leading tools and frameworks to deliver{" "}
+<span className="bg-gradient-to-r from-[#164A5B] to-[#2C7185] bg-clip-text text-transparent font-medium">
+  exceptional digital experiences
+</span>
           </p>
         </div>
 

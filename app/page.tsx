@@ -11,6 +11,7 @@ import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { PricingSection } from "@/components/landing/pricing-section";
 import { CtaSection } from "@/components/landing/cta-section";
 import { FooterSection } from "@/components/landing/footer-section";
+import { PortfolioSection } from "@/components/landing/portfolio";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
       <TestimonialsSection />
       {/* <PricingSection /> */}
       <CtaSection />
+      <PortfolioSection/>
       <FooterSection />  {/* ✅ Footer has id="footer" */}
     </main>
   );
