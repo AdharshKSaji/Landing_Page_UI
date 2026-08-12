@@ -16,12 +16,14 @@ import {
   Trophy,
   Users,
   WalletCards,
+  X,
 } from "lucide-react";
 
 interface Project {
   number: string;
   title: string;
   description: string;
+  fullDescription: string;
   tech: string[];
   icon: React.ElementType;
   size: "normal" | "large" | "featured";
@@ -33,6 +35,8 @@ const projects: Project[] = [
     title: "AIHub SafeZone",
     description:
       "A secure data-governance platform for South Korea's national AI data repository, managing dataset approval workflows between data holders, managers, and the MSP.",
+    fullDescription:
+      "South Korea, with a steadfast commitment to advancing its AI capabilities, aspires to establish a prominent global presence in the AI technologies market. AIHub, a repository of Artificial Intelligence data, serves as a comprehensive resource, offering diverse datasets essential for AI learning. The data is made available upon request, following a meticulous approval process involving the data holder, data manager, and Managed Service Provider (MSP). The Safezone app meticulously manages and controls this data online, leveraging the ReactJS and NodeJS platform to ensure a secure and efficient operation.",
     tech: ["React JS", "Node JS"],
     icon: ShieldCheck,
     size: "large",
@@ -42,6 +46,8 @@ const projects: Project[] = [
     title: "Ariistotle",
     description:
       "Real-world asset tokenization platform for fractional real-estate investment, with KYC authentication and MetaMask-backed asset storage.",
+    fullDescription:
+      "Ariistotle is a revolutionary platform ushering in a new era for seamless trading of Real World Asset Tokens, initially focusing on Real Estate Asset Tokens. This innovative platform enables users to participate in real estate investments with minimal capital, backed by a team proficient in Portfolio Management, Real Estate, and Blockchain Technology. Beyond real estate, Ariistotle introduces diverse global tradable assets to the decentralized space, offering a secure ecosystem with advanced KYC authentication, support for multiple currencies, a centralized console for efficient asset management, and secure storage on MetaMask wallets.",
     tech: ["React JS", "Node JS", "MySQL", "MongoDB"],
     icon: WalletCards,
     size: "normal",
@@ -51,6 +57,8 @@ const projects: Project[] = [
     title: "Competition Management Software",
     description:
       "eTalenter streamlines competition creation, candidate management, live scoring, and automated chest-card and certificate generation for events of any scale.",
+    fullDescription:
+      "eTalenter is an advanced online competition management software with a streamlined and secure framework designed for competitions of varying scales. Its versatile features include seamless competition creation, candidate addition, result management, online scoring, and the generation of chest cards and certificates. With its functional token-projector system, automated ID generation, and comprehensive tools for efficient competition operations, eTalenter provides a precise and organized solution for competition management.",
     tech: ["React JS", ".NET Core", "MySQL", "Flutter"],
     icon: Trophy,
     size: "featured",
@@ -60,6 +68,8 @@ const projects: Project[] = [
     title: "Edu Claim Management System",
     description:
       "Portal for DSD-formatted education-loan subsidy claims across schemes like Pado Pardesh and Dr. Ambedkar, with MIS reporting for statutory audits.",
+    fullDescription:
+      "It functions as a dedicated portal for streamlined submission of subsidy claims in accordance with Ministry guidelines, instructing Member Banks on DSD-formatted claim submissions and efficiently managing operations for education loans. The system encompasses capturing loan details, data preparation, report generation, and maintenance under schemes like Pado Pardesh, Dr. Ambedkar, and CSIS, ensuring accurate uploads through MIS data and facilitating swift statutory audits.",
     tech: ["Angular", "ASP.NET Core", "Oracle 19c", "Redis"],
     icon: GraduationCap,
     size: "normal",
@@ -69,6 +79,8 @@ const projects: Project[] = [
     title: "Didim365",
     description:
       "Cloud consulting and migration platform for an AWS value-added distributor, with native iOS/Android notification systems and offline-first sync.",
+    fullDescription:
+      "Didim365, a Cloud Service Consulting, Migration and Maintenance specialist, is an AWS value-added distributor. Facing challenges in the implementation of iOS features through Objective-C and Android features through Java, the project also involved mobile device-based testing and offline data storage using SQLite and Redis. The project included the development of a Cloud Company Notification System and was executed in South Korea for both Android and iOS devices.",
     tech: ["Flutter", "SQLite", "OneSignal", "Redis"],
     icon: Cloud,
     size: "normal",
@@ -78,6 +90,8 @@ const projects: Project[] = [
     title: "Door Step Gold Loan",
     description:
       "On-boarding and disbursal system letting Business Consultants collect documents and gold at a customer's doorstep, with instant credit and repayment delivery.",
+    fullDescription:
+      "In the door step gold loan facility, the Bank, through Business Consultants, reaches out to the customer's doorstep to on-board the customer and to collect the documents and gold ornaments. The system envisages instantaneous credit of the loan amount to the customer's account, and also delivery of the gold ornaments back to their doorstep on repayment.",
     tech: ["React JS", "ASP.NET Core", "Oracle 19c"],
     icon: Coins,
     size: "large",
@@ -87,6 +101,8 @@ const projects: Project[] = [
     title: "Signature Solutions CMS",
     description:
       "A consultancy CMS supporting hospitality and food-service clients across India, Africa, and the GCC region.",
+    fullDescription:
+      "With extensive experience in the hospitality and food-related industries across India, Africa, and GCC countries, Signature Training & Consultancy is well-equipped to offer a diverse range of specialized support services to meet evolving business and local agency needs. Their team of full-time staff, associates, and part-time professionals brings a wealth of experience, skills, and qualifications, fostering business growth through independent thinking, tailored recommendations, and a commitment to maintaining confidential and respectful client relationships.",
     tech: ["WordPress", "PHP", "MySQL", "HTML"],
     icon: Building2,
     size: "normal",
@@ -96,6 +112,8 @@ const projects: Project[] = [
     title: "Seekl",
     description:
       "Classroom chat application that keeps students and educators connected, encouraging students to lead conversations around their own learning.",
+    fullDescription:
+      "Seekl is a dedicated chat application designed for learning environments, fostering engagement and connectivity among students. It serves as a valuable tool to maintain consistent communication and empowers students to take the lead in conversations by showcasing their learning within the classroom. With Seekl, educators can create an interactive and collaborative space that enhances the overall learning experience.",
     tech: ["React JS", "Node JS", "MySQL", "GraphQL"],
     icon: MessageCircle,
     size: "normal",
@@ -105,6 +123,8 @@ const projects: Project[] = [
     title: "Digital Portal Enrolment & Raffle",
     description:
       "Three-sided raffle platform for malls and organisation clusters — client dashboard, vendor/customer QR scanning, and automated result-reminder emails.",
+    fullDescription:
+      "A digital portal for setting up raffle draws that occur within malls and organisation clusters during festivals. The project consists of three interfaces: a web application for the client, such as a mall or any other organisation cluster like a jewellery group; a web interface for vendors and/or customers which includes a QR code scanning scenario; and email integration for sending reminders to customers regarding the raffle draw and its results.",
     tech: ["React JS", "Node JS"],
     icon: Ticket,
     size: "normal",
@@ -114,6 +134,8 @@ const projects: Project[] = [
     title: "Auction",
     description:
       "Recovery system for gold-backed loans covering auction requests, data capture, master configuration, write-offs, and notice tracking end-to-end.",
+    fullDescription:
+      "The Gold Loan Auction is a comprehensive system meticulously crafted to optimize the recovery process of gold-backed loans, ensuring efficiency and transparency throughout. It encompasses specialized modules for Auction Request, Auction Data Capture, Master Configuration, Write-Off Request, Notice Tracking, and Reporting, providing a seamless and structured workflow. This project aims to enhance operational effectiveness in managing gold-backed loans while maintaining transparency in the overall process.",
     tech: ["Oracle 19c", "Nest JS"],
     icon: Gavel,
     size: "large",
@@ -123,6 +145,8 @@ const projects: Project[] = [
     title: "Empanel",
     description:
       "Centralizes empanelment and annual review workflows for external valuers, standardizing the process across every branch and level.",
+    fullDescription:
+      "The Empanel Application is designed to efficiently oversee outsourced services, specifically addressing the end-to-end process of empanelment and annual reviews for external valuers. This comprehensive solution streamlines and centralizes the entire workflow associated with the empanelment and annual review procedures, ensuring seamless and standardized processes across branches and levels of the organization.",
     tech: ["React JS", "Node JS"],
     icon: ClipboardCheck,
     size: "normal",
@@ -132,13 +156,23 @@ const projects: Project[] = [
     title: "Vendor Management",
     description:
       "Banking-sector vendor oversight system automating periodic audits, risk categorization, and due-diligence tracking by department.",
+    fullDescription:
+      "The Vendor Management Application is a sophisticated solution aimed at optimizing the oversight of external vendors in the banking sector. It facilitates periodic vendor audits, capturing details such as risk categories, user departments, and audit observations. Additionally, the system automates due diligence procedures, enhancing efficiency and compliance for vendors across different risk levels.",
     tech: ["React JS", "Node JS"],
     icon: Users,
     size: "normal",
   },
 ];
 
-function ProjectCard({ project, index }: { project: Project; index: number }) {
+function ProjectCard({
+  project,
+  index,
+  onExpand,
+}: {
+  project: Project;
+  index: number;
+  onExpand: (project: Project) => void;
+}) {
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const Icon = project.icon;
@@ -247,6 +281,15 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             {project.description}
           </p>
 
+          <button
+            type="button"
+            onClick={() => onExpand(project)}
+            className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-blue-600 transition-colors hover:text-blue-700"
+          >
+            See more
+            <ArrowUpRight size={12} />
+          </button>
+
           <div className="mt-4 flex flex-wrap gap-2">
             {project.tech.map((t) => (
               <span
@@ -278,8 +321,86 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
   );
 }
 
+function ProjectModal({
+  project,
+  onClose,
+}: {
+  project: Project;
+  onClose: () => void;
+}) {
+  const Icon = project.icon;
+
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [onClose]);
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+      <button
+        type="button"
+        aria-label="Close project details"
+        onClick={onClose}
+        className="absolute inset-0 cursor-default bg-slate-950/50 backdrop-blur-sm"
+      />
+
+      <div className="relative z-10 max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-[28px] border border-border bg-card p-7 shadow-2xl sm:p-10">
+        <button
+          type="button"
+          onClick={onClose}
+          className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+        >
+          <X size={17} />
+        </button>
+
+        <div className="flex items-start justify-between pr-10">
+          <div>
+            <span className="font-mono text-xs font-medium tracking-widest text-muted-foreground">
+              {project.number}
+            </span>
+            <h3 className="mt-2 text-2xl font-medium tracking-tight text-foreground sm:text-3xl">
+              {project.title}
+            </h3>
+          </div>
+
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-border bg-secondary text-blue-600">
+            <Icon size={22} strokeWidth={1.7} />
+          </div>
+        </div>
+
+        <p className="mt-6 text-sm leading-7 text-muted-foreground sm:text-[15px]">
+          {project.fullDescription}
+        </p>
+
+        <div className="mt-6 flex flex-wrap gap-2">
+          {project.tech.map((t) => (
+            <span
+              key={t}
+              className="rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+
+        <button
+          type="button"
+          onClick={onClose}
+          className="mt-8 inline-flex items-center gap-1 text-xs font-semibold text-blue-600 transition-colors hover:text-blue-700"
+        >
+          See less
+        </button>
+      </div>
+    </div>
+  );
+}
+
 export function PortfolioSection() {
   const [headerVisible, setHeaderVisible] = useState(false);
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const industryCount = 8; // banking, real-estate, AI data, edtech, hospitality, retail, logistics, cloud
@@ -356,7 +477,12 @@ export function PortfolioSection() {
 
         <div className="grid auto-rows-[280px] grid-cols-1 gap-5 [grid-auto-flow:dense] md:grid-cols-2 lg:grid-cols-4">
           {projects.map((project, index) => (
-            <ProjectCard key={project.title} project={project} index={index} />
+            <ProjectCard
+              key={project.title}
+              project={project}
+              index={index}
+              onExpand={setActiveProject}
+            />
           ))}
         </div>
 
@@ -375,6 +501,10 @@ export function PortfolioSection() {
           </div>
         </div>
       </div>
+
+      {activeProject && (
+        <ProjectModal project={activeProject} onClose={() => setActiveProject(null)} />
+      )}
     </section>
   );
 }
