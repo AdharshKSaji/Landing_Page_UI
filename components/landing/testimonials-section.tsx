@@ -42,12 +42,11 @@ export function TestimonialsSection() {
   };
 
   return (
-    <section className="relative py-12 lg:py-16 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50/50 text-[#0A1628]">
+    <section className="relative py-12 lg:py-16 overflow-hidden bg-white text-[#0A1628]">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-indigo-500/10 rounded-full blur-2xl" />
         <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-purple-500/10 rounded-full blur-2xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-blue-500/5 rounded-full blur-2xl" />
 
         <div
           className="absolute inset-0 opacity-[0.02]"
@@ -64,16 +63,19 @@ export function TestimonialsSection() {
         {/* Header */}
         <div className="mb-8 lg:mb-12">
           <div className="flex items-center gap-3 mb-2">
-            <span className="w-8 h-px bg-gradient-to-r from-indigo-600/80 to-transparent" />
-            <span className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-600">
+            <span className="w-8 h-px bg-gradient-to-r from-[#087EA4] to-transparent" />
+            <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[#087EA4]">
               Strategic Partnerships
             </span>
           </div>
 
           <div className="transition-all duration-700">
             <h2 className="text-3xl lg:text-5xl xl:text-6xl font-display tracking-tight leading-[1.08]">
-              <span className="text-[#164A5B] font-bold">
-                Trusted by Global Enterprises
+              <span className="text-[#164A5B] font-bold mr-3">
+                Trusted by
+              </span>
+              <span className="inline-flex font-bold bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
+                Global Enterprises
               </span>
             </h2>
 
@@ -124,7 +126,6 @@ export function TestimonialsSection() {
                           height={company.height}
                           className="object-contain w-full h-full"
                           priority={setIdx === 0}
-                          quality={100}
                           unoptimized={company.logo.endsWith(".svg")}
                           style={{
                             imageRendering: "crisp-edges",
@@ -157,10 +158,6 @@ export function TestimonialsSection() {
             ))}
           </div>
         </div>
-
-        {/* Bottom Gradient */}
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-slate-50 via-slate-50/50 to-transparent pointer-events-none" />
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-48 h-px bg-gradient-to-r from-transparent via-indigo-400/30 to-transparent pointer-events-none" />
       </div>
 
       <style jsx>{`

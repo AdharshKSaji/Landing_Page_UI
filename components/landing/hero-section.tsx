@@ -241,7 +241,7 @@ export function HeroSection() {
 
               {/* Line 1 */}
 
-              <span className="block">
+              <span className="block text-[#164A5B]">
                 We build
               </span>
 
@@ -253,7 +253,7 @@ export function HeroSection() {
 
               {/* Line 3 */}
 
-              <span className="block">
+              <span className="block text-[#164A5B]">
                 that help
               </span>
 

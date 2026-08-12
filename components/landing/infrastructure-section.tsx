@@ -171,20 +171,20 @@ export function InfrastructureSection() {
             <div className="mb-6 flex items-center gap-3">
               <span className="h-px w-8 bg-[#1E3A8A]" />
 
-              <span className="text-xs font-bold uppercase tracking-[0.22em] bg-gradient-to-r from-[#172554] via-[#1E3A8A] to-[#2563EB] bg-clip-text text-transparent">
+              <span className="text-xs text-[#164A5B] font-bold uppercase tracking-[0.22em] ">
                 Our Methodology
               </span>
             </div>
 
             {/* Heading */}
 
-            <h2 className="text-4xl font-display font-semibold leading-[1.02] tracking-[-0.045em] text-slate-950 sm:text-5xl lg:text-[64px]">
+            <h2 className="text-4xl font-display font-semibold leading-[1.02] tracking-[-0.045em] text-[#164A5B] sm:text-5xl lg:text-[64px]">
               Streamlined
               <br />
               development
               <br />
 
-              <span className="bg-gradient-to-r from-[#172554] via-[#1E3A8A] to-[#2563EB] bg-clip-text text-transparent font-semibold">
+              <span className="bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
                 lifecycle.
               </span>
             </h2>

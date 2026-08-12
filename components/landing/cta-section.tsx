@@ -68,8 +68,8 @@ export function CtaSection() {
       <div className="relative z-10 mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
         <div
           className={`relative overflow-hidden border border-slate-200 bg-white transition-all duration-1000 ${isVisible
-              ? "translate-y-0 opacity-100"
-              : "translate-y-10 opacity-0"
+            ? "translate-y-0 opacity-100"
+            : "translate-y-10 opacity-0"
             }`}
         >
           {/* =====================================================
@@ -97,19 +97,19 @@ export function CtaSection() {
             <div className="relative px-7 py-10 sm:px-10 sm:py-12 lg:px-14 lg:py-16 xl:px-16">
               {/* Small label */}
               <div className="mb-5 flex items-center gap-3">
-                <span className="h-px w-8 bg-blue-500" />
+                <span className="h-px w-8 bg-[#164A5B]" />
 
-                <span className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-600">
+                <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[#164A5B]">
                   Let's Work Together
                 </span>
               </div>
 
               {/* Heading */}
-              <h2 className="max-w-[720px] text-[42px] font-display font-light leading-[0.98] tracking-[-0.045em] text-slate-950 sm:text-5xl lg:text-[64px] xl:text-[72px]">
+              <h2 className="max-w-[720px] text-[42px] font-display font-light leading-[0.98] tracking-[-0.045em] text-[#164A5B] sm:text-5xl lg:text-[64px] xl:text-[72px]">
                 Ready to build
                 <br />
                 something{" "}
-                <span className="bg-gradient-to-r from-blue-500 via-blue-600 to-cyan-500 bg-clip-text text-transparent">
+                <span className="inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
                   remarkable?
                 </span>
               </h2>
@@ -427,3 +427,4 @@ export function CtaSection() {
     </section>
   );
 }
+// Force reload

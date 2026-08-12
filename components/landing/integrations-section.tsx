@@ -153,18 +153,18 @@ export function IntegrationsSection() {
             </div>
             <span className={cn(
               "text-base font-semibold transition-all duration-300",
-              isHovered 
-                ? `bg-gradient-to-r ${integration.gradient} bg-clip-text text-transparent` 
+              isHovered
+                ? `bg-gradient-to-r ${integration.gradient} bg-clip-text text-transparent`
                 : "text-gray-700"
             )}>
               {integration.name}
             </span>
           </div>
-          
+
           <span className={cn(
             "text-[10px] font-medium uppercase tracking-wider transition-all duration-300",
-            isHovered 
-              ? `bg-gradient-to-r ${integration.gradient} bg-clip-text text-transparent` 
+            isHovered
+              ? `bg-gradient-to-r ${integration.gradient} bg-clip-text text-transparent`
               : "text-gray-400"
           )}>
             {integration.category}
@@ -216,27 +216,31 @@ export function IntegrationsSection() {
           </span>
 
           <h2
-            className={`text-4xl lg:text-6xl font-bold tracking-tight transition-all duration-700 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-4"
-            }`}
+            className={`text-4xl lg:text-6xl font-bold tracking-tight transition-all duration-700 ${isVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-4"
+              }`}
           >
-            <span className="block text-gray-800">
+            <span className="block text-[#164A5B]">
               Engineering solutions with
             </span>
-            <span className="block text-[#164A5B]">
+            <span className="block inline-flex
+                    bg-gradient-to-r
+                    from-[#087EA4]
+                    via-[#18A8D1]
+                    to-[#24B35A]
+                    bg-clip-text
+                    text-transparent">
               modern technology
             </span>
           </h2>
-          
-          <p className={`mt-4 text-lg text-gray-500 max-w-2xl transition-all duration-700 delay-100 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}>
+
+          <p className={`mt-4 text-lg text-gray-500 max-w-2xl transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}>
             We leverage industry-leading tools and frameworks to deliver{" "}
-<span className="bg-gradient-to-r from-[#164A5B] to-[#2C7185] bg-clip-text text-transparent font-medium">
-  exceptional digital experiences
-</span>
+            <span className="bg-gradient-to-r from-[#164A5B] to-[#2C7185] bg-clip-text text-transparent font-medium">
+              exceptional digital experiences
+            </span>
           </p>
         </div>
 
@@ -270,16 +274,16 @@ export function IntegrationsSection() {
                   )} />
                   <span className={cn(
                     "transition-all duration-300",
-                    isActive 
-                      ? `bg-gradient-to-r ${category.gradient} bg-clip-text text-transparent` 
+                    isActive
+                      ? `bg-gradient-to-r ${category.gradient} bg-clip-text text-transparent`
                       : "group-hover:bg-gradient-to-r group-hover:from-[#667eea] group-hover:to-[#764ba2] group-hover:bg-clip-text group-hover:text-transparent"
                   )}>
                     {category.title}
                   </span>
                   <span className={cn(
                     "text-xs px-2 py-0.5 rounded-full transition-all duration-300",
-                    isActive 
-                      ? `bg-gradient-to-r ${category.gradient} text-white` 
+                    isActive
+                      ? `bg-gradient-to-r ${category.gradient} text-white`
                       : "bg-gray-100 text-gray-400 group-hover:bg-gray-200"
                   )}>
                     {category.technologies.length}
@@ -352,7 +356,7 @@ export function IntegrationsSection() {
                 </span>
               </p>
               <p className="text-xs text-gray-500">
-                Our team is here to help you choose the 
+                Our team is here to help you choose the
                 <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent font-medium"> right technology stack</span>
               </p>
             </div>

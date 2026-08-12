@@ -392,16 +392,10 @@ export function FeaturesSection() {
                 lg:text-7xl
               "
             >
-              <span className="block lg:whitespace-nowrap">Built on experience.</span>
-              <span
-  className="
-    block
-    lg:whitespace-nowrap
-    text-[#164A5B]
-  "
->
-  Driven by results.
-</span>
+              <span className="block lg:whitespace-nowrap text-[#164A5B]">Built on experience.</span>
+              <span className="inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
+                Driven by results.
+              </span>
             </h2>
 
             <p

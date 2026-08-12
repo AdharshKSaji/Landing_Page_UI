@@ -261,18 +261,21 @@ export function MetricsSection() {
           <div className="mb-20 lg:mb-24">
             <div className="flex items-center gap-3 mb-6">
               <span className="w-8 h-px bg-gradient-to-r from-primary/60 to-transparent" />
-              <span className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-600">
-  Enterprise Solutions
-</span>
+              <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[#164A5B]">
+                Enterprise Solutions
+              </span>
             </div>
 
             <div
               className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
             >
-              <h2 className="text-4xl lg:text-6xl xl:text-7xl font-display tracking-tight leading-[1.08]">
-                <span className="block text-4xl bg-gradient-to-r from-gray-800 via-gray-600 to-gray-900 dark:from-gray-100 dark:via-gray-300 dark:to-gray-500 bg-clip-text text-transparent font-bold">
-                  Technology Engineered to Transform Your Business
+              <h2 className="text-4xl lg:text-5xl xl:text-6xl font-display tracking-tight leading-[1.08]">
+                <span className="block text-[#164A5B] font-bold">
+                  Technology Engineered to
+                </span>
+                <span className="inline-flex font-bold bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
+                  Transform Your Business
                 </span>
               </h2>
 
@@ -448,10 +451,6 @@ export function MetricsSection() {
             </div>
           </div>
         </div>
-
-        {/* Bottom Gradient */}
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background via-background/50 to-transparent pointer-events-none" />
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-48 h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent pointer-events-none" />
       </section>
 
       {/* Modal */}

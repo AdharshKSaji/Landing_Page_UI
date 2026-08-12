@@ -28,7 +28,7 @@ export default function Home() {
       <TestimonialsSection />
       {/* <PricingSection /> */}
       <CtaSection />
-      <PortfolioSection/>
+      <PortfolioSection />
       <FooterSection />  {/* ✅ Footer has id="footer" */}
     </main>
   );
