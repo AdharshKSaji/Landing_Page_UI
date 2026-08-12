@@ -158,7 +158,7 @@ export function IntegrationsSection() {
     <section
       id="integrations"
       ref={sectionRef}
-      className="relative py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-background via-background to-background/50"
+      className="relative py-24 lg:py-32 overflow-hidden bg-white"
     >
       {/* Premium background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -185,8 +185,8 @@ export function IntegrationsSection() {
 
           <h2
             className={`text-4xl lg:text-6xl font-display tracking-tight transition-all duration-700 ${isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-4"
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-4"
               }`}
           >
             <span className="block">Engineering solutions with</span>
