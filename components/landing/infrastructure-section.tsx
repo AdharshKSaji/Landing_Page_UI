@@ -152,8 +152,8 @@ export function InfrastructureSection() {
 
           <div
             className={`transition-all duration-1000 ${isVisible
-                ? "translate-x-0 opacity-100"
-                : "-translate-x-8 opacity-0"
+              ? "translate-x-0 opacity-100"
+              : "-translate-x-8 opacity-0"
               }`}
           >
             {/* Label */}
@@ -174,7 +174,7 @@ export function InfrastructureSection() {
               development
               <br />
 
-              <span className="bg-gradient-to-r from-blue-500 via-blue-600 to-cyan-500 bg-clip-text text-transparent">
+              <span className="text-[#164A5B]">
                 lifecycle.
               </span>
             </h2>
@@ -264,8 +264,8 @@ export function InfrastructureSection() {
 
           <div
             className={`transition-all delay-200 duration-1000 ${isVisible
-                ? "translate-x-0 opacity-100"
-                : "translate-x-8 opacity-0"
+              ? "translate-x-0 opacity-100"
+              : "translate-x-8 opacity-0"
               }`}
           >
             {/* Main process card */}
@@ -376,16 +376,16 @@ export function InfrastructureSection() {
                       type="button"
                       onClick={() => setActiveStep(index)}
                       className={`group relative flex w-full items-center gap-4 rounded-xl px-4 py-3 text-left transition-all duration-300 ${isActive
-                          ? "bg-blue-50"
-                          : "hover:bg-slate-50"
+                        ? "bg-blue-50"
+                        : "hover:bg-slate-50"
                         }`}
                     >
                       {/* Number / Icon */}
 
                       <div
                         className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-all duration-300 ${isActive
-                            ? "bg-blue-500 text-white shadow-[0_5px_15px_rgba(59,130,246,0.25)]"
-                            : "border border-slate-200 bg-white text-slate-300 group-hover:border-blue-200 group-hover:text-blue-500"
+                          ? "bg-blue-500 text-white shadow-[0_5px_15px_rgba(59,130,246,0.25)]"
+                          : "border border-slate-200 bg-white text-slate-300 group-hover:border-blue-200 group-hover:text-blue-500"
                           }`}
                       >
                         {isActive ? (
@@ -402,8 +402,8 @@ export function InfrastructureSection() {
                       <div className="min-w-0 flex-1">
                         <div
                           className={`text-sm transition-colors ${isActive
-                              ? "font-medium text-slate-900"
-                              : "text-slate-500 group-hover:text-slate-900"
+                            ? "font-medium text-slate-900"
+                            : "text-slate-500 group-hover:text-slate-900"
                             }`}
                         >
                           {step.step}
@@ -419,8 +419,8 @@ export function InfrastructureSection() {
                       <ArrowRight
                         size={14}
                         className={`shrink-0 transition-all duration-300 ${isActive
-                            ? "translate-x-0 text-blue-500"
-                            : "-translate-x-2 text-slate-200 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
+                          ? "translate-x-0 text-blue-500"
+                          : "-translate-x-2 text-slate-200 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
                           }`}
                       />
                     </button>
