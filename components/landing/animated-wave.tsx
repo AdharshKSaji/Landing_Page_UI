@@ -47,14 +47,20 @@ export function AnimatedWave() {
           const wave1 = Math.sin(x * 0.2 + time * 2) * Math.cos(y * 0.15 + time);
           const wave2 = Math.sin((x + y) * 0.1 + time * 1.5);
           const wave3 = Math.cos(x * 0.1 - y * 0.1 + time * 0.8);
-          
+
           const combined = (wave1 + wave2 + wave3) / 3;
           const normalized = (combined + 1) / 2;
-          
+
           const charIndex = Math.floor(normalized * (chars.length - 1));
           const alpha = 0.15 + normalized * 0.5;
 
-          ctx.fillStyle = `rgba(0, 0, 0, ${alpha})`;
+          const factor = x / cols;
+          // Interpolate between React blue #087EA4 (8, 126, 164) and dark teal #164A5B (22, 74, 91)
+          const r = Math.round(8 + (22 - 8) * factor);
+          const g = Math.round(126 + (74 - 126) * factor);
+          const b = Math.round(164 + (91 - 164) * factor);
+
+          ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
           ctx.fillText(chars[charIndex], px, py);
         }
       }

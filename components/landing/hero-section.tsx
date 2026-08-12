@@ -1,11 +1,24 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap, Shield } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { AnimatedSphere } from "./animated-sphere";
 
 const words = ["transform", "grow", "accelerate", "lead"];
+
+const services = [
+  "Mobile & Web Development",
+  "Modern UI / UX",
+  "AI & Computer Vision",
+  "Technology Consulting",
+];
+
+const serviceColors = [
+  "#087EA4",
+  "#18A8D1",
+  "#24B35A",
+  "#164A5B",
+];
 
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,176 +31,602 @@ export function HeroSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setWordIndex((prev) => (prev + 1) % words.length);
-    }, 2500);
+    }, 2600);
+
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-slate-100/50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
-      {/* Gradient background orbs */}
-      <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full blur-[150px] opacity-20 pointer-events-none bg-gradient-radial from-blue-500/20 to-transparent" />
-      <div className="absolute bottom-[-20%] left-[-10%] w-[500px] h-[500px] rounded-full blur-[120px] opacity-15 pointer-events-none bg-gradient-radial from-purple-500/15 to-transparent" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-[200px] opacity-5 pointer-events-none bg-gradient-radial from-blue-400/10 to-transparent" />
-      
-      {/* Animated sphere background */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] lg:w-[700px] lg:h-[700px] opacity-30 pointer-events-none">
-        <AnimatedSphere />
-      </div>
-      
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 py-32 lg:py-40">
-        {/* Eyebrow */}
-        <div 
-          className={`mb-8 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
-        >
-          <span className="inline-flex items-center gap-3 text-sm font-medium text-slate-600 dark:text-slate-400 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm px-5 py-2.5 rounded-full border border-slate-200/50 dark:border-slate-800/50 shadow-sm">
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
-            </span>
-            Enterprise-grade solutions for modern businesses
-          </span>
-        </div>
-        
-        {/* Main headline */}
-        <div className="mb-10">
-          <h1 
-            className={`text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.1] tracking-tight transition-all duration-1000 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            <span className="block text-slate-900 dark:text-white">
-              We build digital solutions
-            </span>
-            <span className="block mt-3 text-slate-700 dark:text-slate-300">
-              that enable businesses to{" "}
-              <span className="relative inline-block min-w-[120px]">
-                <span 
-                  key={wordIndex}
-className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-gray-600 to-gray-300 dark:from-white dark:via-gray-400 dark:to-gray-700 font-bold"                >
-                  {words[wordIndex]}
-                </span>
-                <span className="absolute -bottom-2 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent rounded-full" />
-              </span>
-            </span>
-          </h1>
-        </div>
-        
-        {/* Description and CTAs */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          <div>
-            <p 
-              className={`text-lg lg:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl transition-all duration-700 delay-200 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-            >
-              Intelligent technology that moves your business forward.
-              <span className="block mt-3 text-slate-500 dark:text-slate-500">
-                From launch to scale, we build secure solutions for lasting impact.
-              </span>
-            </p>
-          </div>
-          
-          {/* CTAs */}
-          <div 
-            className={`flex flex-col sm:flex-row items-start sm:items-center gap-4 transition-all duration-700 delay-300 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
-          >
-            <Button 
-              size="lg" 
-              className="group bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-base font-semibold rounded-xl"
-            >
-              Get Started
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="border-2 border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-900/50 px-8 py-6 text-base font-semibold rounded-xl"
-            >
-              <Zap className="mr-2 h-4 w-4" />
-              View Our Work
-            </Button>
-          </div>
-        </div>
-      </div>
-      
-      {/* Stats marquee */}
-      <div 
-        className={`absolute bottom-24 left-0 right-0 transition-all duration-700 delay-500 ${
-          isVisible ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        <div className="relative">
-          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white dark:from-slate-950 to-transparent z-10" />
-          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white dark:from-slate-950 to-transparent z-10" />
-          
-          <div className="flex gap-12 marquee whitespace-nowrap overflow-hidden">
-            {[...Array(2)].map((_, i) => (
-              <div key={i} className="flex gap-12">
-                {[
-                  { value: "20 days", label: "saved on builds" },
-                  { value: "98%", label: "faster deployment" },
-                  { value: "300%", label: "throughput increase" },
-                  { value: "6x", label: "faster to ship" },
-                ].map((stat) => (
-                  <div key={`${stat.value}-${i}`} className="flex items-baseline gap-4 bg-white/70 dark:bg-slate-900/70 backdrop-blur-sm px-6 py-4 rounded-xl border border-slate-200/50 dark:border-slate-800/50 shadow-sm">
-                    <span className="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">
-                      {stat.value}
-                    </span>
-                    <span className="text-sm text-slate-500 dark:text-slate-400">
-                      {stat.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      
-      {/* Scroll indicator */}
-      <div 
-        className={`absolute bottom-8 left-1/2 -translate-x-1/2 transition-all duration-1000 delay-700 ${
-          isVisible ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        <button 
-          className="flex flex-col items-center gap-2 group"
-          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
-        >
-          <div className="w-6 h-10 rounded-full border-2 border-slate-300 dark:border-slate-700 flex items-start justify-center p-1.5 group-hover:border-slate-400 dark:group-hover:border-slate-600 transition-colors">
-            <div className="w-1 h-2 rounded-full bg-gradient-to-b from-blue-500 to-indigo-500 animate-scroll-down" />
-          </div>
-          <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-slate-400 dark:text-slate-600 group-hover:text-slate-500 dark:group-hover:text-slate-500 transition-colors">
-            Scroll
-          </span>
-        </button>
+    <section className="relative min-h-screen overflow-hidden bg-[#F8F9F7] text-[#171A1C]">
+
+      {/* ============================================================
+          BACKGROUND GRID
+      ============================================================ */}
+
+      <div className="absolute inset-0 pointer-events-none">
+
+        <div
+          className="absolute inset-0 opacity-[0.035]"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, #171A1C 1px, transparent 1px),
+              linear-gradient(to bottom, #171A1C 1px, transparent 1px)
+            `,
+            backgroundSize: "72px 72px",
+          }}
+        />
+
+        {/* Soft background fade */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#F8F9F7]/20 via-transparent to-[#F8F9F7]" />
+
+        {/* Right-side subtle color glow */}
+        <div
+          className="
+            absolute
+            right-[-180px]
+            top-1/2
+            h-[700px]
+            w-[700px]
+            -translate-y-1/2
+            rounded-full
+            bg-[radial-gradient(circle,rgba(24,168,209,0.07)_0%,rgba(36,179,90,0.035)_35%,transparent_70%)]
+          "
+        />
+
       </div>
 
-      {/* Custom styles */}
-      <style jsx>{`
-        @keyframes scroll-down {
-          0% { transform: translateY(0); opacity: 1; }
-          100% { transform: translateY(8px); opacity: 0; }
-        }
-        .animate-scroll-down {
-          animation: scroll-down 1.5s ease-in-out infinite;
-        }
-        .bg-gradient-radial {
-          background-image: radial-gradient(circle, var(--tw-gradient-stops));
-        }
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .marquee {
-          animation: marquee 30s linear infinite;
-          display: flex;
-        }
-      `}</style>
+      {/* ============================================================
+          TOP BORDER
+      ============================================================ */}
+
+      <div className="absolute left-0 right-0 top-0 h-px bg-[#164A5B]/10" />
+
+      {/* ============================================================
+          ANIMATED SPHERE
+      ============================================================ */}
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+          right-[-180px]
+          top-1/2
+          h-[560px]
+          w-[560px]
+          -translate-y-1/2
+
+          lg:right-[-80px]
+          lg:h-[720px]
+          lg:w-[720px]
+
+          xl:right-[-20px]
+          xl:h-[780px]
+          xl:w-[780px]
+        "
+      >
+
+        <div className="absolute inset-0 opacity-[0.42]">
+          <AnimatedSphere />
+        </div>
+
+        {/* Soft left-side fade */}
+
+        <div
+          className="
+            absolute
+            inset-0
+            rounded-full
+            bg-gradient-to-r
+            from-[#F8F9F7]
+            via-transparent
+            to-transparent
+            opacity-80
+          "
+        />
+
+        {/* Soft bottom fade */}
+
+        <div
+          className="
+            absolute
+            inset-0
+            rounded-full
+            bg-gradient-to-t
+            from-[#F8F9F7]/40
+            via-transparent
+            to-transparent
+          "
+        />
+
+      </div>
+
+      {/* ============================================================
+          HERO CONTENT
+      ============================================================ */}
+
+      <div
+        className="
+          relative
+          z-10
+          mx-auto
+          flex
+          min-h-screen
+          max-w-[1500px]
+          flex-col
+          justify-between
+          px-6
+          pb-10
+          pt-28
+
+          lg:px-12
+          lg:pt-32
+        "
+      >
+
+        {/* ==========================================================
+            HERO MAIN
+        ========================================================== */}
+
+        <div className="grid gap-16 lg:grid-cols-[1fr_360px] lg:gap-24">
+
+          {/* ========================================================
+              LEFT CONTENT
+          ======================================================== */}
+
+          <div className="max-w-[900px]">
+
+            {/* ------------------------------------------------------
+                EYEBROW
+            ------------------------------------------------------ */}
+
+            <div
+              className={`
+                mb-10
+                flex
+                items-center
+                gap-4
+                transition-all
+                duration-700
+                ${isVisible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-4 opacity-0"
+                }
+              `}
+            >
+
+              <span
+                className="
+                  h-px
+                  w-10
+                  bg-gradient-to-r
+                  from-[#087EA4]
+                  to-[#24B35A]
+                "
+              />
+
+              <span
+                className="
+                  font-display
+                  text-2xl
+                  italic
+                  text-[#164A5B]
+                  tracking-wide
+                "
+              >
+                Where technology meets business ambition
+              </span>
+
+            </div>
+
+            {/* ------------------------------------------------------
+                MAIN HEADLINE
+            ------------------------------------------------------ */}
+
+            <h1
+              className={`
+                max-w-[950px]
+                text-[clamp(3.4rem,7vw,7.5rem)]
+                font-medium
+                leading-[0.88]
+                tracking-[-0.055em]
+                transition-all
+                duration-1000
+
+                ${isVisible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-8 opacity-0"
+                }
+              `}
+            >
+
+              {/* Line 1 */}
+
+              <span className="block">
+                We build
+              </span>
+
+              {/* Line 2 */}
+
+              <span className="block text-[#164A5B]">
+                digital solutions
+              </span>
+
+              {/* Line 3 */}
+
+              <span className="block">
+                that help
+              </span>
+
+              {/* Animated word */}
+
+              <span className="relative inline-block">
+
+                <span
+                  key={wordIndex}
+                  className="
+                    inline-flex
+                    bg-gradient-to-r
+                    from-[#087EA4]
+                    via-[#18A8D1]
+                    to-[#24B35A]
+                    bg-clip-text
+                    text-transparent
+                  "
+                >
+                  {words[wordIndex].split("").map((char, index) => (
+                    <span
+                      key={`${wordIndex}-${index}`}
+                      className="inline-block animate-char-in"
+                      style={{
+                        animationDelay: `${index * 45}ms`,
+                      }}
+                    >
+                      {char}
+                    </span>
+                  ))}
+                </span>
+
+              </span>
+
+            </h1>
+
+            {/* ------------------------------------------------------
+                DESCRIPTION
+            ------------------------------------------------------ */}
+
+            <div className={`mt-12 max-w-[650px] transition-all delay-200 duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"}`}>
+
+              <p className="text-lg leading-[1.7] text-[#164A5B]/90 lg:text-xl">
+                From <strong className="font-bold text-[#164A5B]">bold ideas</strong> to <strong className="font-bold text-[#164A5B]">meaningful innovation</strong>, we create <strong className="font-bold text-[#164A5B]">secure, scalable technology</strong> that helps businesses <strong className="font-bold text-[#164A5B]">launch, modernize, and grow</strong> with confidence.
+              </p>
+            </div>
+
+            {/* ------------------------------------------------------
+                CTA
+            ------------------------------------------------------ */}
+
+            <div className={`mt-10 flex flex-wrap items-center gap-6 transition-all delay-300 duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"}`}>
+              {/* Primary CTA */}
+
+              <button className="group flex h-14 items-center gap-5 bg-[#164A5B] px-7 text-medium font-medium text-white transition-all duration-300 hover:bg-[#087EA4]">
+                <span>
+                  Start a conversation
+                </span>
+                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </button>
+
+              {/* Secondary CTA */}
+
+              <button
+                className="
+                  group
+                  flex
+                  items-center
+                  gap-3
+                  text-sm
+                  font-medium
+                  text-[#164A5B]
+                  transition-colors
+                  duration-300
+                  hover:text-[#087EA4]
+                "
+              >
+
+                <span>
+                  Explore our work
+                </span>
+
+                <span
+                  className="
+                    h-px
+                    w-8
+                    bg-[#164A5B]/30
+                    transition-all
+                    duration-300
+                    group-hover:w-12
+                    group-hover:bg-[#087EA4]
+                  "
+                />
+
+              </button>
+
+            </div>
+
+          </div>
+
+          {/* ========================================================
+              RIGHT INFORMATION
+          ======================================================== */}
+
+          <div
+            className={`
+              hidden
+              flex-col
+              justify-end
+              pb-10
+              transition-all
+              delay-500
+              duration-700
+
+              lg:flex
+
+              ${isVisible
+                ? "translate-y-0 opacity-100"
+                : "translate-y-5 opacity-0"
+              }
+            `}
+          >
+
+            <div className="border-t border-[#164A5B]/15 pt-5">
+
+              {/* Header */}
+
+              <div className="flex items-start justify-between">
+
+                <span
+                  className="
+                    font-display
+                    text-xl
+                    italic
+                    text-[#164A5B]
+                    tracking-wide
+                  "
+                >
+                  What we do
+                </span>
+
+                <span
+                  className="
+                    font-mono
+                    text-[10px]
+                    text-[#164A5B]/50
+                  "
+                >
+                  01 — 04
+                </span>
+
+              </div>
+
+              {/* Services */}
+
+              <div className="mt-8 space-y-4">
+
+                {services.map((item, index) => (
+                  <div
+                    key={item}
+                    className="
+                      group
+                      flex
+                      items-center
+                      justify-between
+                      border-b
+                      border-[#164A5B]/10
+                      pb-4
+                    "
+                  >
+
+                    <div className="flex items-center gap-3">
+
+                      {/* Color indicator */}
+
+                      <span
+                        className="
+                          h-1.5
+                          w-1.5
+                          rounded-full
+                          transition-transform
+                          duration-300
+                          group-hover:scale-150
+                        "
+                        style={{
+                          backgroundColor: serviceColors[index],
+                        }}
+                      />
+
+                      <span
+                        className="
+                          font-sans
+                          text-base
+                          font-semibold
+                          text-[#164A5B]/90
+                          transition-colors
+                          duration-300
+                          group-hover:text-[#087EA4]
+                        "
+                      >
+                        {item}
+                      </span>
+
+                    </div>
+
+                    <span
+                      className="
+                        font-mono
+                        text-xs
+                        font-medium
+                        text-[#164A5B]/60
+                      "
+                    >
+                      0{index + 1}
+                    </span>
+
+                  </div>
+                ))}
+
+              </div>
+
+            </div>
+
+            {/* Small brand statement */}
+
+            <div className="mt-12">
+
+              <div className="flex items-center gap-3">
+
+                <span
+                  className="
+                    h-1.5
+                    w-1.5
+                    rounded-full
+                    bg-[#24B35A]
+                  "
+                />
+
+                <span
+                  className="
+                    font-sans
+                    text-[11px]
+                    font-bold
+                    uppercase
+                    tracking-[0.15em]
+                    text-[#164A5B]/75
+                  "
+                >
+                  Built for what's next
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* ==========================================================
+            BOTTOM BAR
+        ========================================================== */}
+
+        <div
+          className={`
+            mt-20
+            border-t
+            border-[#164A5B]/10
+            pt-5
+            transition-all
+            delay-500
+            duration-700
+
+            ${isVisible
+              ? "opacity-100"
+              : "opacity-0"
+            }
+          `}
+        >
+
+          <div
+            className="
+              flex
+              flex-col
+              gap-4
+
+              sm:flex-row
+              sm:items-center
+              sm:justify-between
+            "
+          >
+
+            {/* Brand */}
+
+            <div className="flex items-center gap-3">
+
+              <span
+                className="
+                  h-1.5
+                  w-1.5
+                  rounded-full
+                  bg-[#087EA4]
+                "
+              />
+
+              <span
+                className="
+                  font-sans
+                  text-[11px]
+                  font-bold
+                  uppercase
+                  tracking-[0.15em]
+                  text-[#164A5B]/85
+                "
+              >
+                Grandreves Technologies
+              </span>
+
+            </div>
+
+            {/* Bottom information */}
+
+            <div className="flex items-center gap-8">
+
+              <span
+                className="
+                  hidden
+                  font-sans
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  tracking-[0.15em]
+                  text-[#164A5B]/70
+
+                  sm:block
+                "
+              >
+                Technology · Design · Innovation
+              </span>
+
+              <span
+                className="
+                  hidden
+                  h-1.5
+                  w-1.5
+                  rounded-full
+                  bg-[#24B35A]
+
+                  sm:block
+                "
+              />
+
+              <span
+                className="
+                  font-sans
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  tracking-[0.15em]
+                  text-[#164A5B]/70
+                "
+              >
+                Scroll to explore
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </section>
   );
 }

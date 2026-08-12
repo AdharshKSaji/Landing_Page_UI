@@ -149,7 +149,14 @@ export function AnimatedTetrahedron() {
       // Draw points
       points.forEach((point) => {
         const alpha = 0.15 + (point.z + 1.5) * 0.25;
-        ctx.fillStyle = `rgba(0, 0, 0, ${Math.min(alpha, 0.9)})`;
+        const depth = Math.max(0, Math.min(1, (point.z + 1.5) / 3)); // Normalize depth to 0-1 range
+
+        // Interpolate between dark teal #164A5B (22, 74, 91) and cyan #18A8D1 (24, 168, 209)
+        const r = Math.round(22 + (24 - 22) * depth);
+        const g = Math.round(74 + (168 - 74) * depth);
+        const b = Math.round(91 + (209 - 91) * depth);
+
+        ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${Math.min(alpha, 0.9)})`;
         ctx.fillText(point.char, point.x, point.y);
       });
 

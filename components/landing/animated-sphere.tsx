@@ -40,7 +40,7 @@ export function AnimatedSphere() {
       ctx.textBaseline = "middle";
 
       const step = 12;
-      const points: { x: number; y: number; z: number; char: string }[] = [];
+      const points: { x: number; y: number; z: number; nx: number; char: string }[] = [];
 
       // Generate sphere points
       for (let phi = 0; phi < Math.PI * 2; phi += 0.15) {
@@ -66,6 +66,7 @@ export function AnimatedSphere() {
             x: centerX + newX * radius,
             y: centerY + newY * radius,
             z: finalZ,
+            nx: newX,
             char: chars[charIndex],
           });
         }
@@ -77,7 +78,25 @@ export function AnimatedSphere() {
       // Draw points
       points.forEach((point) => {
         const alpha = 0.2 + (point.z + 1) * 0.4;
-        ctx.fillStyle = `rgba(0, 0, 0, ${alpha})`;
+
+        // Multi-stop color gradient matching the brand colors
+        // Left to right gradient: #087EA4 (blue) -> #18A8D1 (cyan) -> #24B35A (green)
+        const factor = (point.nx + 1) / 2; // 0 to 1
+
+        let r = 8, g = 126, b = 164;
+        if (factor < 0.5) {
+          const t = factor * 2;
+          r = Math.round(8 + (24 - 8) * t);
+          g = Math.round(126 + (168 - 126) * t);
+          b = Math.round(164 + (209 - 164) * t);
+        } else {
+          const t = (factor - 0.5) * 2;
+          r = Math.round(24 + (36 - 24) * t);
+          g = Math.round(168 + (179 - 168) * t);
+          b = Math.round(209 + (90 - 209) * t);
+        }
+
+        ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
         ctx.fillText(point.char, point.x, point.y);
       });
 
