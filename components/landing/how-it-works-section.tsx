@@ -182,7 +182,7 @@ export function HowItWorksSection() {
           </div>
 
           {/* Heading */}
-          <h2 className="max-w-4xl text-4xl font-light leading-[1.05] tracking-[-0.035em] sm:text-5xl lg:text-[64px]">
+          <h2 className="max-w-4xl text-4xl font-display font-light leading-[1.05] tracking-[-0.035em] sm:text-5xl lg:text-[64px]">
             Built to move
             <br />
             your{" "}

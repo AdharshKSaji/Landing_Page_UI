@@ -168,7 +168,7 @@ export function InfrastructureSection() {
 
             {/* Heading */}
 
-            <h2 className="text-4xl font-light leading-[1.02] tracking-[-0.045em] text-slate-950 sm:text-5xl lg:text-[64px]">
+            <h2 className="text-4xl font-display font-light leading-[1.02] tracking-[-0.045em] text-slate-950 sm:text-5xl lg:text-[64px]">
               Streamlined
               <br />
               development
