@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -16,6 +17,7 @@ const navLinks = [
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,8 +66,16 @@ export function Navigation() {
                 key={link.name}
                 href={link.href}
                 className="text-base font-bold text-foreground/70 hover:text-foreground transition-colors duration-300 relative group"
+                onMouseEnter={() => setHoveredLink(link.name)}
+                onMouseLeave={() => setHoveredLink(null)}
               >
-                {link.name}
+                <span className={`text-medium font-medium uppercase tracking-[0.2em] inline-flex transition-all duration-300 ${
+                  hoveredLink === link.name
+                    ? "bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent"
+                    : "text-foreground/70"
+                }`}>
+                  {link.name}
+                </span>
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-foreground transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
@@ -109,8 +119,16 @@ export function Navigation() {
                     : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: isMobileMenuOpen ? `${i * 75}ms` : "0ms" }}
+                onMouseEnter={() => setHoveredLink(link.name)}
+                onMouseLeave={() => setHoveredLink(null)}
               >
-                {link.name}
+                <span className={`text-medium font-medium uppercase tracking-[0.2em] inline-flex transition-all duration-300 ${
+                  hoveredLink === link.name
+                    ? "bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent"
+                    : "text-foreground"
+                }`}>
+                  {link.name}
+                </span>
               </Link>
             ))}
           </div>
