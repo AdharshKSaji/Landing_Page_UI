@@ -493,9 +493,9 @@ export function PortfolioSection() {
 
         <div className="mt-8 flex flex-col gap-6 rounded-[28px] border border-border bg-[#020611] p-8 text-primary-foreground lg:flex-row lg:items-center lg:justify-between lg:p-10">
           <div>
-            <div className="mb-2 text-xs font-medium uppercase tracking-[0.2em] text-primary-foreground/70">
-              Have a project in mind?
-            </div>
+            <div className="mb-2 text-xs font-medium uppercase tracking-[0.2em] font-bold bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
+  Have a project in mind?
+</div>
             <h3 className="max-w-2xl text-2xl font-medium tracking-tight lg:text-3xl">
               Let's build something that fits your workflow, not the other way around.
             </h3>

@@ -321,9 +321,9 @@ export function MetricsSection() {
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center gap-3">
                 <LayoutGrid className="w-5 h-5 text-primary" />
-                <h3 className="text-xl font-display tracking-tight">
-                  Our Product Suite
-                </h3>
+                <h3 className="text-xl font-display tracking-tight font-bold bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
+  Our Product Suite
+</h3>
 
               </div>
             </div>

@@ -1,4 +1,3 @@
-
 "use client";
 
 import { ArrowUpRight, Mail, MapPin, Phone, X } from "lucide-react";
@@ -350,23 +349,30 @@ export function FooterSection() {
             {/* Logo / Brand */}
 
             <a href="#hero" className="group inline-block">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-4">
                 {/* Logo mark */}
 
-                <div className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg border border-blue-400/30 bg-blue-500/[0.08]">
+                {/* <div className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg border border-blue-400/30 bg-blue-500/[0.08]">
                   <div className="absolute h-5 w-5 rotate-45 border border-blue-400/70" />
 
                   <div className="absolute h-2 w-2 rounded-full bg-blue-400 shadow-[0_0_12px_rgba(96,165,250,0.8)]" />
-                </div>
+                </div> */}
 
-                <div>
-                  <span className="block text-lg font-semibold tracking-tight">
-                    Grandreves
-                  </span>
-
-                  <span className="block text-[9px] uppercase tracking-[0.25em] text-slate-400">
-                    Technologies
-                  </span>
+                {/* Logo */}
+                <div className="flex items-center gap-4">
+                  <img
+                    src="/logo2.png"
+                    alt="GRANDREVES TECHNOLOGIES"
+                    className="h-12 w-auto object-contain transition-all duration-500"
+                  />
+                  <div>
+                    <span className="block text-xl font-semibold tracking-tight text-white">
+                      Grandreves
+                    </span>
+                    <span className="block text-[10px] uppercase tracking-[0.3em] text-slate-400">
+                      Technologies
+                    </span>
+                  </div>
                 </div>
               </div>
             </a>
