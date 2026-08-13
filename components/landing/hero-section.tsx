@@ -240,7 +240,7 @@ export function HeroSection() {
               </span>
 
               {/* Line 2 */}
-              <span className="block bg-gradient-to-r from-[#168FC5] via-[#00A9A5] to-[#29B34B] bg-clip-text text-transparent">
+              <span className="block text-[#164A5B]">
                 digital solutions
               </span>
 
