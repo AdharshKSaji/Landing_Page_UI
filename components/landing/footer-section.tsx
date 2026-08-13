@@ -1,14 +1,16 @@
+
 "use client";
 
-import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Phone, X } from "lucide-react";
 import { AnimatedWave } from "./animated-wave";
+import { useState } from "react";
 
 const footerLinks = {
   Company: [
-    { name: "Home", href: "#hero" },  // ✅ Updated
+    { name: "Home", href: "#hero" },
     { name: "Who We Are", href: "#how-it-works" },
-    { name: "What We Do", href: "#features" },  // ✅ Updated
-    { name: "Our Portfolio", href: "#portfolio" },  // ✅ Updated
+    { name: "What We Do", href: "#features" },
+    { name: "Our Portfolio", href: "#portfolio" },
   ],
 
   Services: [
@@ -41,10 +43,16 @@ const socialLinks = [
 ];
 
 export function FooterSection() {
+  const [showForm, setShowForm] = useState(false);
+
+  const toggleForm = () => {
+    setShowForm(!showForm);
+  };
+
   return (
-    <footer 
-      id="footer"  // ✅ Added ID here
-      className="relative overflow-hidden bg-[#020611] text-white scroll-mt-20"  // ✅ Added scroll margin
+    <footer
+      id="footer"
+      className="relative overflow-hidden bg-[#020611] text-white scroll-mt-20"
     >
       {/* =========================================================
           BACKGROUND
@@ -110,21 +118,208 @@ export function FooterSection() {
 
             {/* CTA */}
 
-            <a
-              href="#footer"  // ✅ Updated to #footer (or keep #contact if you want)
+            <button
+              onClick={toggleForm}
               className="group inline-flex h-14 shrink-0 items-center justify-center rounded-full bg-white px-7 text-sm font-medium text-slate-950 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-500 hover:text-white hover:shadow-[0_15px_40px_rgba(59,130,246,0.25)]"
             >
               Start a Conversation
 
               <span className="ml-3 flex h-7 w-7 items-center justify-center rounded-full bg-slate-950/10 transition-all group-hover:bg-white/20">
-                <ArrowUpRight
-                  size={15}
-                  className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                />
+                {showForm ? (
+                  <X
+                    size={15}
+                    className="transition-transform duration-300 group-hover:rotate-90"
+                  />
+                ) : (
+                  <ArrowUpRight
+                    size={15}
+                    className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
+                )}
               </span>
-            </a>
+            </button>
           </div>
         </div>
+
+        {/* =======================================================
+            CONTACT FORM SECTION
+        ======================================================== */}
+
+        {showForm && (
+          <div
+            id="contact-form"
+            className="scroll-mt-20 py-16 lg:py-20 animate-in fade-in slide-in-from-top-4 duration-500"
+          >
+            <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
+              {/* Left - Contact Info */}
+
+              <div>
+                <div className="mb-6 flex items-center gap-3">
+                  <span className="h-px w-8 bg-blue-500" />
+
+                  <span className="text-xs font-medium uppercase tracking-[0.22em] text-blue-400">
+                    Contact Us
+                  </span>
+                </div>
+
+                <h3 className="text-3xl font-display font-light leading-[1.1] tracking-[-0.03em] sm:text-4xl lg:text-5xl">
+                  Ready to initiate your path towards a brighter future?
+                </h3>
+
+                <div className="mt-8 space-y-6">
+                  <div>
+                    <p className="text-sm font-medium uppercase tracking-[0.15em] text-blue-400">
+                      Get In Touch
+                    </p>
+                    <p className="mt-2 text-sm leading-7 text-white/45">
+                      Be assured, Your Confidentiality is paramount within these
+                      walls.
+                    </p>
+                  </div>
+
+                  <div className="space-y-3">
+                    <a
+                      href="tel:+919995773273"
+                      className="flex items-center gap-3 text-sm text-white/60 transition-colors hover:text-white"
+                    >
+                      <Phone size={16} className="text-blue-400" />
+                      +91 99957 73273
+                    </a>
+
+                    <a
+                      href="mailto:info@grandreves.com"
+                      className="flex items-center gap-3 text-sm text-white/60 transition-colors hover:text-white"
+                    >
+                      <Mail size={16} className="text-blue-400" />
+                      info@grandreves.com
+                    </a>
+                  </div>
+
+                  <p className="text-xs text-white/30">
+                    We strive to respond to all inquiries within 24 hours on
+                    business days.
+                  </p>
+                </div>
+              </div>
+
+              {/* Right - Contact Form */}
+
+              <div className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-8 sm:p-10">
+                <div className="mb-8">
+                  {/* <h4 className="text-xl font-semibold">Drop Us 👇 a Line</h4> */}
+                  <p className="ext-xs font-medium uppercase tracking-[0.22em] text-blue-400">
+                    Make Enquiry Today - Request Free Quote
+                  </p>
+                </div>
+
+                <form className="space-y-5">
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className="mb-1.5 block text-xs font-medium uppercase tracking-[0.1em] text-white/50"
+                    >
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      placeholder="Your full name"
+                      className="w-full rounded-lg border border-white/[0.10] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/25 focus:border-blue-500/50 focus:outline-none focus:ring-1 focus:ring-blue-500/50"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="mb-1.5 block text-xs font-medium uppercase tracking-[0.1em] text-white/50"
+                    >
+                      E-mail
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      placeholder="you@example.com"
+                      className="w-full rounded-lg border border-white/[0.10] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/25 focus:border-blue-500/50 focus:outline-none focus:ring-1 focus:ring-blue-500/50"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="country"
+                      className="mb-1.5 block text-xs font-medium uppercase tracking-[0.1em] text-white/50"
+                    >
+                      Country
+                    </label>
+                    <input
+                      type="text"
+                      id="country"
+                      placeholder="Your country"
+                      className="w-full rounded-lg border border-white/[0.10] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/25 focus:border-blue-500/50 focus:outline-none focus:ring-1 focus:ring-blue-500/50"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="phone"
+                      className="mb-1.5 block text-xs font-medium uppercase tracking-[0.1em] text-white/50"
+                    >
+                      Phone.No
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      placeholder="+91 99999 99999"
+                      className="w-full rounded-lg border border-white/[0.10] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/25 focus:border-blue-500/50 focus:outline-none focus:ring-1 focus:ring-blue-500/50"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="message"
+                      className="mb-1.5 block text-xs font-medium uppercase tracking-[0.1em] text-white/50"
+                    >
+                      Your Message
+                    </label>
+                    <textarea
+                      id="message"
+                      rows={4}
+                      placeholder="Tell us about your project..."
+                      className="w-full rounded-lg border border-white/[0.10] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder:text-white/25 focus:border-blue-500/50 focus:outline-none focus:ring-1 focus:ring-blue-500/50"
+                    />
+                  </div>
+
+                  {/* reCAPTCHA placeholder */}
+
+                  <div className="rounded-lg border border-white/[0.08] bg-white/[0.03] px-4 py-3">
+                    <div className="flex items-center gap-3">
+                      <div className="h-5 w-5 rounded border-2 border-white/30 bg-white/5" />
+
+                      <span className="text-sm text-white/40">
+                        I'm not a robot
+                      </span>
+                    </div>
+
+                    <p className="mt-2 text-[10px] text-white/25">
+                      reCAPTCHA is changing its terms of service. Take action.
+                    </p>
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="inline-flex h-12 w-full items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 px-8 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(59,130,246,0.3)]"
+                  >
+                    Yes, I want to talk to an expert
+
+                    <ArrowUpRight
+                      size={16}
+                      className="ml-2 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    />
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* =======================================================
             MAIN FOOTER
@@ -138,7 +333,7 @@ export function FooterSection() {
           <div>
             {/* Logo / Brand */}
 
-            <a href="#hero" className="group inline-block">  {/* ✅ Updated */}
+            <a href="#hero" className="group inline-block">
               <div className="flex items-center gap-3">
                 {/* Logo mark */}
 

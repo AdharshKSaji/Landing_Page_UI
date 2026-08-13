@@ -13,7 +13,11 @@ import {
 } from "lucide-react";
 import { AnimatedTetrahedron } from "./animated-tetrahedron";
 
-export function CtaSection() {
+interface CtaSectionProps {
+  id?: string;  // ✅ Added optional id prop
+}
+
+export function CtaSection({ id }: CtaSectionProps) {  // ✅ Destructure id prop
   const [isVisible, setIsVisible] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -37,8 +41,9 @@ export function CtaSection() {
 
   return (
     <section
+      id={id}  // ✅ Apply the id prop to the section
       ref={sectionRef}
-      className="relative overflow-hidden bg-white py-12 sm:py-16 lg:py-20"
+      className="relative overflow-hidden bg-white py-8 sm:py-12 lg:py-16"
     >
       {/* =========================================================
           BACKGROUND
@@ -67,10 +72,11 @@ export function CtaSection() {
 
       <div className="relative z-10 mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
         <div
-          className={`relative overflow-hidden border border-slate-200 bg-white transition-all duration-1000 ${isVisible
-            ? "translate-y-0 opacity-100"
-            : "translate-y-10 opacity-0"
-            }`}
+          className={`relative overflow-hidden border border-slate-200 bg-white transition-all duration-1000 ${
+            isVisible
+              ? "translate-y-0 opacity-100"
+              : "translate-y-10 opacity-0"
+          }`}
         >
           {/* =====================================================
               DECORATIVE CORNERS
@@ -94,7 +100,7 @@ export function CtaSection() {
                 LEFT CONTENT
             ==================================================== */}
 
-            <div className="relative px-7 py-10 sm:px-10 sm:py-12 lg:px-14 lg:py-16 xl:px-16">
+            <div className="relative px-7 py-8 sm:px-10 sm:py-10 lg:px-14 lg:py-14 xl:px-16">
               {/* Small label */}
               <div className="mb-5 flex items-center gap-3">
                 <span className="h-px w-8 bg-[#164A5B]" />
@@ -196,7 +202,7 @@ export function CtaSection() {
                 RIGHT VISUAL
             ==================================================== */}
 
-            <div className="relative min-h-[380px] overflow-hidden border-t border-slate-100 bg-[#f8fbff] lg:min-h-[600px] lg:border-l lg:border-t-0">
+            <div className="relative min-h-[320px] overflow-hidden border-t border-slate-100 bg-[#f8fbff] lg:min-h-[540px] lg:border-l lg:border-t-0">
               {/* Blue gradient */}
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.10),transparent_55%)]" />
 
