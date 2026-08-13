@@ -12,6 +12,7 @@ import { PricingSection } from "@/components/landing/pricing-section";
 import { CtaSection } from "@/components/landing/cta-section";
 import { FooterSection } from "@/components/landing/footer-section";
 import { PortfolioSection } from "@/components/landing/portfolio";
+import { WhatsAppFloat } from "@/components/landing/whatsappFloatingButton";
 
 export default function Home() {
   return (
@@ -29,7 +30,8 @@ export default function Home() {
       {/* <PricingSection /> */}
       <CtaSection />
       <PortfolioSection />
-      <FooterSection />  {/* ✅ Footer has id="footer" */}
+      <FooterSection />  
+      <WhatsAppFloat />
     </main>
   );
 }

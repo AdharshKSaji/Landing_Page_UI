@@ -232,6 +232,14 @@ export function MetricsSection() {
     };
   }, [selectedProduct]);
 
+  const scrollToCta = () => {
+    setSelectedProduct(null);
+    const ctaSection = document.getElementById("cta");
+    if (ctaSection) {
+      ctaSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <section
@@ -261,7 +269,7 @@ export function MetricsSection() {
           <div className="mb-20 lg:mb-24">
             <div className="flex items-center gap-3 mb-6">
               <span className="w-8 h-px bg-gradient-to-r from-primary/60 to-transparent" />
-              <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[#164A5B]">
+              <span className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-600">
                 Enterprise Solutions
               </span>
             </div>
@@ -795,54 +803,11 @@ export function MetricsSection() {
 
               </div>
 
-
-              {/* ───────────────────────── ACTIONS ───────────────────────── */}
-              <div
-                className="
-            mt-7
-            pt-5
-            border-t
-            border-black/[0.07]
-            grid
-            grid-cols-1
-            sm:grid-cols-2
-            gap-2
-          "
-              >
-
-                <button
-                  className="
-              h-10
-              rounded-md
-              bg-[#0b0b0b]
-              text-white
-              text-[10px]
-              font-medium
-              hover:bg-[#222]
-              transition-all
-              shadow-sm
-            "
-                >
-                  Get Started
-                </button>
-
-                <button
-                  className="
-              h-10
-              rounded-md
-              border
-              border-black/[0.12]
-              bg-white
-              text-[#222]
-              text-[10px]
-              font-medium
-              hover:bg-[#f7f7f7]
-              transition-all
-              flex
-              items-center
-              justify-center
-              gap-1.5
-            "
+              {/* Actions */}
+              <div className="mt-10 pt-6 border-t border-foreground/5 flex flex-col sm:flex-row gap-3">
+                <button 
+                  onClick={scrollToCta}
+                  className="flex-1 border border-foreground/10 hover:bg-foreground/5 py-3 px-6 rounded-xl font-medium transition-colors flex items-center justify-center gap-2"
                 >
                   Schedule Demo
 
