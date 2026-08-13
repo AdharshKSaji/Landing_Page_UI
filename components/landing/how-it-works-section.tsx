@@ -168,7 +168,7 @@ export function HowItWorksSection() {
               {/* Small label */}
               <div className="mb-4 flex items-center gap-3">
                 <span className="h-px w-8 bg-blue-500" />
-                <span className="text-xs font-medium uppercase tracking-[0.22em] text-blue-400">
+                          <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
                   Our Services
                 </span>
               </div>

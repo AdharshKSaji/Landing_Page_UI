@@ -203,15 +203,8 @@ export function HeroSection() {
                 "
               />
 
-              <span
-                className="
-                  font-display
-                  text-2xl
-                  italic
-                  text-[#164A5B]
-                  tracking-wide
-                "
-              >
+                          <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
+
                 Where technology meets business ambition
               </span>
 
@@ -241,22 +234,20 @@ export function HeroSection() {
 
               {/* Line 1 */}
 
-              <span className="block text-[#164A5B]">
-                We build
-              </span>
+             {/* Line 1 */}
+<span className="block text-[#164A5B]">
+  We build
+</span>
 
-              {/* Line 2 */}
+{/* Line 2 */}
+<span className="block bg-gradient-to-r from-[#168FC5] via-[#00A9A5] to-[#29B34B] bg-clip-text text-transparent">
+  digital solutions
+</span>
 
-              <span className="block text-[#164A5B]">
-                digital solutions
-              </span>
-
-              {/* Line 3 */}
-
-              <span className="block text-[#164A5B]">
-                that help
-              </span>
-
+{/* Line 3 */}
+<span className="block text-[#164A5B]">
+  that help
+</span>
               {/* Animated word */}
 
               <span className="relative inline-block">
@@ -308,12 +299,7 @@ export function HeroSection() {
             <div className={`mt-10 flex flex-wrap items-center gap-6 transition-all delay-300 duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"}`}>
               {/* Primary CTA */}
 
-              <button className="group flex h-14 items-center gap-5 bg-[#164A5B] px-7 text-medium font-medium text-white transition-all duration-300 hover:bg-[#087EA4]">
-                <span>
-                  Start a conversation
-                </span>
-                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-              </button>
+           
 
               {/* Secondary CTA */}
 
@@ -548,32 +534,6 @@ export function HeroSection() {
 
             {/* Brand */}
 
-            <div className="flex items-center gap-3">
-
-              <span
-                className="
-                  h-1.5
-                  w-1.5
-                  rounded-full
-                  bg-[#087EA4]
-                "
-              />
-
-              <span
-                className="
-                  font-sans
-                  text-[11px]
-                  font-bold
-                  uppercase
-                  tracking-[0.15em]
-                  text-[#164A5B]/85
-                "
-              >
-                Grandreves Technologies
-              </span>
-
-            </div>
-
             {/* Bottom information */}
 
             <div className="flex items-center gap-8">
@@ -630,3 +590,4 @@ export function HeroSection() {
     </section>
   );
 }
+

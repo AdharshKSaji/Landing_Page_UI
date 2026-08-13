@@ -268,10 +268,12 @@ export function MetricsSection() {
           {/* Header */}
           <div className="mb-20 lg:mb-24">
             <div className="flex items-center gap-3 mb-6">
-              <span className="w-8 h-px bg-gradient-to-r from-primary/60 to-transparent" />
-              <span className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-600">
-                Enterprise Solutions
-              </span>
+              {/* <span className="w-8 h-px bg-gradient-to-r from-primary/60 to-transparent" /> */}
+              <span className="h-px w-8 bg-blue-500" />
+                          <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
+                  Enterprise Solutions
+                </span>
+              
             </div>
 
             <div
@@ -805,14 +807,14 @@ export function MetricsSection() {
 
               {/* Actions */}
               <div className="mt-10 pt-6 border-t border-foreground/5 flex flex-col sm:flex-row gap-3">
-                <button 
+                {/* <button 
                   onClick={scrollToCta}
                   className="flex-1 border border-foreground/10 hover:bg-foreground/5 py-3 px-6 rounded-xl font-medium transition-colors flex items-center justify-center gap-2"
                 >
                   Schedule Demo
 
                   <ExternalLink className="w-3 h-3" />
-                </button>
+                </button> */}
 
               </div>
 

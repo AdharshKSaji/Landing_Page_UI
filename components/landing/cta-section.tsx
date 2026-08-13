@@ -100,11 +100,11 @@ export function CtaSection({ id }: CtaSectionProps) {  // ✅ Destructure id pro
             ==================================================== */}
 
             <div className="relative px-7 py-8 sm:px-10 sm:py-10 lg:px-14 lg:py-14 xl:px-16">
-              {/* Small label */}
-              <div className="mb-5 flex items-center gap-3">
-                <span className="h-px w-8 bg-[#164A5B]" />
-
-                <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[#164A5B]">
+              
+               {/* Small label */}
+              <div className="mb-4 flex items-center gap-3">
+                <span className="h-px w-8 bg-blue-500" />
+                          <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
                   Let's Work Together
                 </span>
               </div>
@@ -144,7 +144,7 @@ export function CtaSection({ id }: CtaSectionProps) {  // ✅ Destructure id pro
                   />
                 </Button>
 
-                <button
+                {/* <button
                   type="button"
                   onClick={() => setShowForm(true)}
                   className="group inline-flex h-14 items-center justify-center rounded-full px-5 text-sm font-medium text-slate-600 transition-colors hover:text-blue-600"
@@ -155,7 +155,7 @@ export function CtaSection({ id }: CtaSectionProps) {  // ✅ Destructure id pro
                     size={16}
                     className="ml-2 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                   />
-                </button>
+                </button> */}
               </div>
 
               {/* =================================================

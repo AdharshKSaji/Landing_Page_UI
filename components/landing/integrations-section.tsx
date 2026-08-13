@@ -204,7 +204,7 @@ export function IntegrationsSection() {
       <div className="relative max-w-[1440px] mx-auto px-6 lg:px-16">
         {/* Header - Left aligned with premium gradient title matching the image */}
         <div className="mb-16 lg:mb-20">
-          <span className="inline-flex items-center gap-3 text-sm font-medium text-gray-500 mb-6 bg-white/80 px-4 py-2 rounded-full border border-gray-200/50 shadow-sm">
+          {/* <span className="inline-flex items-center gap-3 text-sm font-medium text-gray-500 mb-6 bg-white/80 px-4 py-2 rounded-full border border-gray-200/50 shadow-sm">
             <span className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse" />
             <span className="bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
               Technology Stack
@@ -213,7 +213,14 @@ export function IntegrationsSection() {
             <span className="text-xs bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent font-medium">
               Enterprise Ready
             </span>
-          </span>
+          </span> */}
+          {/* Small label */}
+              <div className="mb-4 flex items-center gap-3">
+                <span className="h-px w-8 bg-blue-500" />
+                          <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
+                  Technology Stack
+                </span>
+              </div>
 
           <h2
             className={`text-4xl lg:text-6xl font-bold tracking-tight transition-all duration-700 ${isVisible
@@ -333,7 +340,7 @@ export function IntegrationsSection() {
         </div>
       </div>
 
-      {/* CTA section - Friendly and inviting with gradient text */}
+      {/* CTA section - Friendly and inviting with gradient text
       <div className="relative max-w-[1440px] mx-auto px-6 lg:px-16 mt-16">
         <div className={cn(
           "flex flex-col sm:flex-row items-center justify-between gap-4 p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-sm transition-all duration-700 delay-700",
@@ -360,7 +367,7 @@ export function IntegrationsSection() {
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
           </button>
         </div>
-      </div>
+      </div> */}
 
       {/* Bottom subtle gradient */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/50 to-transparent pointer-events-none" />

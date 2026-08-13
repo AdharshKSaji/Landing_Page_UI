@@ -54,15 +54,7 @@ export function Navigation() {
                 isScrolled ? "h-8 w-auto" : "h-10 w-auto"
               }`}
             />
-            <span
-              className={`text-[#164A5B] font-sans font-semibold tracking-tight transition-all duration-500 ${
-                isScrolled
-                  ? "text-[18px] ml-2"
-                  : "text-[21px] ml-2"
-              }`}
-            >
-              Grandreves Technologies
-            </span>
+           
           </div>
 
           {/* Desktop Navigation */}

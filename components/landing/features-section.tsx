@@ -390,14 +390,8 @@ export function FeaturesSection() {
           <div className="mb-7 flex items-center gap-3">
             <span className="h-px w-10 bg-[#087EA4]" />
 
-            <span
-              className="
-                font-mono text-medium
-                font-medium uppercase
-                tracking-[0.2em]
-                text-[#087EA4]
-              "
-            >
+                                   <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
+
               Why Grandreves
             </span>
           </div>
