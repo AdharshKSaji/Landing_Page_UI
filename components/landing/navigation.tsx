@@ -48,16 +48,25 @@ export function Navigation() {
           }`}
         >
           {/* Logo */}
-          <div className="flex items-center">
-            <img
-              src="/logo2.png"
-              alt="GRANDREVES TECHNOLOGIES"
-              className={`object-contain transition-all duration-500 ${
-                isScrolled ? "h-8 w-auto" : "h-10 w-auto"
-              }`}
-            />
-           
-          </div>
+    <div className="flex items-center">
+  <img
+    src="/logo2.png"
+    alt="GRANDREVES TECHNOLOGIES"
+    className={`object-contain transition-all duration-500 ${
+      isScrolled ? "h-8 w-auto" : "h-10 w-auto"
+    }`}
+  />
+
+  <span
+    className={`ml-3 text-muted-foreground font-mono font-bold transition-all duration-500 ${
+      isScrolled
+        ? "text-[16px] mt-0"
+        : "text-[18px] mt-0.5"
+    }`}
+  >
+    Grandreves Technologies
+  </span>
+</div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-12">
