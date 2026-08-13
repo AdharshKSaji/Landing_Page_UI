@@ -226,40 +226,94 @@ function ProjectCard({
       <div
         className={`
           relative z-10 flex h-full flex-col
-          ${isFeatured ? "p-6 lg:p-8" : "p-4 sm:p-5 lg:p-6"}
+          ${isFeatured ? "p-8 lg:p-10" : "p-7 lg:p-8"}
         `}
       >
         <div className="flex items-start justify-between">
           <span className="font-mono text-xs font-medium tracking-widest text-muted-foreground">
             {project.number}
           </span>
-          <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-border bg-secondary transition-all duration-500 group-hover:border-transparent group-hover:bg-[#020611] group-hover:rotate-3">
-            <Icon size={20} strokeWidth={1.7} stroke="url(#icon-grad-portfolio)" className="group-hover:stroke-white transition-colors duration-300" />
+
+          <div
+            className="
+              flex h-11 w-11 items-center justify-center
+              rounded-2xl
+              border border-border
+              bg-secondary
+              transition-all duration-500
+              group-hover:border-transparent
+              group-hover:bg-gradient-to-r group-hover:from-[#087EA4] group-hover:via-[#18A8D1] group-hover:to-[#24B35A]
+              group-hover:rotate-3
+            "
+          >
+            <Icon
+              size={20}
+              strokeWidth={1.7}
+              stroke="url(#icon-grad-portfolio)"
+              className="group-hover:stroke-white transition-colors duration-300"
+            />
           </div>
         </div>
-        <div className={`${isFeatured ? "mt-6" : "mt-auto"} pt-2`}>
-          <h3 className={`max-w-md font-medium tracking-tight text-slate-800 transition-colors duration-300
-              group-hover:text-[#020611]
-              ${isFeatured ? "text-2xl lg:text-3xl" : "text-lg lg:text-xl"}`}>
+
+        <div className={`${isFeatured ? "mt-8" : "mt-auto"} pt-4`}>
+          <h3
+            className={`
+              max-w-md font-medium tracking-tight text-foreground
+              transition-all duration-300
+              group-hover:bg-gradient-to-r group-hover:from-[#087EA4] group-hover:via-[#18A8D1] group-hover:to-[#24B35A] group-hover:bg-clip-text group-hover:text-transparent
+              ${isFeatured ? "text-2xl lg:text-3xl" : "text-xl lg:text-2xl"}
+            `}
+          >
             {project.title}
           </h3>
-          <p className="mt-2 max-w-lg text-[13px] leading-5 text-muted-foreground lg:text-sm lg:leading-6"
-            style={{ display: "-webkit-box", WebkitLineClamp: clampLines, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+
+          <p
+            className="mt-3 max-w-lg text-sm leading-6 text-muted-foreground lg:text-[15px]"
+            style={{
+              display: "-webkit-box",
+              WebkitLineClamp: clampLines,
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
+            }}
+          >
             {project.description}
           </p>
-          <button type="button" onClick={() => onExpand(project)} className="mt-1.5 inline-flex items-center gap-1 text-xs font-semibold text-blue-600 transition-colors hover:text-blue-700">
+
+          <button
+            type="button"
+            onClick={() => onExpand(project)}
+            className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-blue-600 transition-colors hover:text-blue-700"
+          >
             See more
             <ArrowUpRight size={12} />
           </button>
-          <div className="mt-3 flex flex-wrap gap-2">
+
+          <div className="mt-4 flex flex-wrap gap-2">
             {project.tech.map((t) => (
-              <span key={t} className="rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground transition-colors duration-300 group-hover:border-primary/20 group-hover:bg-primary/5 group-hover:text-blue-600">
+              <span
+                key={t}
+                className="
+                  rounded-full border border-border bg-secondary
+                  px-3 py-1 text-xs font-medium text-muted-foreground
+                  transition-colors duration-300
+                  group-hover:border-primary/20 group-hover:bg-primary/5 group-hover:text-blue-600
+                "
+              >
                 {t}
               </span>
             ))}
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-primary transition-all duration-500 group-hover:w-full" />
+
+        <div
+          className="
+            absolute bottom-0 left-0
+            h-[2px] w-0
+            bg-primary
+            transition-all duration-500
+            group-hover:w-full
+          "
+        />
       </div>
     </div>
   );
@@ -429,7 +483,7 @@ export function PortfolioSection() {
           <Stat value="100%" label="In-House Built" icon={ShieldCheck} />
         </div>
 
-        <div className="grid auto-rows-[290px] grid-cols-1 gap-5 [grid-auto-flow:dense] md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid auto-rows-[340px] grid-cols-1 gap-5 [grid-auto-flow:dense] md:grid-cols-2 lg:grid-cols-4">
           {projects.map((project, index) => (
             <ProjectCard
               key={project.title}

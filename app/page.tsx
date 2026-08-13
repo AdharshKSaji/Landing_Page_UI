@@ -28,8 +28,8 @@ export default function Home() {
       {/* <DevelopersSection /> */}
       <TestimonialsSection />
       {/* <PricingSection /> */}
-      <CtaSection />
       <PortfolioSection />
+      <CtaSection />
       <FooterSection />  
       <WhatsAppFloat />
     </main>

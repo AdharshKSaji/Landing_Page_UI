@@ -216,7 +216,7 @@ export function IntegrationsSection() {
           </span>
 
           <h2
-            className={`text-4xl sm:text-5xl lg:text-7xl font-medium leading-[1.05] tracking-[-0.045em] transition-all duration-700 ${isVisible
+            className={`text-4xl lg:text-6xl font-bold tracking-tight transition-all duration-700 ${isVisible
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-4"
               }`}

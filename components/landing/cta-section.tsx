@@ -72,11 +72,10 @@ export function CtaSection({ id }: CtaSectionProps) {  // ✅ Destructure id pro
 
       <div className="relative z-10 mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
         <div
-          className={`relative overflow-hidden border border-slate-200 bg-white transition-all duration-1000 ${
-            isVisible
+          className={`relative overflow-hidden border border-slate-200 bg-white transition-all duration-1000 ${isVisible
               ? "translate-y-0 opacity-100"
               : "translate-y-10 opacity-0"
-          }`}
+            }`}
         >
           {/* =====================================================
               DECORATIVE CORNERS
