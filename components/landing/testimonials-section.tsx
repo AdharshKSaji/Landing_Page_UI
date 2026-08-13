@@ -15,7 +15,7 @@ const trustedCompanies = [
     name: "FEDERAL BANK",
     logo: "/Federal.png",
     tagline: "YOUR PERFECT BANKING PARTNER",
-   width: 100,
+    width: 100,
     height: 30,
   },
   {
@@ -42,7 +42,7 @@ export function TestimonialsSection() {
   };
 
   return (
-    <section className="relative py-12 lg:py-16 overflow-hidden bg-white text-[#0A1628]">
+    <section className="relative pt-2 pb-12 lg:pt-2 lg:pb-16 overflow-hidden bg-white text-[#0A1628]">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-indigo-500/10 rounded-full blur-2xl" />
@@ -62,9 +62,9 @@ export function TestimonialsSection() {
       <div className="relative max-w-[1440px] mx-auto px-6 lg:px-16">
         {/* Header */}
         <div className="mb-8 lg:mb-12">
-          <div className="flex items-center gap-3 mb-2">
-            <span className="w-8 h-px bg-gradient-to-r from-[#087EA4] to-transparent" />
-            <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[#087EA4]">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="h-px w-8 bg-[#087EA4]" />
+            <span className="text-medium font-bold uppercase tracking-[0.22em] bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
               Strategic Partnerships
             </span>
           </div>

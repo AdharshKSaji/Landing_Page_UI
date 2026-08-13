@@ -266,14 +266,14 @@ export function MetricsSection() {
 
         <div className="relative max-w-[1440px] mx-auto px-6 lg:px-16">
           {/* Header */}
-          <div className="mb-20 lg:mb-24">
+          <div className="mb-10 lg:mb-12">
             <div className="flex items-center gap-3 mb-6">
               {/* <span className="w-8 h-px bg-gradient-to-r from-primary/60 to-transparent" /> */}
               <span className="h-px w-8 bg-blue-500" />
-                          <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
-                  Enterprise Solutions
-                </span>
-              
+              <span className="text-medium font-bold uppercase tracking-[0.22em] bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
+                Enterprise Solutions
+              </span>
+
             </div>
 
             <div
@@ -301,11 +301,11 @@ export function MetricsSection() {
 
 
                 </div>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2 text-medium text-muted-foreground">
                   <span className="w-2 h-2 rounded-full bg-blue-500" />
                   <span>100% Production Ready</span>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2 text-medium text-muted-foreground">
                   <span className="w-2 h-2 rounded-full bg-purple-500" />
                   <span>Enterprise Grade Security</span>
                 </div>
@@ -326,10 +326,6 @@ export function MetricsSection() {
                 </h3>
 
               </div>
-              <button className="hidden sm:flex items-center gap-2 text-sm font-medium text-primary hover:gap-3 transition-all group bg-primary/5 hover:bg-primary/10 px-5 py-2.5 rounded-xl border border-primary/10 hover:border-primary/20">
-                View All Solutions
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </button>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -393,20 +389,18 @@ export function MetricsSection() {
                             >
                               {product.name}
                             </h4>
-                            <div className="flex items-center gap-2 mt-0.5">
-                              <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">
-                                {product.category}
-                              </span>
-                              <span className="w-px h-3 bg-white/10" />
-                              <span
-                                className={cn(
-                                  "text-[10px] font-mono px-2 py-0.5 rounded-full border",
-                                  statusColors[product.status]
-                                )}
-                              >
-                                {product.status}
-                              </span>
-                            </div>
+                            {product.status !== "Available" && (
+                              <div className="flex items-center gap-2 mt-1">
+                                <span
+                                  className={cn(
+                                    "text-[10px] font-mono px-2 py-0.5 rounded-full border",
+                                    statusColors[product.status]
+                                  )}
+                                >
+                                  {product.status}
+                                </span>
+                              </div>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -422,7 +416,7 @@ export function MetricsSection() {
                           <span
                             key={feature}
                             className={cn(
-                              "text-[10px] px-2.5 py-1 rounded-full border transition-colors duration-300 font-medium",
+                              "text-xs px-2.5 py-1 rounded-full border transition-colors duration-300 font-medium",
                               isHovered
                                 ? "border-blue-500/30 bg-blue-500/10 text-blue-300"
                                 : "border-white/5 bg-white/5 text-slate-300"
@@ -516,83 +510,61 @@ export function MetricsSection() {
 
               {/* ───────────────────────── HEADER ───────────────────────── */}
               <div className="pr-10">
-
-                <div className="flex items-center gap-3 mb-2.5">
-
+                <div className="flex flex-wrap items-center gap-3 mb-3.5">
                   {/* Small icon */}
                   <div
                     className="
-                w-8
-                h-8
-                rounded-lg
-                border
-                border-black/[0.08]
-                bg-[#f7f7f7]
-                flex
-                items-center
-                justify-center
-              "
+                      w-10
+                      h-10
+                      shrink-0
+                      rounded-xl
+                      border
+                      border-black/[0.08]
+                      bg-[#f7f7f7]
+                      flex
+                      items-center
+                      justify-center
+                    "
                   >
                     <selectedProduct.icon
-                      className="w-[15px] h-[15px] text-[#303030]"
+                      className="w-5 h-5 text-[#303030]"
                     />
                   </div>
 
-                  <div className="flex items-center gap-2">
+                  <h3
+                    className="
+                      text-[22px]
+                      sm:text-[26px]
+                      font-semibold
+                      tracking-[-0.035em]
+                      leading-tight
+                      text-[#171A1C]
+                    "
+                  >
+                    {selectedProduct.name}
+                  </h3>
 
-                    <span
-                      className="
-                  text-[9px]
-                  font-mono
-                  uppercase
-                  tracking-[0.12em]
-                  text-[#777]
-                "
-                    >
-                      {selectedProduct.category}
-                    </span>
-
-                    <span className="w-1 h-1 rounded-full bg-[#c8c8c8]" />
-
+                  {selectedProduct.status !== "Available" && (
                     <span
                       className={cn(
-                        "inline-flex items-center gap-1.5 text-[9px] font-mono uppercase tracking-[0.08em]",
-                        selectedProduct.status === "Available"
-                          ? "text-emerald-600"
-                          : selectedProduct.status === "Beta"
-                            ? "text-blue-600"
-                            : "text-amber-600"
+                        "inline-flex items-center gap-1.5 text-[9px] font-mono uppercase tracking-[0.08em] px-2 py-0.5 rounded-full border",
+                        selectedProduct.status === "Beta"
+                          ? "text-blue-600 border-blue-200 bg-blue-50/50"
+                          : "text-amber-600 border-amber-200 bg-amber-50/50"
                       )}
                     >
                       <span
                         className={cn(
                           "w-1.5 h-1.5 rounded-full",
-                          selectedProduct.status === "Available"
-                            ? "bg-emerald-500"
-                            : selectedProduct.status === "Beta"
-                              ? "bg-blue-500"
-                              : "bg-amber-500"
+                          selectedProduct.status === "Beta"
+                            ? "bg-blue-500 animate-pulse"
+                            : "bg-amber-500 animate-pulse"
                         )}
                       />
                       {selectedProduct.status}
                     </span>
-
-                  </div>
+                  )}
                 </div>
-
-                <h3
-                  className="
-              text-[25px]
-              sm:text-[29px]
-              font-semibold
-              tracking-[-0.035em]
-              leading-[1.1]
-              text-[#171A1C]
-            "
-                >
-                  {selectedProduct.name}
-                </h3>
-
               </div>
 
 
@@ -603,28 +575,12 @@ export function MetricsSection() {
               {/* ───────────────────────── DESCRIPTION ───────────────────────── */}
               <div className="space-y-3">
 
-                <p
-                  className="
-              text-[12px]
-              sm:text-[13px]
-              leading-[1.6]
-              text-[#444]
-              max-w-[780px]
-            "
-                >
+                <p className="text-md sm:text-md leading-[1.6] text-[#444] max-w-[780px]">
                   {selectedProduct.detailedDescription}
                 </p>
 
                 {selectedProduct.longDescription && (
-                  <p
-                    className="
-                text-[11px]
-                sm:text-[12px]
-                leading-[1.6]
-                text-[#666]
-                max-w-[780px]
-              "
-                  >
+                  <p className="text-md sm:text-md leading-[1.6] text-[#666] max-w-[780px]">
                     {selectedProduct.longDescription}
                   </p>
                 )}
@@ -634,18 +590,7 @@ export function MetricsSection() {
 
               {/* ───────────────────────── METRICS ───────────────────────── */}
               {selectedProduct.metrics && (
-                <div
-                  className="
-              mt-6
-              grid
-              grid-cols-3
-              border
-              border-black/[0.07]
-              rounded-xl
-              overflow-hidden
-              bg-[#fafafa]
-            "
-                >
+                <div className="mt-6 grid grid-cols-3 border border-black/[0.07] rounded-xl overflow-hidden bg-[#fafafa]">
                   {selectedProduct.metrics.map((metric, index) => (
                     <div
                       key={metric.label}
@@ -655,28 +600,8 @@ export function MetricsSection() {
                         "border-r border-black/[0.07]"
                       )}
                     >
-                      <div
-                        className="
-                    text-[18px]
-                    sm:text-[21px]
-                    font-semibold
-                    tracking-[-0.03em]
-                    text-[#171A1C]
-                  "
-                      >
-                        {metric.value}
-                      </div>
-
-                      <div
-                        className="
-                    mt-0.5
-                    text-[8px]
-                    sm:text-[9px]
-                    uppercase
-                    tracking-[0.08em]
-                    text-[#777]
-                  "
-                      >
+                      <div className="text-[18px] sm:text-[21px] font-semibold tracking-[-0.03em] text-[#171A1C]"> {metric.value} </div>
+                      <div className="mt-1 text-xs font-semibold uppercase tracking-[0.1em] text-slate-500">
                         {metric.label}
                       </div>
                     </div>
@@ -688,81 +613,32 @@ export function MetricsSection() {
               {/* ───────────────────────── KEY BENEFITS ───────────────────────── */}
               {selectedProduct.benefits && (
                 <div className="mt-6">
-
                   <div className="flex items-center gap-2 mb-2.5">
-
-                    <span
-                      className="
-                  text-[9px]
-                  font-mono
-                  uppercase
-                  tracking-[0.12em]
-                  text-[#666]
-                "
-                    >
+                    <span className="text-sm font-semibold uppercase tracking-[0.12em] text-[#666]">
                       Key Benefits
                     </span>
-
                     <span className="h-px flex-1 bg-black/[0.06]" />
-
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-
                     {selectedProduct.benefits.map((benefit) => (
-                      <div
-                        key={benefit}
-                        className="
-                    flex
-                    items-center
-                    gap-2.5
-                    min-h-[35px]
-                    px-3
-                    rounded-md
-                    border
-                    border-black/[0.07]
-                    bg-[#fbfbfb]
-                    text-[10px]
-                    sm:text-[11px]
-                    text-[#444]
-                  "
-                      >
-                        <Check
-                          className="
-                      w-3
-                      h-3
-                      text-[#555]
-                      shrink-0
-                    "
-                        />
-
+                      <div key={benefit}
+                        className="flex items-center gap-2.5 min-h-[35px] px-3 rounded-md border border-black/[0.07] bg-[#fbfbfb] text-[14px] sm:text-[15px] text-[#444]">
+                        <Check className="w-3 h-3 text-[#555] shrink-0" />
                         <span>{benefit}</span>
                       </div>
                     ))}
-
                   </div>
-
                 </div>
               )}
 
 
               {/* ───────────────────────── CORE CAPABILITIES ───────────────────────── */}
               <div className="mt-6">
-
                 <div className="flex items-center gap-2 mb-2.5">
-
-                  <span
-                    className="
-                text-[9px]
-                font-mono
-                uppercase
-                tracking-[0.12em]
-                text-[#666]
-              "
-                  >
+                  <span className="text-[14px] font-semibold uppercase tracking-[0.12em] text-[#666]">
                     Core Capabilities
                   </span>
-
                   <span className="h-px flex-1 bg-black/[0.06]" />
 
                 </div>
@@ -772,29 +648,9 @@ export function MetricsSection() {
                   {selectedProduct.features.map((feature) => (
                     <span
                       key={feature}
-                      className="
-                  inline-flex
-                  items-center
-                  gap-1.5
-                  px-3
-                  py-1.5
-                  rounded-full
-                  border
-                  border-black/[0.1]
-                  bg-white
-                  text-[9px]
-                  sm:text-[10px]
-                  font-medium
-                  text-[#444]
-                "
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-black/[0.1] bg-white text-[9px] sm:text-[14px] font-medium text-[#444]"
                     >
-                      <span
-                        className="
-                    w-1
-                    h-1
-                    rounded-full
-                    bg-[#888]
-                  "
+                      <span className="w-1 h-1 rounded-full bg-[#888]"
                       />
 
                       {feature}
@@ -805,18 +661,7 @@ export function MetricsSection() {
 
               </div>
 
-              {/* Actions */}
-              <div className="mt-10 pt-6 border-t border-foreground/5 flex flex-col sm:flex-row gap-3">
-                {/* <button 
-                  onClick={scrollToCta}
-                  className="flex-1 border border-foreground/10 hover:bg-foreground/5 py-3 px-6 rounded-xl font-medium transition-colors flex items-center justify-center gap-2"
-                >
-                  Schedule Demo
 
-                  <ExternalLink className="w-3 h-3" />
-                </button> */}
-
-              </div>
 
             </div>
           </div>

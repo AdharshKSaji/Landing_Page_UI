@@ -424,7 +424,7 @@ export function InfrastructureSection() {
               ------------------------------------------------ */}
 
               <div className="flex items-center justify-between border-t border-slate-100 bg-slate-50/60 px-6 py-4">
-                <span className="flex items-center gap-2 text-[10px] text-slate-400">
+                <span className="flex items-center gap-2 text-slate-400">
                   <span className="h-1.5 w-1.5 rounded-full bg-blue-500 text-medium" />
                   Agile workflow
                 </span>

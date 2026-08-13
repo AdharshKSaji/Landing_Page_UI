@@ -43,7 +43,7 @@ export function CtaSection({ id }: CtaSectionProps) {  // ✅ Destructure id pro
     <section
       id={id}  // ✅ Apply the id prop to the section
       ref={sectionRef}
-      className="relative overflow-hidden bg-white py-8 sm:py-12 lg:py-16"
+      className="relative overflow-hidden bg-white pt-2 pb-8 sm:pt-2 sm:pb-12 lg:pt-2 lg:pb-16"
     >
       {/* =========================================================
           BACKGROUND
@@ -99,12 +99,12 @@ export function CtaSection({ id }: CtaSectionProps) {  // ✅ Destructure id pro
                 LEFT CONTENT
             ==================================================== */}
 
-            <div className="relative px-7 py-8 sm:px-10 sm:py-10 lg:px-14 lg:py-14 xl:px-16">
+            <div className="relative px-7 pt-4 pb-8 sm:px-10 sm:pt-6 sm:pb-10 lg:px-14 lg:pt-8 lg:pb-14 xl:px-16">
 
               {/* Small label */}
               <div className="mb-4 flex items-center gap-3">
                 <span className="h-px w-8 bg-blue-500" />
-                <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
+                <span className="text-medium font-medium uppercase tracking-[0.2em] inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
                   Let's Work Together
                 </span>
               </div>
@@ -137,11 +137,11 @@ export function CtaSection({ id }: CtaSectionProps) {  // ✅ Destructure id pro
                   </div>
 
                   <div>
-                    <p className="text-sm font-medium text-slate-800">
+                    <p className="text-medium font-medium text-slate-800">
                       Your privacy matters
                     </p>
 
-                    <p className="mt-0.5 text-xs leading-5 text-slate-400">
+                    <p className="mt-0.5 text-[14px] leading-5 text-slate-400">
                       Your information stays confidential.
                     </p>
                   </div>
@@ -157,7 +157,7 @@ export function CtaSection({ id }: CtaSectionProps) {  // ✅ Destructure id pro
                       Quick response
                     </p>
 
-                    <p className="mt-0.5 text-xs leading-5 text-slate-400">
+                    <p className="mt-0.5 text-[14px] leading-5 text-slate-400">
                       We respond within 24 business hours.
                     </p>
                   </div>
@@ -200,11 +200,11 @@ export function CtaSection({ id }: CtaSectionProps) {  // ✅ Destructure id pro
               {/* Bottom label */}
               <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between border-t border-slate-200/80 pt-4 sm:left-8 sm:right-8">
                 <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-blue-600">
+                  <p className="text-[14px] font-semibold uppercase tracking-[0.2em] text-blue-600">
                     Grandreves Technologies
                   </p>
 
-                  <p className="mt-0.5 text-xs text-slate-400">
+                  <p className="mt-0.5 text-[14px] text-slate-400">
                     Digital solutions built for growth
                   </p>
                 </div>
@@ -232,11 +232,11 @@ export function CtaSection({ id }: CtaSectionProps) {  // ✅ Destructure id pro
                 </div>
 
                 <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-slate-400">
                     Call Us
                   </p>
 
-                  <p className="mt-0.5 text-sm font-medium text-slate-700">
+                  <p className="mt-0.5 text-medium font-medium text-slate-700">
                     +91 99957 73273
                   </p>
                 </div>
@@ -252,11 +252,11 @@ export function CtaSection({ id }: CtaSectionProps) {  // ✅ Destructure id pro
                 </div>
 
                 <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-slate-400">
                     Email Us
                   </p>
 
-                  <p className="mt-0.5 text-sm font-medium text-slate-700">
+                  <p className="mt-0.5 text-medium font-medium text-slate-700">
                     info@grandreeves.com
                   </p>
                 </div>

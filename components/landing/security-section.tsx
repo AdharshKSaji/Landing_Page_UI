@@ -154,7 +154,7 @@ export function SecuritySection() {
         <div className="flex flex-col items-center text-center gap-6 mb-20">
           <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-foreground/10 bg-foreground/5 backdrop-blur-sm hover:border-primary/20 transition-colors duration-300">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm font-mono text-muted-foreground">Live • {time.toLocaleTimeString()}</span>
+            <span className="text-sm font-mono text-muted-foreground">Live Status</span>
             <span className="w-px h-4 bg-foreground/10" />
             <span className="text-xs font-mono text-primary/60">Enterprise Ready</span>
           </div>
@@ -226,23 +226,19 @@ export function SecuritySection() {
                   <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${product.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
                   <div className="relative">
-                    <div className="flex items-start justify-between mb-4">
+                    <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center gap-3">
-                        <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors shadow-lg shadow-primary/5">
-                          <Icon className="w-6 h-6 text-primary" />
+                        <div className="p-2.5 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors shadow-lg shadow-primary/5 shrink-0">
+                          <Icon className="w-5 h-5 text-primary" />
                         </div>
-                        <span className="text-xs font-mono text-primary/60 px-2 py-1 rounded-full bg-primary/5 border border-primary/10">
-                          Enterprise
-                        </span>
+                        <h3 className="text-lg font-display font-semibold group-hover:text-primary transition-colors leading-tight">
+                          {product.name}
+                        </h3>
                       </div>
-                      <div className="flex items-center gap-1.5 text-[10px] font-mono text-primary/60 bg-primary/5 px-2.5 py-1 rounded-full border border-primary/10">
+                      <div className="flex items-center gap-1.5 text-[10px] font-mono text-primary/60 bg-primary/5 px-2.5 py-1 rounded-full border border-primary/10 shrink-0">
                         {product.badge}
                       </div>
                     </div>
-
-                    <h3 className="text-xl font-display font-semibold mb-3 group-hover:text-primary transition-colors">
-                      {product.name}
-                    </h3>
 
                     <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                       {product.description}

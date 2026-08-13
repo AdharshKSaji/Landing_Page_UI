@@ -203,21 +203,11 @@ export function IntegrationsSection() {
 
       <div className="relative max-w-[1440px] mx-auto px-6 lg:px-16">
         {/* Header - Left aligned with premium gradient title matching the image */}
-        <div className="mb-16 lg:mb-20">
-          {/* <span className="inline-flex items-center gap-3 text-sm font-medium text-gray-500 mb-6 bg-white/80 px-4 py-2 rounded-full border border-gray-200/50 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse" />
-            <span className="bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
-              Technology Stack
-            </span>
-            <span className="text-slate-300">•</span>
-            <span className="bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent font-bold">
-              Enterprise Ready
-            </span>
-          </span> */}
+        <div className="mb-16 lg:mb-20">s
           {/* Small label */}
           <div className="mb-4 flex items-center gap-3">
             <span className="h-px w-8 bg-blue-500" />
-            <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
+            <span className="text-medium font-bold uppercase tracking-[0.22em] bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
               Technology Stack
             </span>
           </div>

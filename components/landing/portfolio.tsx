@@ -194,7 +194,7 @@ function ProjectCard({
 
   const isLarge = project.size === "large";
   const isFeatured = project.size === "featured";
-  const clampLines = isFeatured ? 5 : isLarge ? 3 : 3;
+  const clampLines = isFeatured ? 8 : isLarge ? 3 : 3;
 
   return (
     <div
@@ -226,18 +226,15 @@ function ProjectCard({
       <div
         className={`
           relative z-10 flex h-full flex-col
-          ${isFeatured ? "p-8 lg:p-10" : "p-7 lg:p-8"}
+          ${isFeatured ? "pt-5 pb-5 px-6 lg:pt-6 lg:pb-6 lg:px-8" : "pt-4 pb-4 px-5 lg:pt-5 lg:pb-5 lg:px-6"}
         `}
       >
-        <div className="flex items-start justify-between">
-          <span className="font-mono text-xs font-medium tracking-widest text-muted-foreground">
-            {project.number}
-          </span>
-
+        {/* Header - Icon and Title inline */}
+        <div className="flex items-center gap-3 mb-2.5">
           <div
             className="
-              flex h-11 w-11 items-center justify-center
-              rounded-2xl
+              flex h-10 w-10 shrink-0 items-center justify-center
+              rounded-xl
               border border-border
               bg-secondary
               transition-all duration-500
@@ -247,48 +244,51 @@ function ProjectCard({
             "
           >
             <Icon
-              size={20}
+              size={18}
               strokeWidth={1.7}
               stroke="url(#icon-grad-portfolio)"
               className="group-hover:stroke-white transition-colors duration-300"
             />
           </div>
-        </div>
 
-        <div className={`${isFeatured ? "mt-8" : "mt-auto"} pt-4`}>
           <h3
             className={`
-              max-w-md font-medium tracking-tight text-foreground
+              font-semibold tracking-tight text-foreground
               transition-all duration-300
               group-hover:bg-gradient-to-r group-hover:from-[#087EA4] group-hover:via-[#18A8D1] group-hover:to-[#24B35A] group-hover:bg-clip-text group-hover:text-transparent
-              ${isFeatured ? "text-2xl lg:text-3xl" : "text-xl lg:text-2xl"}
+              ${isFeatured ? "text-xl lg:text-2xl" : "text-lg lg:text-xl"}
             `}
           >
             {project.title}
           </h3>
+        </div>
 
-          <p
-            className="mt-3 max-w-lg text-sm leading-6 text-muted-foreground lg:text-[15px]"
-            style={{
-              display: "-webkit-box",
-              WebkitLineClamp: clampLines,
-              WebkitBoxOrient: "vertical",
-              overflow: "hidden",
-            }}
-          >
-            {project.description}
-          </p>
+        {/* Content body flowing naturally */}
+        <div className="flex-1 flex flex-col justify-between">
+          <div>
+            <p
+              className="max-w-lg text-[13px] leading-5 text-muted-foreground lg:text-sm lg:leading-6"
+              style={{
+                display: "-webkit-box",
+                WebkitLineClamp: clampLines,
+                WebkitBoxOrient: "vertical",
+                overflow: "hidden",
+              }}
+            >
+              {isFeatured ? project.fullDescription : project.description}
+            </p>
 
-          <button
-            type="button"
-            onClick={() => onExpand(project)}
-            className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-blue-600 transition-colors hover:text-blue-700"
-          >
-            See more
-            <ArrowUpRight size={12} />
-          </button>
+            <button
+              type="button"
+              onClick={() => onExpand(project)}
+              className="mt-1.5 inline-flex items-center gap-1 text-xs font-semibold text-[#087EA4] transition-colors hover:text-teal-600"
+            >
+              See more
+              <ArrowUpRight size={12} />
+            </button>
+          </div>
 
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="mt-3 flex flex-wrap gap-1.5">
             {project.tech.map((t) => (
               <span
                 key={t}
@@ -452,7 +452,7 @@ export function PortfolioSection() {
         >
           <div className="mb-7 flex items-center gap-3">
             <span className="h-px w-10 bg-primary" />
-            <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
+            <span className="text-medium font-bold uppercase tracking-[0.22em] bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
               Our Portfolio
             </span>
           </div>
@@ -483,7 +483,7 @@ export function PortfolioSection() {
           <Stat value="100%" label="In-House Built" icon={ShieldCheck} />
         </div>
 
-        <div className="grid auto-rows-[340px] grid-cols-1 gap-5 [grid-auto-flow:dense] md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid auto-rows-[260px] grid-cols-1 gap-5 [grid-auto-flow:dense] md:grid-cols-2 lg:grid-cols-4">
           {projects.map((project, index) => (
             <ProjectCard
               key={project.title}

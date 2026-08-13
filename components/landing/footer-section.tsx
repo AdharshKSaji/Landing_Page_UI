@@ -113,7 +113,7 @@ export function FooterSection() {
               <div className="mb-4 flex items-center gap-3">
                 <span className="h-px w-8 bg-blue-500" />
 
-                <span className="text-xs font-medium uppercase tracking-[0.22em] text-blue-400">
+                <span className="text-medium font-medium uppercase tracking-[0.22em] text-blue-400">
                   Let's build together
                 </span>
               </div>
@@ -375,23 +375,6 @@ export function FooterSection() {
               Building smart digital solutions that help businesses transform,
               grow and move forward with confidence.
             </p>
-
-            {/* Social */}
-
-            <div className="mt-5 flex items-center gap-3">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  aria-label={social.name}
-                  className="group flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.10] bg-white/[0.02] text-xs text-slate-400 transition-all duration-300 hover:border-blue-500/50 hover:bg-blue-500 hover:text-white"
-                >
-                  {social.name === "Facebook" && "f"}
-                  {social.name === "Instagram" && "ig"}
-                  {social.name === "GitHub" && "gh"}
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* =====================================================
