@@ -247,7 +247,7 @@ export function CtaSection() {
               CONTACT BAR
           ====================================================== */}
 
-          <div className="border-t border-slate-200 bg-slate-50/70">
+          <div className="border-t bg-white border-slate-200 bg-slate-50/70">
             <div className="grid sm:grid-cols-2">
               {/* Phone */}
               <a

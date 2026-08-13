@@ -164,56 +164,27 @@ function FeatureCard({
         <div className="absolute left-3/4 top-0 h-full w-px bg-slate-100" />
       </div>
 
-      <div
-        className={`
-          relative z-10 flex h-full flex-col
-          ${isFeatured ? "p-8 lg:p-10" : "pt-4 pb-7 px-7 lg:pt-5 lg:pb-8 lg:px-8"}
-        `}
-      >
-        {/* Top */}
-        <div className="flex items-start justify-between">
-          <span
-            className="
-              font-mono text-xs font-medium
-              tracking-widest text-slate-400
-            "
-          >
-            {feature.number}
-          </span>
+      {isFeatured ? (
+        <div className="relative z-10 flex h-full flex-col p-6 lg:p-8">
+          {/* Top */}
+          <div className="flex items-start justify-between">
+            <span className="font-mono text-xs font-medium tracking-widest text-slate-400">
+              {feature.number}
+            </span>
 
-          <div
-            className="
-              flex h-11 w-11 items-center justify-center
-              rounded-2xl
-              border border-slate-200
-              bg-slate-50
-              transition-all duration-500
-              group-hover:border-[#1E3A8A]/20
-              group-hover:bg-[#1E3A8A]
-              group-hover:rotate-3
-            "
-          >
-            <Icon
-              size={20}
-              strokeWidth={1.7}
-              stroke="url(#icon-grad)"
-              className="group-hover:stroke-white transition-colors duration-300"
-            />
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 transition-all duration-500 group-hover:border-transparent group-hover:bg-gradient-to-r group-hover:from-[#087EA4] group-hover:via-[#18A8D1] group-hover:to-[#24B35A] group-hover:rotate-3">
+              <Icon
+                size={20}
+                strokeWidth={1.7}
+                stroke="url(#icon-grad)"
+                className="group-hover:stroke-white transition-colors duration-300"
+              />
+            </div>
           </div>
-        </div>
 
-        {/* Featured content */}
-        {isFeatured ? (
           <div className="mt-auto pt-4">
             <div className="mb-6 flex items-end gap-3">
-              <span
-                className="
-                  text-7xl font-semibold
-                  tracking-[-0.08em]
-                  text-slate-900
-                  lg:text-8xl
-                "
-              >
+              <span className="text-7xl font-semibold tracking-[-0.08em] text-slate-900 lg:text-8xl">
                 15
               </span>
 
@@ -222,7 +193,7 @@ function FeatureCard({
               </span>
             </div>
 
-            <h3 className="mb-4 text-2xl font-medium tracking-tight text-slate-900 lg:text-3xl">
+            <h3 className="mb-4 text-2xl font-medium tracking-tight text-slate-900 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#087EA4] group-hover:via-[#18A8D1] group-hover:to-[#24B35A] group-hover:bg-clip-text group-hover:text-transparent lg:text-3xl">
               Years of Experience
             </h3>
 
@@ -232,38 +203,90 @@ function FeatureCard({
               dependable digital products.
             </p>
           </div>
-        ) : (
+        </div>
+      ) : isLarge ? (
+        <div className="relative z-10 flex h-full flex-col justify-between p-5 md:flex-row md:items-center md:gap-8 md:p-6 lg:p-7">
+          {/* Left Column (Content) */}
+          <div className="flex flex-1 flex-col justify-center h-full">
+            {/* Top Header inside Left Column */}
+            <div className="flex items-center justify-between md:block">
+              <span className="font-mono text-xs font-medium tracking-widest text-slate-400">
+                {feature.number}
+              </span>
+              
+              {/* Mobile Icon (hidden on desktop) */}
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 transition-all duration-500 group-hover:border-transparent group-hover:bg-gradient-to-r group-hover:from-[#087EA4] group-hover:via-[#18A8D1] group-hover:to-[#24B35A] group-hover:rotate-3 md:hidden">
+                <Icon
+                  size={20}
+                  strokeWidth={1.7}
+                  stroke="url(#icon-grad)"
+                  className="group-hover:stroke-white transition-colors duration-300"
+                />
+              </div>
+            </div>
+
+            {/* Text Content */}
+            <div className="mt-2.5">
+              <h3 className="max-w-md text-xl font-medium tracking-tight text-slate-900 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#087EA4] group-hover:via-[#18A8D1] group-hover:to-[#24B35A] group-hover:bg-clip-text group-hover:text-transparent lg:text-2xl">
+                {feature.title}
+              </h3>
+              <p className="mt-2 max-w-lg text-sm leading-6 text-slate-500 lg:text-[15px]">
+                {feature.description}
+              </p>
+            </div>
+          </div>
+
+          {/* Right Column (Desktop Icon - hidden on mobile) */}
+          <div className="hidden md:flex h-20 w-20 shrink-0 items-center justify-center rounded-3xl border border-slate-200 bg-slate-50/50 transition-all duration-500 group-hover:scale-105 group-hover:border-transparent group-hover:bg-gradient-to-r group-hover:from-[#087EA4] group-hover:via-[#18A8D1] group-hover:to-[#24B35A] group-hover:rotate-6 shadow-sm">
+            <Icon
+              size={32}
+              strokeWidth={1.5}
+              stroke="url(#icon-grad)"
+              className="group-hover:stroke-white transition-colors duration-300"
+            />
+          </div>
+        </div>
+      ) : (
+        <div className="relative z-10 flex h-full flex-col justify-center p-4 sm:p-5 lg:p-6">
+          {/* Top Section */}
+          <div className="flex items-start justify-between">
+            <span className="font-mono text-xs font-medium tracking-widest text-slate-400">
+              {feature.number}
+            </span>
+
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 transition-all duration-500 group-hover:border-transparent group-hover:bg-gradient-to-r group-hover:from-[#087EA4] group-hover:via-[#18A8D1] group-hover:to-[#24B35A] group-hover:rotate-3">
+              <Icon
+                size={20}
+                strokeWidth={1.7}
+                stroke="url(#icon-grad)"
+                className="group-hover:stroke-white transition-colors duration-300"
+              />
+            </div>
+          </div>
+
+          {/* Bottom Content */}
           <div className="mt-3">
-            <h3
-              className="
-                max-w-md
-                text-xl font-medium
-                tracking-tight text-slate-900
-                transition-colors duration-300
-                group-hover:text-[#087EA4]
-                lg:text-2xl
-              "
-            >
+            <h3 className="max-w-md text-lg font-medium tracking-tight text-slate-900 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#087EA4] group-hover:via-[#18A8D1] group-hover:to-[#24B35A] group-hover:bg-clip-text group-hover:text-transparent lg:text-xl">
               {feature.title}
             </h3>
 
-            <p className="mt-3 max-w-lg text-sm leading-6 text-slate-500 lg:text-[15px]">
+            <p className="mt-2 max-w-lg text-[13px] leading-5 text-slate-500 lg:text-sm lg:leading-6">
               {feature.description}
             </p>
           </div>
-        )}
+        </div>
+      )}
 
-        {/* Bottom accent */}
-        <div
-          className="
-            absolute bottom-0 left-0
-            h-[2px] w-0
-            bg-gradient-to-r from-[#087EA4] to-[#36C5EE]
-            transition-all duration-500
-            group-hover:w-full
-          "
-        />
-      </div>
+      {/* Bottom accent */}
+      <div
+        className="
+          absolute bottom-0 left-0
+          h-[2px] w-0
+          bg-gradient-to-r from-[#087EA4] to-[#36C5EE]
+          transition-all duration-500
+          group-hover:w-full
+        "
+      />
     </div>
   );
 }
@@ -307,9 +330,9 @@ export function FeaturesSection() {
       <svg className="absolute w-0 h-0 pointer-events-none" width="0" height="0">
         <defs>
           <linearGradient id="icon-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#172554" />
-            <stop offset="50%" stopColor="#1E3A8A" />
-            <stop offset="100%" stopColor="#2563EB" />
+            <stop offset="0%" stopColor="#087EA4" />
+            <stop offset="50%" stopColor="#18A8D1" />
+            <stop offset="100%" stopColor="#24B35A" />
           </linearGradient>
         </defs>
       </svg>
@@ -369,7 +392,7 @@ export function FeaturesSection() {
 
             <span
               className="
-                font-mono text-xs
+                font-mono text-medium
                 font-medium uppercase
                 tracking-[0.2em]
                 text-[#087EA4]

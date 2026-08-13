@@ -79,11 +79,20 @@ export function AnimatedSphere() {
       points.forEach((point) => {
         const alpha = 0.2 + (point.z + 1) * 0.4;
 
-        // Left to right gradient: Lighter navy (#1E40AF) to dark navy (#172554)
+        // Left to right gradient: #087EA4 via #18A8D1 to #24B35A
         const factor = (point.nx + 1) / 2; // 0 to 1
-        const r = Math.round(30 + (23 - 30) * factor);
-        const g = Math.round(64 + (37 - 64) * factor);
-        const b = Math.round(175 + (84 - 175) * factor);
+        let r, g, b;
+        if (factor <= 0.5) {
+          const t = factor * 2;
+          r = Math.round(8 + (24 - 8) * t);
+          g = Math.round(126 + (168 - 126) * t);
+          b = Math.round(164 + (209 - 164) * t);
+        } else {
+          const t = (factor - 0.5) * 2;
+          r = Math.round(24 + (36 - 24) * t);
+          g = Math.round(168 + (179 - 168) * t);
+          b = Math.round(209 + (90 - 209) * t);
+        }
 
         ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
         ctx.fillText(point.char, point.x, point.y);

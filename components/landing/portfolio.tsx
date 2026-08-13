@@ -223,99 +223,43 @@ function ProjectCard({
           group-hover:opacity-100
         "
       />
-
-      <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-        <div className="absolute left-1/4 top-0 h-full w-px bg-border" />
-        <div className="absolute left-2/4 top-0 h-full w-px bg-border" />
-        <div className="absolute left-3/4 top-0 h-full w-px bg-border" />
-      </div>
-
       <div
         className={`
           relative z-10 flex h-full flex-col
-          ${isFeatured ? "p-8 lg:p-10" : "p-7 lg:p-8"}
+          ${isFeatured ? "p-6 lg:p-8" : "p-4 sm:p-5 lg:p-6"}
         `}
       >
         <div className="flex items-start justify-between">
           <span className="font-mono text-xs font-medium tracking-widest text-muted-foreground">
             {project.number}
           </span>
-
-          <div
-            className="
-              flex h-11 w-11 items-center justify-center
-              rounded-2xl
-              border border-border
-              bg-secondary
-              text-blue-600
-              transition-all duration-500
-              group-hover:border-blue-600/20
-              group-hover:rotate-3
-            "
-          >
-            <Icon size={20} strokeWidth={1.7} />
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-border bg-secondary transition-all duration-500 group-hover:border-transparent group-hover:bg-[#020611] group-hover:rotate-3">
+            <Icon size={20} strokeWidth={1.7} stroke="url(#icon-grad-portfolio)" className="group-hover:stroke-white transition-colors duration-300" />
           </div>
         </div>
-
-        <div className="mt-auto pt-4">
-          <h3
-            className={`
-              max-w-md font-medium tracking-tight text-foreground
-              transition-colors duration-300
-              group-hover:text-blue-600
-              ${isFeatured ? "text-2xl lg:text-3xl" : "text-xl lg:text-2xl"}
-            `}
-          >
+        <div className={`${isFeatured ? "mt-6" : "mt-auto"} pt-2`}>
+          <h3 className={`max-w-md font-medium tracking-tight text-slate-800 transition-colors duration-300
+              group-hover:text-[#020611]
+              ${isFeatured ? "text-2xl lg:text-3xl" : "text-lg lg:text-xl"}`}>
             {project.title}
           </h3>
-
-          <p
-            className="mt-3 max-w-lg text-sm leading-6 text-muted-foreground lg:text-[15px]"
-            style={{
-              display: "-webkit-box",
-              WebkitLineClamp: clampLines,
-              WebkitBoxOrient: "vertical",
-              overflow: "hidden",
-            }}
-          >
+          <p className="mt-2 max-w-lg text-[13px] leading-5 text-muted-foreground lg:text-sm lg:leading-6"
+            style={{ display: "-webkit-box", WebkitLineClamp: clampLines, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
             {project.description}
           </p>
-
-          <button
-            type="button"
-            onClick={() => onExpand(project)}
-            className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-blue-600 transition-colors hover:text-blue-700"
-          >
+          <button type="button" onClick={() => onExpand(project)} className="mt-1.5 inline-flex items-center gap-1 text-xs font-semibold text-blue-600 transition-colors hover:text-blue-700">
             See more
             <ArrowUpRight size={12} />
           </button>
-
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="mt-3 flex flex-wrap gap-2">
             {project.tech.map((t) => (
-              <span
-                key={t}
-                className="
-                  rounded-full border border-border bg-secondary
-                  px-3 py-1 text-xs font-medium text-muted-foreground
-                  transition-colors duration-300
-                  group-hover:border-primary/20 group-hover:bg-primary/5 group-hover:text-blue-600
-                "
-              >
+              <span key={t} className="rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground transition-colors duration-300 group-hover:border-primary/20 group-hover:bg-primary/5 group-hover:text-blue-600">
                 {t}
               </span>
             ))}
           </div>
         </div>
-
-        <div
-          className="
-            absolute bottom-0 left-0
-            h-[2px] w-0
-            bg-primary
-            transition-all duration-500
-            group-hover:w-full
-          "
-        />
+        <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-primary transition-all duration-500 group-hover:w-full" />
       </div>
     </div>
   );
@@ -422,7 +366,17 @@ export function PortfolioSection() {
   }, []);
 
   return (
-    <section id="portfolio" ref={sectionRef} className="relative overflow-hidden bg-background py-24 lg:py-32">
+    <section id="portfolio" ref={sectionRef} className="relative overflow-hidden bg-white py-4 lg:py-8">
+      {/* Global SVG Gradients for Icons */}
+      <svg className="absolute w-0 h-0 pointer-events-none" width="0" height="0">
+        <defs>
+          <linearGradient id="icon-grad-portfolio" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#087EA4" />
+            <stop offset="50%" stopColor="#18A8D1" />
+            <stop offset="100%" stopColor="#24B35A" />
+          </linearGradient>
+        </defs>
+      </svg>
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-40 top-40 h-[420px] w-[420px] rounded-full bg-primary/5 blur-[120px]" />
         <div className="absolute -right-40 bottom-20 h-[420px] w-[420px] rounded-full bg-primary/5 blur-[120px]" />
@@ -444,23 +398,23 @@ export function PortfolioSection() {
         >
           <div className="mb-7 flex items-center gap-3">
             <span className="h-px w-10 bg-primary" />
-            <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-blue-600">
+            <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
               Our Portfolio
             </span>
           </div>
 
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <h2 className="max-w-3xl text-4xl font-medium leading-[1.05] tracking-[-0.045em] text-foreground sm:text-5xl lg:text-7xl">
+              <h2 className="max-w-3xl text-4xl text-[#164A5B] font-bold leading-[1.05] tracking-[-0.045em] sm:text-5xl lg:text-7xl">
                 Ideas we've
                 <br />
-                <span className="bg-gradient-to-r from-blue-500 via-blue-600 to-cyan-500 bg-clip-text text-transparent">
+                <span className="inline-flex font-bold bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
                   shipped to production.
                 </span>
               </h2>
             </div>
 
-            <p className="max-w-sm text-sm leading-6 text-muted-foreground lg:pb-2">
+            <p className="mt-5 max-w-xl text-sm leading-7 text-slate-500 sm:text-base lg:text-lg">
               A snapshot of platforms we've designed, built, and scaled across
               banking, fintech, edtech, and cloud — solving real operational
               problems, not just shipping features.
@@ -475,7 +429,7 @@ export function PortfolioSection() {
           <Stat value="100%" label="In-House Built" icon={ShieldCheck} />
         </div>
 
-        <div className="grid auto-rows-[280px] grid-cols-1 gap-5 [grid-auto-flow:dense] md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid auto-rows-[290px] grid-cols-1 gap-5 [grid-auto-flow:dense] md:grid-cols-2 lg:grid-cols-4">
           {projects.map((project, index) => (
             <ProjectCard
               key={project.title}
@@ -486,7 +440,7 @@ export function PortfolioSection() {
           ))}
         </div>
 
-        <div className="mt-8 flex flex-col gap-6 rounded-[28px] border border-border bg-primary p-8 text-primary-foreground lg:flex-row lg:items-center lg:justify-between lg:p-10">
+        <div className="mt-8 flex flex-col gap-6 rounded-[28px] border border-border bg-[#020611] p-8 text-primary-foreground lg:flex-row lg:items-center lg:justify-between lg:p-10">
           <div>
             <div className="mb-2 text-xs font-medium uppercase tracking-[0.2em] text-primary-foreground/70">
               Have a project in mind?
@@ -533,16 +487,20 @@ function Stat({
       <div
         className="
           flex h-10 w-10 shrink-0 items-center justify-center
-          rounded-xl bg-accent text-blue-600
+          rounded-xl bg-accent
           transition-all duration-300
         "
       >
-        <Icon size={17} strokeWidth={1.8} />
+        <Icon
+          size={17}
+          strokeWidth={1.8}
+          stroke="url(#icon-grad-portfolio)"
+        />
       </div>
 
       <div>
-        <div className="text-xl font-semibold tracking-tight text-foreground">{value}</div>
-        <div className="mt-0.5 text-xs text-muted-foreground">{label}</div>
+        <div className="text-xl font-semibold tracking-tight text-slate-900">{value}</div>
+        <div className="mt-0.5 text-xs text-slate-500">{label}</div>
       </div>
     </div>
   );

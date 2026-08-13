@@ -81,12 +81,12 @@ export function FooterSection() {
             TOP CTA
         ======================================================== */}
 
-        <div className="border-b border-white/[0.08] py-20 lg:py-24">
-          <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
+        <div className="border-b border-white/[0.08] py-12 lg:py-16">
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             {/* Heading */}
 
             <div className="max-w-4xl">
-              <div className="mb-6 flex items-center gap-3">
+              <div className="mb-4 flex items-center gap-3">
                 <span className="h-px w-8 bg-blue-500" />
 
                 <span className="text-xs font-medium uppercase tracking-[0.22em] text-blue-400">
@@ -97,13 +97,12 @@ export function FooterSection() {
               <h2 className="text-4xl font-display font-light leading-[1] tracking-[-0.04em] sm:text-5xl lg:text-[68px]">
                 Have an idea?
                 <br />
-
                 <span className="bg-gradient-to-r from-blue-300 via-blue-500 to-cyan-400 bg-clip-text text-transparent">
                   Let's make it real.
                 </span>
               </h2>
 
-              <p className="mt-6 max-w-2xl text-sm leading-7 text-white/45 sm:text-base">
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
                 From ambitious ideas to complex digital challenges, we help
                 businesses create technology that delivers meaningful results.
               </p>
@@ -131,7 +130,7 @@ export function FooterSection() {
             MAIN FOOTER
         ======================================================== */}
 
-        <div className="grid gap-14 py-16 lg:grid-cols-[1.5fr_1fr_1fr_1.1fr] lg:gap-12 lg:py-20">
+        <div className="grid gap-10 py-12 lg:grid-cols-[1.5fr_1fr_1fr_1.1fr] lg:gap-8 lg:py-14">
           {/* =====================================================
               BRAND
           ====================================================== */}
@@ -154,27 +153,27 @@ export function FooterSection() {
                     Grandreves
                   </span>
 
-                  <span className="block text-[9px] uppercase tracking-[0.25em] text-white/35">
+                  <span className="block text-[9px] uppercase tracking-[0.25em] text-slate-400">
                     Technologies
                   </span>
                 </div>
               </div>
             </a>
 
-            <p className="mt-7 max-w-sm text-sm leading-7 text-white/45">
+            <p className="mt-4 max-w-sm text-sm leading-7 text-slate-400">
               Building smart digital solutions that help businesses transform,
               grow and move forward with confidence.
             </p>
 
             {/* Social */}
 
-            <div className="mt-8 flex items-center gap-3">
+            <div className="mt-5 flex items-center gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
                   aria-label={social.name}
-                  className="group flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.10] bg-white/[0.02] text-xs text-white/45 transition-all duration-300 hover:border-blue-500/50 hover:bg-blue-500 hover:text-white"
+                  className="group flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.10] bg-white/[0.02] text-xs text-slate-400 transition-all duration-300 hover:border-blue-500/50 hover:bg-blue-500 hover:text-white"
                 >
                   {social.name === "Facebook" && "f"}
                   {social.name === "Instagram" && "ig"}
@@ -189,7 +188,7 @@ export function FooterSection() {
           ====================================================== */}
 
           <div>
-            <h3 className="mb-6 text-xs font-semibold uppercase tracking-[0.18em] text-white">
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white">
               Company
             </h3>
 
@@ -198,7 +197,7 @@ export function FooterSection() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="group inline-flex items-center text-sm text-white/40 transition-colors duration-300 hover:text-white"
+                    className="group inline-flex items-center text-sm text-slate-400 transition-colors duration-300 hover:text-white"
                   >
                     {link.name}
 
@@ -217,7 +216,7 @@ export function FooterSection() {
           ====================================================== */}
 
           <div>
-            <h3 className="mb-6 text-xs font-semibold uppercase tracking-[0.18em] text-white">
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white">
               Services
             </h3>
 
@@ -226,7 +225,7 @@ export function FooterSection() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="group inline-flex items-center text-sm text-white/40 transition-colors duration-300 hover:text-white"
+                    className="group inline-flex items-center text-sm text-slate-400 transition-colors duration-300 hover:text-white"
                   >
                     {link.name}
 
@@ -245,11 +244,11 @@ export function FooterSection() {
           ====================================================== */}
 
           <div>
-            <h3 className="mb-6 text-xs font-semibold uppercase tracking-[0.18em] text-white">
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white">
               Get in touch
             </h3>
 
-            <div className="space-y-5">
+            <div className="space-y-3.5">
               {/* Email */}
 
               <a
@@ -261,11 +260,11 @@ export function FooterSection() {
                 </div>
 
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.15em] text-white/30">
+                  <p className="text-[10px] uppercase tracking-[0.15em] text-slate-500">
                     Email
                   </p>
 
-                  <p className="mt-1 text-sm text-white/60 transition-colors group-hover:text-white">
+                  <p className="mt-1 text-sm text-slate-300 transition-colors group-hover:text-white">
                     info@grandreves.com
                   </p>
                 </div>
@@ -282,11 +281,11 @@ export function FooterSection() {
                 </div>
 
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.15em] text-white/30">
+                  <p className="text-[10px] uppercase tracking-[0.15em] text-slate-500">
                     Phone
                   </p>
 
-                  <p className="mt-1 text-sm text-white/60 transition-colors group-hover:text-white">
+                  <p className="mt-1 text-sm text-slate-300 transition-colors group-hover:text-white">
                     +91 99957 73273
                   </p>
                 </div>
@@ -300,11 +299,11 @@ export function FooterSection() {
                 </div>
 
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.15em] text-white/30">
+                  <p className="text-[10px] uppercase tracking-[0.15em] text-slate-500">
                     Office
                   </p>
 
-                  <p className="mt-1 text-sm leading-6 text-white/45">
+                  <p className="mt-1 text-sm leading-6 text-slate-400">
                     Mananth Complex, First Floor,
                     <br />
                     Near NGO Quarters,
@@ -321,8 +320,8 @@ export function FooterSection() {
             BOTTOM BAR
         ======================================================== */}
 
-        <div className="flex flex-col gap-5 border-t border-white/[0.08] py-7 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs text-white/30">
+        <div className="flex flex-col gap-5 border-t border-white/[0.08] py-5 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-xs text-slate-500">
             © {new Date().getFullYear()} Grandreves Technologies. All rights
             reserved.
           </p>
@@ -330,16 +329,16 @@ export function FooterSection() {
           <div className="flex items-center gap-5 text-xs">
             <a
               href="#privacy"
-              className="text-white/30 transition-colors hover:text-white"
+              className="text-slate-400 transition-colors hover:text-white"
             >
               Privacy Policy
             </a>
 
-            <span className="h-3 w-px bg-white/10" />
+            <span className="h-3 w-px bg-slate-800" />
 
             <a
               href="#cookies"
-              className="text-white/30 transition-colors hover:text-white"
+              className="text-slate-400 transition-colors hover:text-white"
             >
               Cookies Policy
             </a>
