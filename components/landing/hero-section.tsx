@@ -203,7 +203,7 @@ export function HeroSection() {
                 "
               />
 
-                          <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
+              <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
 
                 Where technology meets business ambition
               </span>
@@ -234,20 +234,20 @@ export function HeroSection() {
 
               {/* Line 1 */}
 
-             {/* Line 1 */}
-<span className="block text-[#164A5B]">
-  We build
-</span>
+              {/* Line 1 */}
+              <span className="block text-[#164A5B]">
+                We build
+              </span>
 
-{/* Line 2 */}
-<span className="block bg-gradient-to-r from-[#168FC5] via-[#00A9A5] to-[#29B34B] bg-clip-text text-transparent">
-  digital solutions
-</span>
+              {/* Line 2 */}
+              <span className="block bg-gradient-to-r from-[#168FC5] via-[#00A9A5] to-[#29B34B] bg-clip-text text-transparent">
+                digital solutions
+              </span>
 
-{/* Line 3 */}
-<span className="block text-[#164A5B]">
-  that help
-</span>
+              {/* Line 3 */}
+              <span className="block text-[#164A5B]">
+                that help
+              </span>
               {/* Animated word */}
 
               <span className="relative inline-block">
@@ -299,7 +299,7 @@ export function HeroSection() {
             <div className={`mt-10 flex flex-wrap items-center gap-6 transition-all delay-300 duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"}`}>
               {/* Primary CTA */}
 
-           
+
 
               {/* Secondary CTA */}
 
@@ -339,11 +339,6 @@ export function HeroSection() {
             </div>
 
           </div>
-
-          {/* ========================================================
-              RIGHT INFORMATION
-          ======================================================== */}
-
           <div
             className={`
               hidden
@@ -458,52 +453,16 @@ export function HeroSection() {
 
                   </div>
                 ))}
-
               </div>
-
             </div>
-
-            {/* Small brand statement */}
-
-            <div className="mt-12">
-
-              <div className="flex items-center gap-3">
-
-                <span
-                  className="
-                    h-1.5
-                    w-1.5
-                    rounded-full
-                    bg-[#24B35A]
-                  "
-                />
-
-                <span
-                  className="
-                    font-sans
-                    text-[11px]
-                    font-bold
-                    uppercase
-                    tracking-[0.15em]
-                    text-[#164A5B]/75
-                  "
-                >
-                  Built for what's next
-                </span>
-
-              </div>
-
-            </div>
-
           </div>
-
         </div>
 
         {/* ==========================================================
             BOTTOM BAR
         ========================================================== */}
 
-        <div
+        {/* <div
           className={`
             mt-8
             border-t
@@ -518,9 +477,9 @@ export function HeroSection() {
               : "opacity-0"
             }
           `}
-        >
+        > */}
 
-          <div
+        {/* <div
             className="
               flex
               flex-col
@@ -530,13 +489,39 @@ export function HeroSection() {
               sm:items-center
               sm:justify-between
             "
-          >
+          > */}
 
-            {/* Brand */}
+        {/* Brand */}
 
-            {/* Bottom information */}
+        {/* <div className="flex items-center gap-3">
 
-            <div className="flex items-center gap-8">
+              <span
+                className="
+                  h-1.5
+                  w-1.5
+                  rounded-full
+                  bg-[#087EA4]
+                "
+              />
+
+              <span
+                className="
+                  font-sans
+                  text-[11px]
+                  font-bold
+                  uppercase
+                  tracking-[0.15em]
+                  text-[#164A5B]/85
+                "
+              >
+                Grandreves Technologies
+              </span>
+
+            </div> */}
+
+        {/* Bottom information */}
+
+        {/* <div className="flex items-center gap-8">
 
               <span
                 className="
@@ -579,15 +564,15 @@ export function HeroSection() {
                 Scroll to explore
               </span>
 
-            </div>
+            </div> */}
 
-          </div>
+        {/* </div> */}
 
-        </div>
+        {/* </div> */}
 
       </div>
 
-    </section>
+    </section >
   );
 }
 

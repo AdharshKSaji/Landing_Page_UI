@@ -23,7 +23,7 @@ const integrationCategories = [
     technologies: ["React", "Next.js", "Angular", "TypeScript"],
     description: "Modern UI frameworks for exceptional user experiences",
     color: "from-blue-500/10 to-cyan-500/10",
-    borderColor: "hover:border-blue-400/30",
+    borderColor: "border-blue-400/80 shadow-[0_8px_30px_rgba(59,130,246,0.15)]",
     gradient: "from-blue-600 to-cyan-500",
   },
   {
@@ -33,7 +33,7 @@ const integrationCategories = [
     technologies: ["PHP", "Go", "Node.js", "Django", "Nest.js", "Python"],
     description: "Scalable server-side architecture and APIs",
     color: "from-emerald-500/10 to-teal-500/10",
-    borderColor: "hover:border-emerald-400/30",
+    borderColor: "border-emerald-400/80 shadow-[0_8px_30px_rgba(16,185,129,0.15)]",
     gradient: "from-emerald-600 to-teal-500",
   },
   {
@@ -43,7 +43,7 @@ const integrationCategories = [
     technologies: ["Swift", "Kotlin", "Java", "Flutter", "React Native"],
     description: "Native and cross-platform mobile excellence",
     color: "from-purple-500/10 to-pink-500/10",
-    borderColor: "hover:border-purple-400/30",
+    borderColor: "border-purple-400/80 shadow-[0_8px_30px_rgba(168,85,247,0.15)]",
     gradient: "from-purple-600 to-pink-500",
   },
   {
@@ -53,7 +53,7 @@ const integrationCategories = [
     technologies: ["SQL", "MySQL", "Oracle", "MariaDB", "MongoDB", "Redis", "DynamoDB"],
     description: "High-performance data storage solutions",
     color: "from-orange-500/10 to-amber-500/10",
-    borderColor: "hover:border-orange-400/30",
+    borderColor: "border-orange-400/80 shadow-[0_8px_30px_rgba(249,115,22,0.15)]",
     gradient: "from-orange-600 to-amber-500",
   },
   {
@@ -63,7 +63,7 @@ const integrationCategories = [
     technologies: ["Python", "TensorFlow", "NumPy", "PyTorch", "OpenCV", "dlib", "CUDA"],
     description: "Intelligent automation and predictive analytics",
     color: "from-violet-500/10 to-indigo-500/10",
-    borderColor: "hover:border-violet-400/30",
+    borderColor: "border-violet-400/80 shadow-[0_8px_30px_rgba(139,92,246,0.15)]",
     gradient: "from-violet-600 to-indigo-500",
   },
   {
@@ -73,7 +73,7 @@ const integrationCategories = [
     technologies: ["AWS", "Docker", "Kubernetes", "Google Cloud", "Microsoft Azure"],
     description: "Enterprise-grade cloud infrastructure and CI/CD",
     color: "from-sky-500/10 to-blue-500/10",
-    borderColor: "hover:border-sky-400/30",
+    borderColor: "border-sky-400/80 shadow-[0_8px_30px_rgba(14,165,233,0.15)]",
     gradient: "from-sky-600 to-blue-500",
   },
 ];
@@ -122,11 +122,11 @@ export function IntegrationsSection() {
         key={integration.id}
         className={cn(
           "shrink-0 px-7 py-4 rounded-2xl border-2 transition-all duration-500 relative overflow-hidden",
-          "hover:shadow-xl hover:shadow-black/5 cursor-default min-w-[140px]",
+          "cursor-default min-w-[140px]",
           "bg-white/50 backdrop-blur-sm",
           isHovered
-            ? `${integration.borderColor} scale-[1.03] shadow-lg`
-            : "border-gray-200/60 hover:border-gray-300/80"
+            ? `${integration.borderColor} scale-[1.03]`
+            : "border-slate-200/60 hover:border-slate-300/80 shadow-sm"
         )}
         onMouseEnter={() => setHoveredTech(integration.id)}
         onMouseLeave={() => setHoveredTech(null)}
@@ -184,7 +184,7 @@ export function IntegrationsSection() {
     <section
       id="integrations"
       ref={sectionRef}
-      className="relative pt-12 pb-24 lg:pt-16 lg:pb-32 overflow-hidden bg-gradient-to-b from-white via-gray-50/30 to-white"
+      className="relative pt-12 pb-12 lg:pt-16 lg:pb-16 overflow-hidden bg-gradient-to-b from-white via-gray-50/30 to-white"
     >
       {/* Decorative elements - softer and friendlier */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -209,18 +209,18 @@ export function IntegrationsSection() {
             <span className="bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
               Technology Stack
             </span>
-            <span className="text-xs text-gray-400">•</span>
-            <span className="text-xs bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent font-medium">
+            <span className="text-slate-300">•</span>
+            <span className="bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent font-bold">
               Enterprise Ready
             </span>
           </span> */}
           {/* Small label */}
-              <div className="mb-4 flex items-center gap-3">
-                <span className="h-px w-8 bg-blue-500" />
-                          <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
-                  Technology Stack
-                </span>
-              </div>
+          <div className="mb-4 flex items-center gap-3">
+            <span className="h-px w-8 bg-blue-500" />
+            <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
+              Technology Stack
+            </span>
+          </div>
 
           <h2
             className={`text-4xl lg:text-6xl font-bold tracking-tight transition-all duration-700 ${isVisible
@@ -248,7 +248,7 @@ export function IntegrationsSection() {
         {/* Category Pills - Friendlier with gradient text */}
         <div
           className={cn(
-            "flex flex-wrap justify-center gap-3 mb-12 transition-all duration-700 delay-200",
+            "flex flex-wrap justify-center gap-3 mb-8 transition-all duration-700 delay-200",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           )}
         >
@@ -262,22 +262,22 @@ export function IntegrationsSection() {
                 onClick={() => setActiveCategory(isActive ? null : category.title)}
                 className={cn(
                   "group px-5 py-2.5 text-sm font-medium rounded-full border-2 transition-all duration-300",
-                  "hover:shadow-md hover:scale-[1.02] active:scale-[0.98]",
+                  "hover:scale-[1.02] active:scale-[0.98]",
                   isActive
-                    ? `border-[#667eea]/40 bg-gradient-to-r ${category.color} text-[#667eea] shadow-sm`
-                    : "border-gray-200/60 bg-white/50 text-gray-600 hover:border-gray-300/80 hover:bg-white/80"
+                    ? `border-[#087EA4] bg-[#087EA4]/5 text-[#087EA4] shadow-[0_8px_30px_rgba(8,126,164,0.15)]`
+                    : "border-slate-200/80 bg-white/50 text-gray-600 hover:border-[#087EA4]/40 hover:bg-white"
                 )}
               >
                 <span className="flex items-center gap-2.5">
                   <IconComponent className={cn(
                     "w-4 h-4 transition-all duration-300",
-                    isActive ? "text-[#667eea]" : "text-gray-400 group-hover:text-gray-600"
+                    isActive ? "text-[#087EA4]" : "text-gray-400 group-hover:text-[#087EA4]"
                   )} />
                   <span className={cn(
                     "transition-all duration-300",
                     isActive
                       ? `bg-gradient-to-r ${category.gradient} bg-clip-text text-transparent`
-                      : "group-hover:bg-gradient-to-r group-hover:from-[#667eea] group-hover:to-[#764ba2] group-hover:bg-clip-text group-hover:text-transparent"
+                      : "group-hover:bg-gradient-to-r group-hover:from-[#087EA4] group-hover:via-[#18A8D1] group-hover:to-[#24B35A] group-hover:bg-clip-text group-hover:text-transparent"
                   )}>
                     {category.title}
                   </span>
@@ -285,7 +285,7 @@ export function IntegrationsSection() {
                     "text-xs px-2 py-0.5 rounded-full transition-all duration-300",
                     isActive
                       ? `bg-gradient-to-r ${category.gradient} text-white`
-                      : "bg-gray-100 text-gray-400 group-hover:bg-gray-200"
+                      : "bg-gray-100 text-gray-400 group-hover:bg-[#087EA4]/10 group-hover:text-[#087EA4]"
                   )}>
                     {category.technologies.length}
                   </span>
@@ -343,26 +343,27 @@ export function IntegrationsSection() {
       {/* CTA section - Friendly and inviting with gradient text
       <div className="relative max-w-[1440px] mx-auto px-6 lg:px-16 mt-16">
         <div className={cn(
-          "flex flex-col sm:flex-row items-center justify-between gap-4 p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-sm transition-all duration-700 delay-700",
+          "flex flex-col sm:flex-row items-center justify-between gap-4 p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-slate-200/60 shadow-sm transition-all duration-700 delay-700",
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
         )}>
           <div className="flex items-center gap-4">
-            <div className="p-2 bg-gradient-to-br from-[#667eea]/10 to-[#764ba2]/10 rounded-full">
-              <CheckCircle className="w-5 h-5 text-[#667eea]" />
+            <div className="p-2 bg-gradient-to-br from-[#087EA4]/10 to-[#24B35A]/10 rounded-full">
+              <CheckCircle className="w-5 h-5 text-[#087EA4]" />
             </div>
             <div>
-              <p className="text-sm font-medium">
-                <span className="bg-gradient-to-r from-gray-800 to-gray-900 bg-clip-text text-transparent">
-                  Ready to build something amazing?
-                </span>
+              <p className="text-medium font-semibold text-[#164A5B] font-sans">
+                Ready to build something amazing?
               </p>
-              <p className="text-xs text-gray-500">
+              <p className="text-medium text-slate-500 font-sans mt-0.5">
                 Our team is here to help you choose the
-                <span className="bg-gradient-to-r from-[#667eea] to-[#764ba2] bg-clip-text text-transparent font-medium"> right technology stack</span>
+                <span className="bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent font-bold"> right technology stack</span>
               </p>
             </div>
           </div>
-          <button className="group inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-[#667eea] to-[#764ba2] text-white rounded-full text-sm font-medium hover:shadow-lg hover:shadow-[#667eea]/25 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
+          <button 
+            onClick={() => window.dispatchEvent(new CustomEvent("open-contact-form"))}
+            className="group inline-flex items-center gap-2 px-7 py-3 bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] text-white rounded-full text-sm font-semibold tracking-wide hover:shadow-[0_10px_30px_rgba(24,179,90,0.2)] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+          >
             Let's Talk
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
           </button>
@@ -370,10 +371,10 @@ export function IntegrationsSection() {
       </div> */}
 
       {/* Bottom subtle gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/50 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white via-white/50 to-transparent pointer-events-none" />
 
       {/* Bottom decorative line */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-40 h-px bg-gradient-to-r from-transparent via-[#667eea]/20 to-transparent pointer-events-none" />
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-40 h-px bg-gradient-to-r from-transparent via-[#087EA4]/20 to-transparent pointer-events-none" />
     </section>
   );
 }

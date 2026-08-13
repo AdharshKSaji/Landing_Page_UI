@@ -3,7 +3,7 @@
 
 import { ArrowUpRight, Mail, MapPin, Phone, X } from "lucide-react";
 import { AnimatedWave } from "./animated-wave";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const footerLinks = {
   Company: [
@@ -44,6 +44,22 @@ const socialLinks = [
 
 export function FooterSection() {
   const [showForm, setShowForm] = useState(false);
+
+  useEffect(() => {
+    const handleOpenForm = () => {
+      setShowForm(true);
+      setTimeout(() => {
+        const element = document.getElementById("contact-form");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        } else {
+          document.getElementById("footer")?.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    };
+    window.addEventListener("open-contact-form", handleOpenForm);
+    return () => window.removeEventListener("open-contact-form", handleOpenForm);
+  }, []);
 
   const toggleForm = () => {
     setShowForm(!showForm);

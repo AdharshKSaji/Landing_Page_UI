@@ -169,16 +169,15 @@ export function InfrastructureSection() {
             {/* Label */}
 
             <div className="mb-6 flex items-center gap-3">
-              {/* <span className="h-px w-8 bg-[#1E3A8A]" />
-
-              <span className="text-xs text-[#164A5B] font-bold uppercase tracking-[0.22em] ">
+              <span className="h-px w-8 bg-[#087EA4]" />
+              <span className="text-medium font-bold uppercase tracking-[0.22em] bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
                 Our Methodology
-              </span> */}
-               {/* Small label */}
+              </span>
+              {/* Small label */}
               <div className="mb-4 flex items-center gap-3">
                 <span className="h-px w-8 bg-blue-500" />
-                          <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
-                    Our Methodology
+                <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
+                  Our Methodology
                 </span>
               </div>
             </div>
@@ -299,27 +298,10 @@ export function InfrastructureSection() {
                   </div>
 
                   <div>
-                    <p className="text-sm font-medium text-slate-900">
+                    <p className="text-medium font-medium text-slate-900">
                       Development Lifecycle
                     </p>
-
-                    <p className="mt-0.5 text-[10px] uppercase tracking-[0.15em] text-slate-600">
-                      07 stages
-                    </p>
                   </div>
-                </div>
-
-                {/* Status */}
-
-                <div className="flex items-center gap-2 rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1.5">
-                  <span className="relative flex h-1.5 w-1.5">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
-                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                  </span>
-
-                  <span className="text-[10px] font-medium text-emerald-600">
-                    Active
-                  </span>
                 </div>
               </div>
 
@@ -449,12 +431,8 @@ export function InfrastructureSection() {
               ------------------------------------------------ */}
 
               <div className="flex items-center justify-between border-t border-slate-100 bg-slate-50/60 px-6 py-4">
-                <span className="text-[10px] uppercase tracking-[0.16em] text-slate-400">
-                  Continuous improvement
-                </span>
-
                 <span className="flex items-center gap-2 text-[10px] text-slate-400">
-                  <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-blue-500 text-medium" />
                   Agile workflow
                 </span>
               </div>

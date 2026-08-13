@@ -73,8 +73,8 @@ export function CtaSection({ id }: CtaSectionProps) {  // ✅ Destructure id pro
       <div className="relative z-10 mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
         <div
           className={`relative overflow-hidden border border-slate-200 bg-white transition-all duration-1000 ${isVisible
-              ? "translate-y-0 opacity-100"
-              : "translate-y-10 opacity-0"
+            ? "translate-y-0 opacity-100"
+            : "translate-y-10 opacity-0"
             }`}
         >
           {/* =====================================================
@@ -100,11 +100,11 @@ export function CtaSection({ id }: CtaSectionProps) {  // ✅ Destructure id pro
             ==================================================== */}
 
             <div className="relative px-7 py-8 sm:px-10 sm:py-10 lg:px-14 lg:py-14 xl:px-16">
-              
-               {/* Small label */}
+
+              {/* Small label */}
               <div className="mb-4 flex items-center gap-3">
                 <span className="h-px w-8 bg-blue-500" />
-                          <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
+                <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
                   Let's Work Together
                 </span>
               </div>
@@ -125,38 +125,6 @@ export function CtaSection({ id }: CtaSectionProps) {  // ✅ Destructure id pro
                 it into a digital solution that creates real impact. Tell us
                 what you're building and we'll take it from there.
               </p>
-
-              {/* =================================================
-                  CTA
-              ================================================== */}
-
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <Button
-                  size="lg"
-                  onClick={() => setShowForm(true)}
-                  className="group h-14 rounded-full bg-slate-950 px-7 text-sm font-medium text-white shadow-lg shadow-slate-950/10 transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-600 hover:shadow-xl hover:shadow-blue-600/20"
-                >
-                  Start a Conversation
-
-                  <ArrowRight
-                    size={17}
-                    className="ml-3 transition-transform duration-300 group-hover:translate-x-1"
-                  />
-                </Button>
-
-                {/* <button
-                  type="button"
-                  onClick={() => setShowForm(true)}
-                  className="group inline-flex h-14 items-center justify-center rounded-full px-5 text-sm font-medium text-slate-600 transition-colors hover:text-blue-600"
-                >
-                  Make an Enquiry
-
-                  <ArrowUpRight
-                    size={16}
-                    className="ml-2 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                  />
-                </button> */}
-              </div>
 
               {/* =================================================
                   TRUST INDICATORS

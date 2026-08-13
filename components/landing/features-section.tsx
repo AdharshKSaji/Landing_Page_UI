@@ -165,13 +165,9 @@ function FeatureCard({
       </div>
 
       {isFeatured ? (
-        <div className="relative z-10 flex h-full flex-col p-6 lg:p-8">
+        <div className="relative z-10 flex h-full flex-col pt-4 pb-4 px-5 lg:pt-5 lg:pb-5 lg:px-6">
           {/* Top */}
-          <div className="flex items-start justify-between">
-            <span className="font-mono text-xs font-medium tracking-widest text-slate-400">
-              {feature.number}
-            </span>
-
+          <div className="flex items-start justify-end">
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 transition-all duration-500 group-hover:border-transparent group-hover:bg-gradient-to-r group-hover:from-[#087EA4] group-hover:via-[#18A8D1] group-hover:to-[#24B35A] group-hover:rotate-3">
               <Icon
                 size={20}
@@ -182,22 +178,22 @@ function FeatureCard({
             </div>
           </div>
 
-          <div className="mt-auto pt-4">
-            <div className="mb-6 flex items-end gap-3">
-              <span className="text-7xl font-semibold tracking-[-0.08em] text-slate-900 lg:text-8xl">
+          <div className="mt-5">
+            <div className="mb-3 flex items-end gap-2">
+              <span className="text-5xl font-semibold tracking-[-0.08em] text-slate-900 lg:text-6xl">
                 15
               </span>
 
-              <span className="mb-3 text-3xl font-light text-[#0D9AC8]">
+              <span className="mb-1 text-2xl font-light text-[#0D9AC8]">
                 +
               </span>
             </div>
 
-            <h3 className="mb-4 text-2xl font-medium tracking-tight text-slate-900 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#087EA4] group-hover:via-[#18A8D1] group-hover:to-[#24B35A] group-hover:bg-clip-text group-hover:text-transparent lg:text-3xl">
+            <h3 className="mb-2 text-xl font-medium tracking-tight text-slate-900 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-[#087EA4] group-hover:via-[#18A8D1] group-hover:to-[#24B35A] group-hover:bg-clip-text group-hover:text-transparent lg:text-2xl">
               Years of Experience
             </h3>
 
-            <p className="max-w-md text-base leading-7 text-slate-500">
+            <p className="max-w-md text-xs leading-5 text-slate-500 lg:text-sm lg:leading-6">
               Deep industry experience, practical engineering knowledge,
               and proven approaches that help turn complex ideas into
               dependable digital products.
@@ -205,15 +201,11 @@ function FeatureCard({
           </div>
         </div>
       ) : isLarge ? (
-        <div className="relative z-10 flex h-full flex-col justify-between p-5 md:flex-row md:items-center md:gap-8 md:p-6 lg:p-7">
+        <div className="relative z-10 flex h-full flex-col justify-between pt-4 pb-4 px-5 md:flex-row md:items-center md:gap-8 md:pt-5 md:pb-5 md:px-6 lg:pt-6 lg:pb-6 lg:px-7">
           {/* Left Column (Content) */}
           <div className="flex flex-1 flex-col justify-center h-full">
             {/* Top Header inside Left Column */}
-            <div className="flex items-center justify-between md:block">
-              <span className="font-mono text-xs font-medium tracking-widest text-slate-400">
-                {feature.number}
-              </span>
-              
+            <div className="flex items-center justify-end md:block">
               {/* Mobile Icon (hidden on desktop) */}
               <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 transition-all duration-500 group-hover:border-transparent group-hover:bg-gradient-to-r group-hover:from-[#087EA4] group-hover:via-[#18A8D1] group-hover:to-[#24B35A] group-hover:rotate-3 md:hidden">
                 <Icon
@@ -247,13 +239,9 @@ function FeatureCard({
           </div>
         </div>
       ) : (
-        <div className="relative z-10 flex h-full flex-col justify-center p-4 sm:p-5 lg:p-6">
+        <div className="relative z-10 flex h-full flex-col justify-center pt-4 pb-4 px-5 lg:pt-5 lg:pb-5 lg:px-6">
           {/* Top Section */}
-          <div className="flex items-start justify-between">
-            <span className="font-mono text-xs font-medium tracking-widest text-slate-400">
-              {feature.number}
-            </span>
-
+          <div className="flex items-start justify-end">
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 transition-all duration-500 group-hover:border-transparent group-hover:bg-gradient-to-r group-hover:from-[#087EA4] group-hover:via-[#18A8D1] group-hover:to-[#24B35A] group-hover:rotate-3">
               <Icon
                 size={20}
@@ -390,8 +378,14 @@ export function FeaturesSection() {
           <div className="mb-7 flex items-center gap-3">
             <span className="h-px w-10 bg-[#087EA4]" />
 
-                                   <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
-
+            <span
+              className="
+                font-sans text-medium
+                font-medium uppercase
+                tracking-[0.2em]
+                text-[#087EA4]
+              "
+            >
               Why Grandreves
             </span>
           </div>
@@ -409,7 +403,7 @@ export function FeaturesSection() {
                 lg:text-7xl
               "
             >
-              <span className="block lg:whitespace-nowrap text-[#164A5B]">Built on experience.</span>
+              <span className="block text-[#164A5B]">Built on experience.</span>
               <span className="inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
                 Driven by results.
               </span>
@@ -431,7 +425,7 @@ export function FeaturesSection() {
         </div>
 
         {/* Bento Grid */}
-        <div className=" grid auto-rows-[250px] grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <div className=" grid auto-rows-[180px] grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
           {/* 01 */}
           <FeatureCard feature={features[0]} index={0} />
 
@@ -478,9 +472,9 @@ export function FeaturesSection() {
             <div
               className="
                 mb-2
-                text-xs font-medium
-                uppercase tracking-[0.2em]
-                text-[#49C7EA]
+                text-xs font-semibold
+                uppercase tracking-[0.22em]
+                inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent
               "
             >
               One team. One goal.
@@ -497,21 +491,6 @@ export function FeaturesSection() {
             >
               Turning technology into measurable business value.
             </h3>
-          </div>
-
-          <div
-            className="
-              flex h-12 w-12
-              shrink-0 items-center justify-center
-              rounded-full
-              border border-white/15
-              bg-white/5
-            "
-          >
-            <ArrowUpRight
-              size={20}
-              className="text-[#49C7EA]"
-            />
           </div>
         </div>
       </div>
