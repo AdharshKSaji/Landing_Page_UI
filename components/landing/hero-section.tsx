@@ -329,16 +329,6 @@ export function HeroSection() {
                   What we do
                 </span>
 
-                <span
-                  className="
-                    font-mono
-                    text-[10px]
-                    text-[#164A5B]/50
-                  "
-                >
-                  01 — 04
-                </span>
-
               </div>
 
               {/* Services */}
@@ -390,141 +380,14 @@ export function HeroSection() {
                       >
                         {item}
                       </span>
-
                     </div>
-
-                    <span
-                      className="
-                        font-mono
-                        text-xs
-                        font-medium
-                        text-[#164A5B]/60
-                      "
-                    >
-                      0{index + 1}
-                    </span>
-
                   </div>
                 ))}
               </div>
             </div>
           </div>
         </div>
-
-        {/* ==========================================================
-            BOTTOM BAR
-        ========================================================== */}
-
-        {/* <div
-          className={`
-            mt-8
-            border-t
-            border-[#164A5B]/10
-            pt-5
-            transition-all
-            delay-500
-            duration-700
-
-            ${isVisible
-              ? "opacity-100"
-              : "opacity-0"
-            }
-          `}
-        > */}
-
-        {/* <div
-            className="
-              flex
-              flex-col
-              gap-4
-
-              sm:flex-row
-              sm:items-center
-              sm:justify-between
-            "
-          > */}
-
-        {/* Brand */}
-
-        {/* <div className="flex items-center gap-3">
-
-              <span
-                className="
-                  h-1.5
-                  w-1.5
-                  rounded-full
-                  bg-[#087EA4]
-                "
-              />
-
-              <span
-                className="
-                  font-sans
-                  text-[11px]
-                  font-bold
-                  uppercase
-                  tracking-[0.15em]
-                  text-[#164A5B]/85
-                "
-              >
-                Grandreves Technologies
-              </span>
-
-            </div> */}
-
-        {/* Bottom information */}
-
-        {/* <div className="flex items-center gap-8">
-
-              <span
-                className="
-                  hidden
-                  font-sans
-                  text-[10px]
-                  font-bold
-                  uppercase
-                  tracking-[0.15em]
-                  text-[#164A5B]/70
-
-                  sm:block
-                "
-              >
-                Technology · Design · Innovation
-              </span>
-
-              <span
-                className="
-                  hidden
-                  h-1.5
-                  w-1.5
-                  rounded-full
-                  bg-[#24B35A]
-
-                  sm:block
-                "
-              />
-
-              <span
-                className="
-                  font-sans
-                  text-[10px]
-                  font-bold
-                  uppercase
-                  tracking-[0.15em]
-                  text-[#164A5B]/70
-                "
-              >
-                Scroll to explore
-              </span>
-
-            </div> */}
-
-        {/* </div> */}
-
-        {/* </div> */}
-
       </div>
-
     </section >
   );
 }
