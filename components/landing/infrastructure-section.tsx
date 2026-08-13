@@ -173,13 +173,6 @@ export function InfrastructureSection() {
               <span className="text-medium font-bold uppercase tracking-[0.22em] bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
                 Our Methodology
               </span>
-              {/* Small label */}
-              <div className="mb-4 flex items-center gap-3">
-                <span className="h-px w-8 bg-blue-500" />
-                <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
-                  Our Methodology
-                </span>
-              </div>
             </div>
 
             {/* Heading */}

@@ -291,53 +291,6 @@ export function HeroSection() {
                 From <strong className="font-bold text-[#164A5B]">bold ideas</strong> to <strong className="font-bold text-[#164A5B]">meaningful innovation</strong>, we create <strong className="font-bold text-[#164A5B]">secure, scalable technology</strong> that helps businesses <strong className="font-bold text-[#164A5B]">launch, modernize, and grow</strong> with confidence.
               </p>
             </div>
-
-            {/* ------------------------------------------------------
-                CTA
-            ------------------------------------------------------ */}
-
-            <div className={`mt-10 flex flex-wrap items-center gap-6 transition-all delay-300 duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"}`}>
-              {/* Primary CTA */}
-
-
-
-              {/* Secondary CTA */}
-
-              <button
-                className="
-                  group
-                  flex
-                  items-center
-                  gap-3
-                  text-sm
-                  font-medium
-                  text-[#164A5B]
-                  transition-colors
-                  duration-300
-                  hover:text-[#087EA4]
-                "
-              >
-
-                <span>
-                  Explore our work
-                </span>
-
-                <span
-                  className="
-                    h-px
-                    w-8
-                    bg-[#164A5B]/30
-                    transition-all
-                    duration-300
-                    group-hover:w-12
-                    group-hover:bg-[#087EA4]
-                  "
-                />
-
-              </button>
-
-            </div>
-
           </div>
           <div
             className={`
