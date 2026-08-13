@@ -216,7 +216,7 @@ export function IntegrationsSection() {
           </span>
 
           <h2
-            className={`text-4xl lg:text-6xl font-bold tracking-tight transition-all duration-700 ${isVisible
+            className={`text-4xl sm:text-5xl lg:text-7xl font-medium leading-[1.05] tracking-[-0.045em] transition-all duration-700 ${isVisible
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-4"
               }`}
@@ -224,13 +224,7 @@ export function IntegrationsSection() {
             <span className="block text-[#164A5B]">
               Engineering solutions with
             </span>
-            <span className="block inline-flex
-                    bg-gradient-to-r
-                    from-[#087EA4]
-                    via-[#18A8D1]
-                    to-[#24B35A]
-                    bg-clip-text
-                    text-transparent">
+            <span className="block inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
               modern technology
             </span>
           </h2>
