@@ -267,7 +267,7 @@ function ProjectCard({
         <div className="flex-1 flex flex-col justify-between">
           <div>
             <p
-              className="max-w-lg text-[13px] leading-5 text-muted-foreground lg:text-sm lg:leading-6"
+              className="max-w-lg text-[14px] leading-5 text-muted-foreground lg:text-sm lg:leading-6"
               style={{
                 display: "-webkit-box",
                 WebkitLineClamp: clampLines,
@@ -281,7 +281,7 @@ function ProjectCard({
             <button
               type="button"
               onClick={() => onExpand(project)}
-              className="mt-1.5 inline-flex items-center gap-1 text-xs font-semibold text-[#087EA4] transition-colors hover:text-teal-600"
+              className="mt-1.5 inline-flex items-center gap-1 text-[14px] font-semibold text-[#087EA4] transition-colors hover:text-teal-600"
             >
               See more
               <ArrowUpRight size={12} />
@@ -356,10 +356,7 @@ function ProjectModal({
 
         <div className="flex items-start justify-between pr-10">
           <div>
-            <span className="font-mono text-xs font-medium tracking-widest text-muted-foreground">
-              {project.number}
-            </span>
-            <h3 className="mt-2 text-2xl font-medium tracking-tight text-foreground sm:text-3xl">
+            <h3 className="text-2xl font-medium tracking-tight text-foreground sm:text-3xl">
               {project.title}
             </h3>
           </div>
@@ -377,7 +374,7 @@ function ProjectModal({
           {project.tech.map((t) => (
             <span
               key={t}
-              className="rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground"
+              className="rounded-full border border-border bg-secondary px-3 py-1 text-[14px] font-medium text-muted-foreground"
             >
               {t}
             </span>
@@ -387,7 +384,7 @@ function ProjectModal({
         <button
           type="button"
           onClick={onClose}
-          className="mt-8 inline-flex items-center gap-1 text-xs font-semibold text-blue-600 transition-colors hover:text-blue-700"
+          className="mt-8 inline-flex items-center gap-1 text-[14px] font-semibold text-blue-600 transition-colors hover:text-blue-700"
         >
           See less
         </button>
@@ -553,8 +550,8 @@ function Stat({
       </div>
 
       <div>
-        <div className="text-xl font-semibold tracking-tight text-slate-900">{value}</div>
-        <div className="mt-0.5 text-xs text-slate-500">{label}</div>
+        <div className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">{value}</div>
+        <div className="mt-1 text-[14px] font-medium text-slate-500">{label}</div>
       </div>
     </div>
   );

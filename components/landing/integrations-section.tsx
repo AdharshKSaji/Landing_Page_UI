@@ -203,7 +203,7 @@ export function IntegrationsSection() {
 
       <div className="relative max-w-[1440px] mx-auto px-6 lg:px-16">
         {/* Header - Left aligned with premium gradient title matching the image */}
-        <div className="mb-16 lg:mb-20">s
+        <div className="mb-16 lg:mb-20">
           {/* Small label */}
           <div className="mb-4 flex items-center gap-3">
             <span className="h-px w-8 bg-blue-500" />

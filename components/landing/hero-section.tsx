@@ -203,7 +203,7 @@ export function HeroSection() {
                 "
               />
 
-              <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
+              <span className="font-mono text-[14px] font-medium uppercase tracking-[0.2em] inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
 
                 Where technology meets business ambition
               </span>

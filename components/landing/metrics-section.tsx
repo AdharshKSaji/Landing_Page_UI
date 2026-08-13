@@ -446,13 +446,6 @@ export function MetricsSection() {
                 );
               })}
             </div>
-
-            <div className="mt-10 text-center sm:hidden">
-              <button className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:gap-3 transition-all group bg-primary/5 hover:bg-primary/10 px-6 py-3 rounded-xl border border-primary/10">
-                View All Solutions
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </button>
-            </div>
           </div>
         </div>
       </section>

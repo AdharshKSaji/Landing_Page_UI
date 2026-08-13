@@ -371,7 +371,7 @@ export function FooterSection() {
               </div>
             </a>
 
-            <p className="mt-4 max-w-sm text-sm leading-7 text-slate-400">
+            <p className="mt-4 max-w-sm text-medium leading-7 text-slate-400">
               Building smart digital solutions that help businesses transform,
               grow and move forward with confidence.
             </p>
@@ -382,7 +382,7 @@ export function FooterSection() {
           ====================================================== */}
 
           <div>
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white">
+            <h3 className="mb-4 text-medium font-semibold uppercase tracking-[0.18em] text-white">
               Company
             </h3>
 
@@ -391,7 +391,7 @@ export function FooterSection() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="group inline-flex items-center text-sm text-slate-400 transition-colors duration-300 hover:text-white"
+                    className="group inline-flex items-center text-medium text-slate-400 transition-colors duration-300 hover:text-white"
                   >
                     {link.name}
 
@@ -410,7 +410,7 @@ export function FooterSection() {
           ====================================================== */}
 
           <div>
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white">
+            <h3 className="mb-4 text-medium font-semibold uppercase tracking-[0.18em] text-white">
               Services
             </h3>
 
@@ -419,7 +419,7 @@ export function FooterSection() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="group inline-flex items-center text-sm text-slate-400 transition-colors duration-300 hover:text-white"
+                    className="group inline-flex items-center text-medium text-slate-400 transition-colors duration-300 hover:text-white"
                   >
                     {link.name}
 
@@ -438,7 +438,7 @@ export function FooterSection() {
           ====================================================== */}
 
           <div>
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white">
+            <h3 className="mb-4 text-medium font-semibold uppercase tracking-[0.18em] text-white">
               Get in touch
             </h3>
 
@@ -454,7 +454,7 @@ export function FooterSection() {
                 </div>
 
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.15em] text-slate-500">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.15em] text-slate-500">
                     Email
                   </p>
 
@@ -475,7 +475,7 @@ export function FooterSection() {
                 </div>
 
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.15em] text-slate-500">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.15em] text-slate-500">
                     Phone
                   </p>
 
@@ -493,7 +493,7 @@ export function FooterSection() {
                 </div>
 
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.15em] text-slate-500">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.15em] text-slate-500">
                     Office
                   </p>
 
