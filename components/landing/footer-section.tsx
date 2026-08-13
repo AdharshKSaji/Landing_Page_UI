@@ -358,6 +358,11 @@ export function FooterSection() {
                   <div className="absolute h-2 w-2 rounded-full bg-blue-400 shadow-[0_0_12px_rgba(96,165,250,0.8)]" />
                 </div> */}
 
+{/* Animated wave */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[420px] overflow-hidden opacity-[0.14]">
+        <AnimatedWave />
+      </div>
+
                 {/* Logo */}
                 <div className="flex items-center gap-4">
                   <img

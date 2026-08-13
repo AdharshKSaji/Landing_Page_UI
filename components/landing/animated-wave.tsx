@@ -54,13 +54,8 @@ export function AnimatedWave() {
           const charIndex = Math.floor(normalized * (chars.length - 1));
           const alpha = 0.15 + normalized * 0.5;
 
-          const factor = x / cols;
-          // Interpolate between React blue #087EA4 (8, 126, 164) and dark teal #164A5B (22, 74, 91)
-          const r = Math.round(8 + (22 - 8) * factor);
-          const g = Math.round(126 + (74 - 126) * factor);
-          const b = Math.round(164 + (91 - 164) * factor);
-
-          ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
+          // Pure white with varying alpha
+          ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
           ctx.fillText(chars[charIndex], px, py);
         }
       }
