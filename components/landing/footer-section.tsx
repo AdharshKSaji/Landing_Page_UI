@@ -135,25 +135,25 @@ export function FooterSection() {
             {/* CTA */}
 
             <button
-              onClick={toggleForm}
-              className="group inline-flex h-14 shrink-0 items-center justify-center rounded-full bg-white px-7 text-sm font-medium text-slate-950 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-500 hover:text-white hover:shadow-[0_15px_40px_rgba(59,130,246,0.25)]"
-            >
-              Start a Conversation
+  onClick={toggleForm}
+  className="group inline-flex h-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] px-7 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(24,168,209,0.25)]"
+>
+  Start a Conversation
 
-              <span className="ml-3 flex h-7 w-7 items-center justify-center rounded-full bg-slate-950/10 transition-all group-hover:bg-white/20">
-                {showForm ? (
-                  <X
-                    size={15}
-                    className="transition-transform duration-300 group-hover:rotate-90"
-                  />
-                ) : (
-                  <ArrowUpRight
-                    size={15}
-                    className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  />
-                )}
-              </span>
-            </button>
+  <span className="ml-3 flex h-7 w-7 items-center justify-center rounded-full bg-white/15 transition-all group-hover:bg-white/25">
+    {showForm ? (
+      <X
+        size={15}
+        className="transition-transform duration-300 group-hover:rotate-90"
+      />
+    ) : (
+      <ArrowUpRight
+        size={15}
+        className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+      />
+    )}
+  </span>
+</button>
           </div>
         </div>
 
