@@ -16,7 +16,6 @@ import {
   Trophy,
   Users,
   WalletCards,
-  X,
 } from "lucide-react";
 
 interface Project {
@@ -164,16 +163,9 @@ const projects: Project[] = [
   },
 ];
 
-function ProjectCard({
-  project,
-  index,
-  onExpand,
-}: {
-  project: Project;
-  index: number;
-  onExpand: (project: Project) => void;
-}) {
+function ProjectCard({ project, index }: { project: Project; index: number }) {
   const [visible, setVisible] = useState(false);
+  const [expanded, setExpanded] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const Icon = project.icon;
 
@@ -194,7 +186,7 @@ function ProjectCard({
 
   const isLarge = project.size === "large";
   const isFeatured = project.size === "featured";
-  const clampLines = isFeatured ? 8 : isLarge ? 3 : 3;
+  const clampLines = isFeatured ? 8 : 3;
 
   return (
     <div
@@ -268,23 +260,26 @@ function ProjectCard({
           <div>
             <p
               className="max-w-lg text-[14px] leading-5 text-muted-foreground lg:text-sm lg:leading-6"
-              style={{
-                display: "-webkit-box",
-                WebkitLineClamp: clampLines,
-                WebkitBoxOrient: "vertical",
-                overflow: "hidden",
-              }}
+              style={
+                expanded
+                  ? undefined
+                  : {
+                      display: "-webkit-box",
+                      WebkitLineClamp: clampLines,
+                      WebkitBoxOrient: "vertical",
+                      overflow: "hidden",
+                    }
+              }
             >
-              {isFeatured ? project.fullDescription : project.description}
+              {project.fullDescription}
             </p>
 
             <button
               type="button"
-              onClick={() => onExpand(project)}
+              onClick={() => setExpanded((v) => !v)}
               className="mt-1.5 inline-flex items-center gap-1 text-[14px] font-semibold text-[#087EA4] transition-colors hover:text-teal-600"
             >
-              See more
-              <ArrowUpRight size={12} />
+              {expanded ? "Show less" : "Show more"}
             </button>
           </div>
 
@@ -319,83 +314,8 @@ function ProjectCard({
   );
 }
 
-function ProjectModal({
-  project,
-  onClose,
-}: {
-  project: Project;
-  onClose: () => void;
-}) {
-  const Icon = project.icon;
-
-  useEffect(() => {
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    document.addEventListener("keydown", onKeyDown);
-    return () => document.removeEventListener("keydown", onKeyDown);
-  }, [onClose]);
-
-  return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-      <button
-        type="button"
-        aria-label="Close project details"
-        onClick={onClose}
-        className="absolute inset-0 cursor-default bg-slate-950/50 backdrop-blur-sm"
-      />
-
-      <div className="relative z-10 max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-[28px] border border-border bg-card p-7 shadow-2xl sm:p-10">
-        <button
-          type="button"
-          onClick={onClose}
-          className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-        >
-          <X size={17} />
-        </button>
-
-        <div className="flex items-start justify-between pr-10">
-          <div>
-            <h3 className="text-2xl font-medium tracking-tight text-foreground sm:text-3xl">
-              {project.title}
-            </h3>
-          </div>
-
-          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-border bg-secondary text-blue-600">
-            <Icon size={22} strokeWidth={1.7} />
-          </div>
-        </div>
-
-        <p className="mt-6 text-sm leading-7 text-muted-foreground sm:text-[15px]">
-          {project.fullDescription}
-        </p>
-
-        <div className="mt-6 flex flex-wrap gap-2">
-          {project.tech.map((t) => (
-            <span
-              key={t}
-              className="rounded-full border border-border bg-secondary px-3 py-1 text-[14px] font-medium text-muted-foreground"
-            >
-              {t}
-            </span>
-          ))}
-        </div>
-
-        <button
-          type="button"
-          onClick={onClose}
-          className="mt-8 inline-flex items-center gap-1 text-[14px] font-semibold text-blue-600 transition-colors hover:text-blue-700"
-        >
-          See less
-        </button>
-      </div>
-    </div>
-  );
-}
-
 export function PortfolioSection() {
   const [headerVisible, setHeaderVisible] = useState(false);
-  const [activeProject, setActiveProject] = useState<Project | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const industryCount = 8; // banking, real-estate, AI data, edtech, hospitality, retail, logistics, cloud
@@ -473,21 +393,16 @@ export function PortfolioSection() {
           </div>
         </div>
 
-        <div className="mb-6 grid grid-cols-2 overflow-hidden rounded-[24px] border border-border bg-card sm:grid-cols-4">
+        {/* <div className="mb-6 grid grid-cols-2 overflow-hidden rounded-[24px] border border-border bg-card sm:grid-cols-4">
           <Stat value={`${projects.length}+`} label="Projects Delivered" icon={Sparkles} />
           <Stat value={`${industryCount}+`} label="Industries Served" icon={Building2} />
           <Stat value={`${techCount}+`} label="Technologies Used" icon={Coins} />
           <Stat value="100%" label="In-House Built" icon={ShieldCheck} />
-        </div>
+        </div> */}
 
-        <div className="grid auto-rows-[260px] grid-cols-1 gap-5 [grid-auto-flow:dense] md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 items-start gap-5 [grid-auto-flow:dense] md:grid-cols-2 lg:grid-cols-4">
           {projects.map((project, index) => (
-            <ProjectCard
-              key={project.title}
-              project={project}
-              index={index}
-              onExpand={setActiveProject}
-            />
+            <ProjectCard key={project.title} project={project} index={index} />
           ))}
         </div>
 
@@ -506,10 +421,6 @@ export function PortfolioSection() {
           </div>
         </div>
       </div>
-
-      {activeProject && (
-        <ProjectModal project={activeProject} onClose={() => setActiveProject(null)} />
-      )}
     </section>
   );
 }
