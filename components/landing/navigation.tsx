@@ -29,44 +29,39 @@ export function Navigation() {
 
   return (
     <header
-      className={`fixed z-50 transition-all duration-500 ${
-        isScrolled
-          ? "top-4 left-4 right-4"
-          : "top-0 left-0 right-0"
-      }`}
+      className={`fixed z-50 transition-all duration-500 ${isScrolled
+        ? "top-4 left-4 right-4"
+        : "top-0 left-0 right-0"
+        }`}
     >
       <nav
-        className={`mx-auto transition-all duration-500 ${
-          isScrolled || isMobileMenuOpen
-            ? "bg-background/80 backdrop-blur-xl border border-foreground/10 rounded-2xl shadow-lg max-w-[1200px]"
-            : "bg-transparent max-w-[1400px]"
-        }`}
+        className={`mx-auto transition-all duration-500 ${isScrolled || isMobileMenuOpen
+          ? "bg-background/80 backdrop-blur-xl border border-foreground/10 rounded-2xl shadow-lg max-w-[1200px]"
+          : "bg-transparent max-w-[1400px]"
+          }`}
       >
         <div
-          className={`flex items-center justify-between transition-all duration-500 px-6 lg:px-8 ${
-            isScrolled ? "h-14" : "h-20"
-          }`}
+          className={`flex items-center justify-between transition-all duration-500 px-6 lg:px-8 ${isScrolled ? "h-14" : "h-20"
+            }`}
         >
           {/* Logo */}
-    <div className="flex items-center">
-  <img
-    src="/logo2.png"
-    alt="GRANDREVES TECHNOLOGIES"
-    className={`object-contain transition-all duration-500 ${
-      isScrolled ? "h-8 w-auto" : "h-10 w-auto"
-    }`}
-  />
+          <div className="flex items-center">
+            <img
+              src="/logo2.png"
+              alt="GRANDREVES TECHNOLOGIES"
+              className={`object-contain transition-all duration-500 ${isScrolled ? "h-8 w-auto" : "h-10 w-auto"
+                }`}
+            />
 
-  <span
-    className={`ml-3 text-muted-foreground font-mono font-bold transition-all duration-500 ${
-      isScrolled
-        ? "text-[16px] mt-0"
-        : "text-[18px] mt-0.5"
-    }`}
-  >
-    Grandreves Technologies
-  </span>
-</div>
+            <span
+              className={`ml-3 text-muted-foreground font-mono font-bold transition-all duration-500 ${isScrolled
+                ? "text-[16px] mt-0"
+                : "text-[18px] mt-0.5"
+                }`}
+            >
+              Grandreves Technologies
+            </span>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-12">
@@ -74,15 +69,14 @@ export function Navigation() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-base font-bold text-foreground/70 hover:text-foreground transition-colors duration-300 relative group"
+                className="text-xs font-bold text-foreground/70 hover:text-foreground transition-colors duration-300 relative group"
                 onMouseEnter={() => setHoveredLink(link.name)}
                 onMouseLeave={() => setHoveredLink(null)}
               >
-                <span className={`text-medium font-medium uppercase tracking-[0.2em] inline-flex transition-all duration-300 ${
-                  hoveredLink === link.name
-                    ? "bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent"
-                    : "text-foreground/70"
-                }`}>
+                <span className={`text-medium font-bold uppercase tracking-[0.2em] inline-flex transition-all duration-300 ${hoveredLink === link.name
+                  ? "bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent"
+                  : "text-foreground/70"
+                  }`}>
                   {link.name}
                 </span>
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-foreground transition-all duration-300 group-hover:w-full" />
@@ -107,11 +101,10 @@ export function Navigation() {
 
       {/* Mobile Menu - Full Screen Overlay */}
       <div
-        className={`md:hidden fixed inset-0 bg-background z-40 transition-all duration-500 ${
-          isMobileMenuOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        }`}
+        className={`md:hidden fixed inset-0 bg-background z-40 transition-all duration-500 ${isMobileMenuOpen
+          ? "opacity-100 pointer-events-auto"
+          : "opacity-0 pointer-events-none"
+          }`}
         style={{ top: 0 }}
       >
         <div className="flex flex-col h-full px-8 pt-28 pb-8">
@@ -122,20 +115,18 @@ export function Navigation() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-5xl font-display text-foreground hover:text-muted-foreground transition-all duration-500 ${
-                  isMobileMenuOpen
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-4"
-                }`}
+                className={`text-5xl font-display text-foreground hover:text-muted-foreground transition-all duration-500 ${isMobileMenuOpen
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-4"
+                  }`}
                 style={{ transitionDelay: isMobileMenuOpen ? `${i * 75}ms` : "0ms" }}
                 onMouseEnter={() => setHoveredLink(link.name)}
                 onMouseLeave={() => setHoveredLink(null)}
               >
-                <span className={`text-medium font-medium uppercase tracking-[0.2em] inline-flex transition-all duration-300 ${
-                  hoveredLink === link.name
-                    ? "bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent"
-                    : "text-foreground"
-                }`}>
+                <span className={`text-medium font-medium uppercase tracking-[0.2em] inline-flex transition-all duration-300 ${hoveredLink === link.name
+                  ? "bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent"
+                  : "text-foreground"
+                  }`}>
                   {link.name}
                 </span>
               </Link>
@@ -144,11 +135,10 @@ export function Navigation() {
 
           {/* Bottom CTAs */}
           <div
-            className={`flex gap-4 pt-8 border-t border-foreground/10 transition-all duration-500 ${
-              isMobileMenuOpen
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-4"
-            }`}
+            className={`flex gap-4 pt-8 border-t border-foreground/10 transition-all duration-500 ${isMobileMenuOpen
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-4"
+              }`}
             style={{ transitionDelay: isMobileMenuOpen ? "300ms" : "0ms" }}
           >
             <Button
