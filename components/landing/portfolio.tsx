@@ -177,7 +177,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           observer.disconnect();
         }
       },
-      { threshold: 0.15 }
+      // { threshold: 0.15 }
     );
 
     if (ref.current) observer.observe(ref.current);
@@ -369,8 +369,8 @@ export function PortfolioSection() {
         >
           <div className="mb-7 flex items-center gap-3">
             <span className="h-px w-10 bg-primary" />
-            <span className="text-medium font-bold uppercase tracking-[0.22em] bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
-              Our Portfolio
+<span className="font-sans text-medium font-medium uppercase tracking-[0.2em] text-[#087EA4]">
+                Our Portfolio
             </span>
           </div>
 
@@ -408,9 +408,9 @@ export function PortfolioSection() {
 
         <div className="mt-8 flex flex-col gap-6 rounded-[28px] border border-border bg-[#020611] p-8 text-primary-foreground lg:flex-row lg:items-center lg:justify-between lg:p-10">
           <div>
-            <div className="mb-2 text-xs font-medium uppercase tracking-[0.2em] font-bold bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
-              Have a project in mind?
-            </div>
+            <div className="font-sans text-medium font-medium uppercase tracking-[0.2em] text-[#087EA4]">
+  Have a project in mind?
+</div>
             <h3 className="max-w-2xl text-2xl font-medium tracking-tight lg:text-3xl">
               Let's build something that fits your workflow, not the other way around.
             </h3>

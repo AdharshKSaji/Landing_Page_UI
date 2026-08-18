@@ -106,7 +106,7 @@ export function IntegrationsSection() {
       ([entry]) => {
         if (entry.isIntersecting) setIsVisible(true);
       },
-      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+      {  rootMargin: "0px 0px -50px 0px" }
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
@@ -207,9 +207,17 @@ export function IntegrationsSection() {
           {/* Small label */}
           <div className="mb-4 flex items-center gap-3">
             <span className="h-px w-8 bg-blue-500" />
-            <span className="text-medium font-bold uppercase tracking-[0.22em] bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
-              Technology Stack
-            </span>
+         <span
+  className="
+    font-sans text-medium
+    font-medium uppercase
+    tracking-[0.2em]
+    text-[#087EA4]
+  "
+>
+  Technology Stack
+</span>
+
           </div>
 
           <h2

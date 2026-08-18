@@ -86,7 +86,7 @@ export function InfrastructureSection() {
         }
       },
       {
-        threshold: 0.15,
+        // threshold: 0.15,
       }
     );
 

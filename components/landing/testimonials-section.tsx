@@ -64,7 +64,7 @@ export function TestimonialsSection() {
         <div className="mb-8 lg:mb-12">
           <div className="flex items-center gap-3 mb-6">
             <span className="h-px w-8 bg-[#087EA4]" />
-            <span className="text-medium font-bold uppercase tracking-[0.22em] bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
+            <span className="font-sans text-medium font-medium uppercase tracking-[0.2em] text-[#087EA4]">
               Strategic Partnerships
             </span>
           </div>

@@ -57,7 +57,7 @@ export function HowItWorksSection() {
           setIsVisible(true);
         }
       },
-      { threshold: 0.15 }
+      // { threshold: 0.15 }
     );
 
     if (sectionRef.current) {
@@ -82,41 +82,52 @@ export function HowItWorksSection() {
     <section
       id="how-it-works"
       ref={sectionRef}
-      className="relative overflow-hidden bg-[#020611] text-white pt-10 pb-20 lg:pt-14 lg:pb-28"
+      className="relative overflow-hidden bg-gradient-to-b from-[#0a1a3a] via-[#06112a] to-[#020611] text-white pt-10 pb-20 lg:pt-14 lg:pb-28"
     >
       {/* =========================================================
-          BACKGROUND
+          BACKGROUND - Lighter gradient with more proportions at top
       ========================================================== */}
 
-      {/* Main radial glow */}
+      {/* Main radial glow - lighter and with gradient emphasis at top */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-[45%] top-[20%] h-[500px] w-[500px] rounded-full bg-blue-600/[0.06] blur-[140px]" />
-        <div className="absolute right-[-10%] top-[-10%] h-[500px] w-[500px] rounded-full bg-blue-500/[0.04] blur-[120px]" />
-        <div className="absolute bottom-[-20%] left-[-10%] h-[500px] w-[500px] rounded-full bg-blue-600/[0.04] blur-[130px]" />
+        {/* Top glow - more prominent */}
+        <div className="absolute left-[30%] top-[-10%] h-[600px] w-[600px] rounded-full bg-blue-400/[0.15] blur-[140px]" />
+        <div className="absolute right-[10%] top-[-5%] h-[500px] w-[500px] rounded-full bg-indigo-400/[0.10] blur-[120px]" />
+        
+        {/* Mid section glows */}
+        <div className="absolute left-[45%] top-[30%] h-[400px] w-[400px] rounded-full bg-blue-300/[0.08] blur-[130px]" />
+        <div className="absolute left-[60%] top-[40%] h-[350px] w-[350px] rounded-full bg-cyan-400/[0.06] blur-[110px]" />
+        
+        {/* Bottom glows - less prominent */}
+        <div className="absolute right-[-10%] bottom-[-10%] h-[400px] w-[400px] rounded-full bg-blue-400/[0.05] blur-[120px]" />
+        <div className="absolute bottom-[-20%] left-[-10%] h-[350px] w-[350px] rounded-full bg-blue-500/[0.04] blur-[130px]" />
       </div>
 
-      {/* Diagonal lines */}
+      {/* Gradient overlay - more light at top */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-blue-400/[0.06] via-transparent to-transparent" />
+
+      {/* Diagonal lines - lighter visibility */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.035]"
+        className="pointer-events-none absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage: `
             repeating-linear-gradient(
               -45deg,
               transparent 0px,
               transparent 44px,
-              rgba(255,255,255,0.8) 44px,
-              rgba(255,255,255,0.8) 45px
+              rgba(150,200,255,0.5) 44px,
+              rgba(150,200,255,0.5) 45px
             )
           `,
         }}
       />
 
-      {/* Top-right curved lines */}
-      <div className="pointer-events-none absolute -right-32 -top-20 h-[450px] w-[650px] opacity-[0.12]">
+      {/* Top-right curved lines - lighter and more visible at top */}
+      <div className="pointer-events-none absolute -right-32 -top-20 h-[450px] w-[650px] opacity-[0.18]">
         {[0, 1, 2, 3, 4, 5, 6].map((item) => (
           <div
             key={item}
-            className="absolute right-0 rounded-full border-t border-blue-500/40"
+            className="absolute right-0 rounded-full border-t border-blue-300/40"
             style={{
               width: `${400 + item * 45}px`,
               height: `${220 + item * 35}px`,
@@ -127,12 +138,12 @@ export function HowItWorksSection() {
         ))}
       </div>
 
-      {/* Bottom-left curved lines */}
-      <div className="pointer-events-none absolute -bottom-40 -left-40 h-[400px] w-[600px] opacity-[0.10]">
+      {/* Bottom-left curved lines - less visible */}
+      <div className="pointer-events-none absolute -bottom-40 -left-40 h-[400px] w-[600px] opacity-[0.08]">
         {[0, 1, 2, 3, 4, 5].map((item) => (
           <div
             key={item}
-            className="absolute bottom-0 rounded-full border-b border-blue-500/40"
+            className="absolute bottom-0 rounded-full border-b border-blue-300/25"
             style={{
               width: `${400 + item * 50}px`,
               height: `${180 + item * 35}px`,
@@ -142,6 +153,9 @@ export function HowItWorksSection() {
           />
         ))}
       </div>
+
+      {/* Subtle top highlight gradient */}
+      <div className="pointer-events-none absolute top-0 left-0 right-0 h-[200px] bg-gradient-to-b from-blue-400/[0.04] via-blue-300/[0.02] to-transparent" />
 
       {/* =========================================================
           CONTENT
@@ -160,15 +174,16 @@ export function HowItWorksSection() {
           <div className="flex flex-col lg:h-full lg:justify-between">
             {/* HEADER */}
             <div
-              className={`mb-10 transition-all duration-1000 ${isVisible
-                ? "translate-y-0 opacity-100"
-                : "translate-y-8 opacity-0"
-                }`}
+              className={`mb-10 transition-all duration-1000 ${
+                isVisible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-8 opacity-0"
+              }`}
             >
               {/* Small label */}
               <div className="mb-4 flex items-center gap-3">
-                <span className="h-px w-8 bg-blue-500" />
-                          <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
+                <span className="h-px w-8 bg-blue-400" />
+<span className="font-sans text-medium font-medium uppercase tracking-[0.2em] text-[#087EA4]">
                   Our Services
                 </span>
               </div>
@@ -178,13 +193,13 @@ export function HowItWorksSection() {
                 Built to move
                 <br />
                 your{" "}
-                <span className="bg-gradient-to-r from-blue-300 via-blue-500 to-blue-600 bg-clip-text text-transparent">
+            <span className="block inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
                   business forward.
                 </span>
               </h2>
 
               {/* Description */}
-              <p className="mt-5 text-sm leading-6 text-white/55 lg:text-base">
+              <p className="mt-5 text-sm leading-6 text-white/60 lg:text-base">
                 Our team delivers exceptional IT services and innovative digital
                 solutions tailored to drive measurable results. From concept to
                 execution, we build scalable, secure and future-ready solutions
@@ -203,58 +218,65 @@ export function HowItWorksSection() {
                   key={step.number}
                   type="button"
                   onClick={() => setActiveStep(index)}
-                  className={`group relative flex w-full items-center gap-4 overflow-hidden rounded-xl border px-4 py-4 text-left transition-all duration-500 sm:px-5 sm:py-5 ${isActive
-                    ? "border-blue-500/70 bg-blue-500/[0.08] shadow-[0_0_35px_rgba(37,99,235,0.08)]"
-                    : "border-white/[0.08] bg-white/[0.015] hover:border-blue-500/30 hover:bg-white/[0.025]"
-                    }`}
+                  className={`group relative flex w-full items-center gap-4 overflow-hidden rounded-xl border px-4 py-4 text-left transition-all duration-500 sm:px-5 sm:py-5 ${
+                    isActive
+                      ? "border-blue-400/60 bg-blue-500/[0.12] shadow-[0_0_35px_rgba(59,130,246,0.12)]"
+                      : "border-white/[0.08] bg-white/[0.02] hover:border-blue-400/30 hover:bg-white/[0.04]"
+                  }`}
                 >
                   {/* Active left line */}
                   <span
-                    className={`absolute left-0 top-0 h-full w-[2px] bg-blue-500 transition-all duration-500 ${isActive ? "opacity-100" : "opacity-0"
-                      }`}
+                    className={`absolute left-0 top-0 h-full w-[2px] bg-blue-400 transition-all duration-500 ${
+                      isActive ? "opacity-100" : "opacity-0"
+                    }`}
                   />
 
                   {/* Icon */}
                   <div
-                    className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border transition-all duration-500 ${isActive
-                      ? "border-blue-500/30 bg-blue-500/[0.12] text-blue-400"
-                      : "border-white/[0.06] bg-white/[0.025] text-white/35 group-hover:text-blue-400"
-                      }`}
+                    className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border transition-all duration-500 ${
+                      isActive
+                        ? "border-blue-400/30 bg-blue-400/[0.12] text-blue-300"
+                        : "border-white/[0.06] bg-white/[0.02] text-white/40 group-hover:text-blue-300"
+                    }`}
                   >
                     <Icon size={20} strokeWidth={1.5} />
                   </div>
 
                   {/* Number */}
                   <span
-                    className={`hidden w-8 text-xs font-medium tracking-widest transition-colors duration-300 sm:block ${isActive ? "text-blue-400" : "text-white/20"
-                      }`}
+                    className={`hidden w-8 text-xs font-medium tracking-widest transition-colors duration-300 sm:block ${
+                      isActive ? "text-blue-300" : "text-white/25"
+                    }`}
                   >
                     {step.number}
                   </span>
 
                   {/* Title */}
                   <span
-                    className={`flex-1 text-sm font-medium transition-all duration-300 sm:text-base lg:text-lg ${isActive
-                      ? "text-white"
-                      : "text-white/50 group-hover:text-white/80"
-                      }`}
+                    className={`flex-1 text-sm font-medium transition-all duration-300 sm:text-base lg:text-lg ${
+                      isActive
+                        ? "text-white"
+                        : "text-white/55 group-hover:text-white/80"
+                    }`}
                   >
                     {step.title}
                   </span>
 
                   {/* Arrow */}
                   <div
-                    className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-all duration-500 ${isActive
-                      ? "bg-blue-500 text-white shadow-[0_0_20px_rgba(59,130,246,0.35)]"
-                      : "text-white/30 group-hover:text-blue-400"
-                      }`}
+                    className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-all duration-500 ${
+                      isActive
+                        ? "bg-blue-400 text-white shadow-[0_0_25px_rgba(59,130,246,0.4)]"
+                        : "text-white/30 group-hover:text-blue-300"
+                    }`}
                   >
                     <ArrowRight
                       size={17}
-                      className={`transition-transform duration-300 ${isActive
-                        ? "translate-x-0"
-                        : "group-hover:translate-x-1"
-                        }`}
+                      className={`transition-transform duration-300 ${
+                        isActive
+                          ? "translate-x-0"
+                          : "group-hover:translate-x-1"
+                      }`}
                     />
                   </div>
 
@@ -262,7 +284,7 @@ export function HowItWorksSection() {
                   {isActive && (
                     <span
                       key={`progress-${activeStep}`}
-                      className="absolute bottom-0 left-0 h-[1px] bg-blue-500"
+                      className="absolute bottom-0 left-0 h-[1px] bg-blue-400"
                       style={{
                         animation: "serviceProgress 5s linear forwards",
                       }}
@@ -279,74 +301,73 @@ export function HowItWorksSection() {
           ==================================================== */}
 
           <div
-            className="relative lg:h-full overflow-hidden rounded-2xl border border-blue-500/20 bg-gradient-to-br from-blue-500/[0.08] via-white/[0.02] to-transparent p-7 sm:p-9 lg:p-10"
+            className="relative lg:h-full overflow-hidden rounded-2xl border border-blue-400/20 bg-gradient-to-br from-blue-500/[0.10] via-white/[0.03] to-transparent p-7 sm:p-9 lg:p-10"
           >
-            {/* Card glow */}
-            <div className="pointer-events-none absolute right-[-20%] top-[-15%] h-[300px] w-[300px] rounded-full bg-blue-500/[0.10] blur-[100px]" />
+            {/* Card glow - lighter */}
+            <div className="pointer-events-none absolute right-[-20%] top-[-15%] h-[300px] w-[300px] rounded-full bg-blue-400/[0.12] blur-[100px]" />
 
             {/* Inner border */}
-            <div className="pointer-events-none absolute inset-3 rounded-xl border border-white/[0.03]" />
+            <div className="pointer-events-none absolute inset-3 rounded-xl border border-white/[0.04]" />
 
             <div
               key={activeStep}
               className="relative z-10 flex h-full flex-col justify-between animate-service-fade"
             >
               {/* =================================================
-                  ABSTRACT WEB UI
+                  ABSTRACT WEB UI — improved clarity
               ================================================== */}
 
               <div className="mb-8 flex justify-center">
                 <div className="relative w-full max-w-[380px]">
-                  {/* Glow */}
-                  <div className="absolute inset-10 rounded-full bg-blue-500/20 blur-[70px]" />
+                  {/* Glow - lighter and more vibrant */}
+                  <div className="absolute inset-10 rounded-full bg-blue-400/20 blur-[70px]" />
 
                   {/* Browser */}
-                  <div className="relative overflow-hidden rounded-xl border border-blue-500/50 bg-[#061126] shadow-[0_0_50px_rgba(37,99,235,0.12)]">
+                  <div className="relative overflow-hidden rounded-xl border border-blue-400/40 bg-gradient-to-b from-[#0a1a3a] to-[#051028] shadow-[0_0_50px_rgba(59,130,246,0.15)]">
                     {/* Browser header */}
-                    <div className="flex h-9 items-center gap-1.5 border-b border-blue-500/20 px-3">
-                      <span className="h-1.5 w-1.5 rounded-full bg-blue-400/70" />
-                      <span className="h-1.5 w-1.5 rounded-full bg-blue-400/40" />
-                      <span className="h-1.5 w-1.5 rounded-full bg-blue-400/20" />
+                    <div className="flex h-9 items-center gap-1.5 border-b border-blue-400/20 px-3">
+                      <span className="h-1.5 w-1.5 rounded-full bg-blue-300/70" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-blue-300/40" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-blue-300/20" />
 
-                      <div className="ml-auto h-1.5 w-16 rounded-full bg-blue-400/10" />
+                      <div className="ml-auto h-1.5 w-16 rounded-full bg-blue-300/15" />
                     </div>
 
-                    {/* Browser content */}
+                    {/* Browser content - improved contrast */}
                     <div className="p-6">
                       <div className="mb-5 flex gap-4">
-                        <div className="h-14 w-14 rounded-md border border-blue-400/50 bg-blue-500/10" />
-
+                        <div className="h-14 w-14 rounded-md border border-blue-400/50 bg-blue-500/15" />
                         <div className="flex-1 pt-1">
-                          <div className="mb-2 h-2 w-24 rounded-full bg-blue-400/60" />
-                          <div className="h-1.5 w-32 rounded-full bg-blue-400/20" />
+                          <div className="mb-2 h-2 w-24 rounded-full bg-blue-300/60" />
+                          <div className="h-1.5 w-32 rounded-full bg-blue-300/25" />
                         </div>
                       </div>
 
                       <div className="grid grid-cols-3 gap-3">
-                        <div className="h-16 rounded-md border border-blue-500/20 bg-blue-500/[0.05]" />
-                        <div className="h-16 rounded-md border border-blue-500/20 bg-blue-500/[0.05]" />
-                        <div className="h-16 rounded-md border border-blue-500/20 bg-blue-500/[0.05]" />
+                        <div className="h-16 rounded-md border border-blue-400/20 bg-blue-500/[0.06]" />
+                        <div className="h-16 rounded-md border border-blue-400/20 bg-blue-500/[0.06]" />
+                        <div className="h-16 rounded-md border border-blue-400/20 bg-blue-500/[0.06]" />
                       </div>
 
                       <div className="mt-4 space-y-2">
-                        <div className="h-1.5 w-full rounded-full bg-blue-400/10" />
-                        <div className="h-1.5 w-4/5 rounded-full bg-blue-400/10" />
-                        <div className="h-1.5 w-3/5 rounded-full bg-blue-400/10" />
+                        <div className="h-1.5 w-full rounded-full bg-blue-300/15" />
+                        <div className="h-1.5 w-4/5 rounded-full bg-blue-300/15" />
+                        <div className="h-1.5 w-3/5 rounded-full bg-blue-300/15" />
                       </div>
                     </div>
                   </div>
 
-                  {/* Floating blue square */}
-                  <div className="absolute -left-5 top-16 h-3 w-3 border border-blue-500 bg-[#020611] shadow-[0_0_15px_rgba(59,130,246,0.7)]" />
+                  {/* Floating elements - more visible */}
+                  <div className="absolute -left-5 top-16 h-3 w-3 border border-blue-400 bg-[#020611] shadow-[0_0_20px_rgba(59,130,246,0.8)]" />
 
-                  <div className="absolute -right-3 bottom-12 h-2 w-2 rounded-full bg-blue-400 shadow-[0_0_12px_rgba(59,130,246,0.8)]" />
+                  <div className="absolute -right-3 bottom-12 h-2 w-2 rounded-full bg-blue-300 shadow-[0_0_15px_rgba(59,130,246,0.9)]" />
                 </div>
               </div>
 
               {/* Bottom Info Group */}
               <div>
                 {/* Small divider */}
-                <div className="mb-6 h-px w-20 bg-blue-500" />
+                <div className="mb-6 h-px w-20 bg-blue-400" />
 
                 {/* Description */}
                 <p className="max-w-lg text-xl font-light leading-relaxed text-white/85 sm:text-2xl">
@@ -360,11 +381,11 @@ export function HowItWorksSection() {
                     <Zap
                       size={25}
                       strokeWidth={1.5}
-                      className="mb-3 text-blue-400"
+                      className="mb-3 text-blue-300"
                     />
 
                     <span className="text-xs leading-5 text-white/60 sm:text-sm">
-                      Fast &
+                      Fast &amp;
                       <br />
                       Performant
                     </span>
@@ -375,7 +396,7 @@ export function HowItWorksSection() {
                     <MonitorSmartphone
                       size={25}
                       strokeWidth={1.5}
-                      className="mb-3 text-blue-400"
+                      className="mb-3 text-blue-300"
                     />
 
                     <span className="text-xs leading-5 text-white/60 sm:text-sm">
@@ -390,7 +411,7 @@ export function HowItWorksSection() {
                     <UserRound
                       size={25}
                       strokeWidth={1.5}
-                      className="mb-3 text-blue-400"
+                      className="mb-3 text-blue-300"
                     />
 
                     <span className="text-xs leading-5 text-white/60 sm:text-sm">

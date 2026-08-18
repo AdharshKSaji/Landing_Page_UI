@@ -104,7 +104,7 @@ function FeatureCard({
         }
       },
       {
-        threshold: 0.15,
+        // threshold: 0.15,
       }
     );
 
@@ -292,7 +292,7 @@ export function FeaturesSection() {
         }
       },
       {
-        threshold: 0.1,
+        // threshold: 0.1,
       }
     );
 
@@ -469,13 +469,15 @@ export function FeaturesSection() {
           "
         >
           <div>
+            
             <div
-              className="
-                mb-2
-                text-xs font-semibold
-                uppercase tracking-[0.22em]
-                inline-flex bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent
+                 className="
+                font-sans text-medium
+                font-medium uppercase
+                tracking-[0.2em]
+                text-[#087EA4]
               "
+      
             >
               One team. One goal.
             </div>

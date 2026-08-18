@@ -112,7 +112,12 @@ export function FooterSection() {
               <div className="mb-4 flex items-center gap-3">
                 <span className="h-px w-8 bg-blue-500" />
 
-                <span className="text-medium font-medium uppercase tracking-[0.22em] text-blue-400">
+                <span className="
+    font-sans text-medium
+    font-medium uppercase
+    tracking-[0.2em]
+    text-[#087EA4]
+  ">
                   Let's build together
                 </span>
               </div>
@@ -172,7 +177,7 @@ export function FooterSection() {
                 <div className="mb-6 flex items-center gap-3">
                   <span className="h-px w-8 bg-blue-500" />
 
-                  <span className="text-xs font-medium uppercase tracking-[0.22em] text-blue-400">
+<span className="font-sans text-medium font-medium uppercase tracking-[0.2em] text-[#087EA4]">
                     Contact Us
                   </span>
                 </div>
@@ -222,7 +227,7 @@ export function FooterSection() {
               <div className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-8 sm:p-10">
                 <div className="mb-8">
                   {/* <h4 className="text-xl font-semibold">Drop Us 👇 a Line</h4> */}
-                  <p className="ext-xs font-medium uppercase tracking-[0.22em] text-blue-400">
+                  <p className="font-sans text-medium font-medium uppercase tracking-[0.2em] text-[#087EA4]">
                     Make Enquiry Today - Request Free Quote
                   </p>
                 </div>
@@ -397,7 +402,7 @@ export function FooterSection() {
               Company
             </h3>
 
-            <ul className="space-y-4">
+            {/* <ul className="space-y-4">
               {footerLinks.Company.map((link) => (
                 <li key={link.name}>
                   <a
@@ -413,7 +418,7 @@ export function FooterSection() {
                   </a>
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
 
           {/* =====================================================

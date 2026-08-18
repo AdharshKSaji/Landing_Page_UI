@@ -26,6 +26,7 @@ import {
   LandPlot,
   LayoutGrid,
   LucideIcon,
+  Smartphone,
 } from "lucide-react";
 
 interface Product {
@@ -195,6 +196,33 @@ const products: Product[] = [
       { label: "Bidder Engagement", value: "65% higher" },
     ],
   },
+  {
+    name: "Sharjah Education Academy (SEA) Mobile App ",
+    icon: Smartphone,
+    description:
+      "Enterprise mobile application providing centralized access to academic, administrative, and organizational services for SEA users.",
+    features: ["Role-based Access", "Oracle Fusion ERP Integration", "Nursery Management Integration", "Multi-service Portal"],
+    category: "Mobile Enterprise",
+    status: "Available",
+    detailedDescription:
+      "The SEA Mobile App is an enterprise-grade mobile solution developed to transform how Sharjah Education Academy users interact with academic and administrative services. By integrating seamlessly with Oracle Fusion ERP and the Nursery Management System (NMS), the app delivers personalized, role-based experiences for Parents, Academic Employees, Nursery users, Events attendees, Visitors, and Claims management.",
+    longDescription:
+      "The Sharjah Education Academy Mobile Application represents a comprehensive digital transformation initiative, bringing together disparate systems into a unified mobile platform. Built with a modern hybrid architecture, the app enables users to access grades, attendance records, financial information, nursery updates, event registrations, visitor management, and claims processing—all from a single intuitive interface. The project encompasses full lifecycle development including backend/API integrations, robust authentication and authorization frameworks, comprehensive testing and UAT, and successful deployment to both the Apple App Store and Google Play Store, ensuring seamless access for the entire SEA community.",
+    benefits: [
+      "Centralized access to all SEA services",
+      "Role-based personalized user experiences",
+      "Real-time Oracle Fusion ERP synchronization",
+      "Integrated Nursery Management System",
+      "Streamlined claims and visitor management",
+      "Secure authentication and authorization",
+    ],
+    metrics: [
+      { label: "User Base", value: "5,000+" },
+      { label: "Service Uptime", value: "99.9%" },
+      { label: "Process Efficiency", value: "40% improvement" },
+      { label: "User Satisfaction", value: "4.8/5" },
+    ],
+}
 ];
 
 const statusColors = {
@@ -214,7 +242,7 @@ export function MetricsSection() {
       ([entry]) => {
         if (entry.isIntersecting) setIsVisible(true);
       },
-      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+      {  rootMargin: "0px 0px -50px 0px" }
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
@@ -270,7 +298,12 @@ export function MetricsSection() {
             <div className="flex items-center gap-3 mb-6">
               {/* <span className="w-8 h-px bg-gradient-to-r from-primary/60 to-transparent" /> */}
               <span className="h-px w-8 bg-blue-500" />
-              <span className="text-medium font-bold uppercase tracking-[0.22em] bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
+              <span className="
+    font-sans text-medium
+    font-medium uppercase
+    tracking-[0.2em]
+    text-[#087EA4]
+  ">
                 Enterprise Solutions
               </span>
 
@@ -321,7 +354,11 @@ export function MetricsSection() {
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center gap-3">
                 <LayoutGrid className="w-5 h-5 text-primary" />
-                <h3 className="text-xl font-display tracking-tight font-bold bg-gradient-to-r from-[#087EA4] via-[#18A8D1] to-[#24B35A] bg-clip-text text-transparent">
+                <h3 className="
+    font-sans text-medium
+    font-medium uppercase
+    tracking-[0.2em]
+    text-[#087EA4] ">
   Our Product Suite
 </h3>
 
