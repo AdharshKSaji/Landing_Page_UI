@@ -43,6 +43,7 @@ const socialLinks = [
 
 export function FooterSection() {
   const [showForm, setShowForm] = useState(false);
+  const [isCaptchaChecked, setIsCaptchaChecked] = useState(false);
 
   useEffect(() => {
     const handleOpenForm = () => {
@@ -62,6 +63,21 @@ export function FooterSection() {
 
   const toggleForm = () => {
     setShowForm(!showForm);
+    setIsCaptchaChecked(false);
+  };
+
+  const handleCaptchaToggle = () => {
+    setIsCaptchaChecked(!isCaptchaChecked);
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!isCaptchaChecked) {
+      alert("Please verify that you're not a robot.");
+      return;
+    }
+    // Form submission logic here
+    console.log("Form submitted successfully!");
   };
 
   return (
@@ -232,7 +248,7 @@ export function FooterSection() {
                   </p>
                 </div>
 
-                <form className="space-y-5">
+                <form className="space-y-5" onSubmit={handleSubmit}>
                   <div>
                     <label
                       htmlFor="name"
@@ -312,7 +328,31 @@ export function FooterSection() {
 
                   <div className="rounded-lg border border-white/[0.08] bg-white/[0.03] px-4 py-3">
                     <div className="flex items-center gap-3">
-                      <div className="h-5 w-5 rounded border-2 border-white/30 bg-white/5" />
+                      <button
+                        type="button"
+                        onClick={handleCaptchaToggle}
+                        className={`h-5 w-5 rounded border-2 flex items-center justify-center transition-all ${
+                          isCaptchaChecked
+                            ? "border-blue-500 bg-blue-500"
+                            : "border-white/30 bg-white/5 hover:border-white/50"
+                        }`}
+                      >
+                        {isCaptchaChecked && (
+                          <svg
+                            className="h-3 w-3 text-white"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth={3}
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
+                        )}
+                      </button>
 
                       <span className="text-sm text-white/40">
                         I'm not a robot

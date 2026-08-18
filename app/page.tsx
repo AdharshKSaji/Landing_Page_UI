@@ -1,35 +1,35 @@
 import { Navigation } from "@/components/landing/navigation";
 import { HeroSection } from "@/components/landing/hero-section";
-import { FeaturesSection } from "@/components/landing/features-section";
-import { HowItWorksSection } from "@/components/landing/how-it-works-section";
-import { InfrastructureSection } from "@/components/landing/infrastructure-section";
-import { MetricsSection } from "@/components/landing/metrics-section";
-import { IntegrationsSection } from "@/components/landing/integrations-section";
-import { SecuritySection } from "@/components/landing/security-section";
-import { DevelopersSection } from "@/components/landing/developers-section";
-import { TestimonialsSection } from "@/components/landing/testimonials-section";
+import { OurServices } from "@/components/landing/how-it-works-section";
+import { OurMethodology } from "@/components/landing/infrastructure-section";
+import { StrategicPartnerships,} from "@/components/landing/testimonials-section";
 import { PricingSection } from "@/components/landing/pricing-section";
-import { CtaSection } from "@/components/landing/cta-section";
 import { FooterSection } from "@/components/landing/footer-section";
 import { PortfolioSection } from "@/components/landing/portfolio";
 import { WhatsAppFloat } from "@/components/landing/whatsappFloatingButton";
+import { AboutOrganization } from "@/components/landing/features-section";
+import { TechnologyStack } from "@/components/landing/integrations-section";
+import { EnterpriseSolutions } from "@/components/landing/metrics-section";
+import { ConatactDetails } from "@/components/landing/cta-section";
+
+
+
 
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-x-hidden noise-overlay">
       <Navigation />
       <HeroSection />
-      <FeaturesSection />
-      <HowItWorksSection />
-      <IntegrationsSection />
-      <InfrastructureSection />
-      <MetricsSection />
-      {/* <SecuritySection /> */}
-      {/* <DevelopersSection /> */}
-      <TestimonialsSection />
-      {/* <PricingSection /> */}
+      <AboutOrganization />
+      
+
+      <OurServices />
+      <TechnologyStack />
+      <OurMethodology />
+      <EnterpriseSolutions/>
+      <StrategicPartnerships />
       <PortfolioSection />
-      <CtaSection />
+      <ConatactDetails />
       <FooterSection />  
       <WhatsAppFloat />
     </main>
