@@ -34,7 +34,7 @@ const trustedCompanies = [
   },
 ];
 
-export function TestimonialsSection() {
+export function StrategicPartnerships() {
   const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
 
   const handleImageError = (name: string) => {

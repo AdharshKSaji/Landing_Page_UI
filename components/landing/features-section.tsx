@@ -279,7 +279,7 @@ function FeatureCard({
   );
 }
 
-export function FeaturesSection() {
+export function AboutOrganization() {
   const [headerVisible, setHeaderVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 

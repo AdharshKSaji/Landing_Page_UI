@@ -69,7 +69,7 @@ const processSteps = [
   },
 ];
 
-export function InfrastructureSection() {
+export function OurMethodology() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeStep, setActiveStep] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);

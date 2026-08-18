@@ -17,7 +17,7 @@ interface CtaSectionProps {
   id?: string;  // ✅ Added optional id prop
 }
 
-export function CtaSection({ id }: CtaSectionProps) {  // ✅ Destructure id prop
+export function  ConatactDetails({ id }: CtaSectionProps) {  // ✅ Destructure id prop
   const [isVisible, setIsVisible] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);

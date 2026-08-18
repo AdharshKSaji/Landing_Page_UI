@@ -45,7 +45,7 @@ const steps = [
   },
 ];
 
-export function HowItWorksSection() {
+export function OurServices() {
   const [activeStep, setActiveStep] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);

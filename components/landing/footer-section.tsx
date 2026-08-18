@@ -372,7 +372,7 @@ export function FooterSection() {
                 <div className="flex items-center gap-4">
                   <img
                     src="/logo2.png"
-                    alt="GRANDREVES TECHNOLOGIES"
+                    alt=""
                     className="h-12 w-auto object-contain transition-all duration-500"
                   />
                   <div>

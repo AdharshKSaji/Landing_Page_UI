@@ -95,7 +95,7 @@ const getFlattenedIntegrations = () => {
 
 const allIntegrations = getFlattenedIntegrations();
 
-export function IntegrationsSection() {
+export function TechnologyStack() {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredTech, setHoveredTech] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);

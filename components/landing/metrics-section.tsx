@@ -231,7 +231,7 @@ const statusColors = {
   Beta: "text-blue-500 bg-blue-500/10 border-blue-500/20",
 };
 
-export function MetricsSection() {
+export function EnterpriseSolutions() {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredProduct, setHoveredProduct] = useState<string | null>(null);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
